@@ -1,0 +1,40 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import './App.css'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import Home from './Pages/Home'
+import Courses from './Pages/Courses'
+import Blog from './Pages/Blog'
+import About from './Pages/About'
+import Contact from './Pages/Contact'
+import Privacy from './Pages/Privacy'
+import RefundPolicy from './Pages/RefundPolicy'
+import TermsCondition from './Pages/TermsCondition'
+import Faq from './Pages/Faq'
+import BlogDetailPage from './Pages/BlogDetailPage'
+
+function App() {
+
+  return (
+    <>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/refund" element={<RefundPolicy />} />
+          <Route path="/terms" element={<TermsCondition />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/blog/:id" element={<BlogDetailPage />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </>
+  )
+}
+
+export default App
