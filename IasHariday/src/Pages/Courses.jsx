@@ -9,6 +9,8 @@ const courseData = [
   {
     image: UpscPre,
     courseTitle: "UPSC Prelims 2026",
+    description:
+      "Comprehensive preparation for UPSC Prelims including GS, CSAT.",
     rating: 4.8,
     price: "₹12,999",
     discountPrice: "₹8,999",
@@ -18,6 +20,8 @@ const courseData = [
   {
     image: UpscMain,
     courseTitle: "UPSC Mains 2026",
+    description:
+      "Advanced answer writing program with GS papers.",
     rating: 4.9,
     price: "₹14,999",
     discountPrice: "₹9,999",
@@ -27,6 +31,8 @@ const courseData = [
   {
     image: UppcsEx,
     courseTitle: "UPPCS Preparation",
+    description:
+      "Complete UPPCS preparation course covering prelims, mains.",
     rating: 4.7,
     price: "₹10,999",
     discountPrice: "₹6,999",
@@ -36,14 +42,19 @@ const courseData = [
   {
     image: SSCEx,
     courseTitle: "SSC CGL Complete Batch",
+    description:
+      "Full SSC CGL course with quantitative aptitude, reasoning, English.",
     rating: 4.6,
     price: "₹8,999",
     discountPrice: "₹4,999",
     button: "View More",
   },
+
   {
     image: UpscPre,
     courseTitle: "CDS Preparation",
+    description:
+      "Focused CDS preparation with mathematics, English, GK.",
     rating: 4.8,
     price: "₹13,999",
     discountPrice: "₹9,999",
@@ -53,6 +64,8 @@ const courseData = [
   {
     image: UpscMain,
     courseTitle: "CTET Preparation",
+    description:
+      "Structured CTET course including pedagogy, child development.",
     rating: 4.9,
     price: "₹11,999",
     discountPrice: "₹8,999",
@@ -62,6 +75,8 @@ const courseData = [
   {
     image: UppcsEx,
     courseTitle: "IBPS PO",
+    description:
+      "Complete IBPS PO preparation with banking awareness.",
     rating: 4.7,
     price: "₹7,999",
     discountPrice: "₹3,999",
@@ -71,12 +86,13 @@ const courseData = [
   {
     image: SSCEx,
     courseTitle: "Banking Exams",
+    description:
+      "All-in-one banking preparation course for SBI.",
     rating: 4.6,
     price: "₹6,999",
     discountPrice: "₹2,599",
     button: "View More",
   },
-
 ];
 
 const Courses = () => {
@@ -119,6 +135,7 @@ const Courses = () => {
                 <h2 className='text-xl font-bold mt-2 text-[#6B0F0F] leading-snug'>
                   {course.courseTitle}
                 </h2>
+                <h4 className='text-[#7C604F]'>{course.description}</h4>
                 {/* Price */}
                 <div className='flex items-center gap-3 mt-2'>
                   <h3 className='text-2xl font-bold text-black'>

@@ -12,12 +12,14 @@ import RefundPolicy from './Pages/RefundPolicy'
 import TermsCondition from './Pages/TermsCondition'
 import Faq from './Pages/Faq'
 import BlogDetailPage from './Pages/BlogDetailPage'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
 
   return (
     <>
       <BrowserRouter>
+      <ScrollToTop/>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

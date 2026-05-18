@@ -15,7 +15,7 @@ import HomeBlog from './HomeBlog'
 const Home = () => {
     return (
         <>
-            <div className='bg-gradient-to-r from-[#FDF6EC] via-[#F2E5DC] to-[#FDF6EC]'>
+            <div className='bg-[#FDF6EC]'>
                 <HeroSection />
                 <PopularCourse/>
                 <WhyUs/>

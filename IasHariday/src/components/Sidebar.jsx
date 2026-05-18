@@ -3,6 +3,12 @@ import { createPortal } from 'react-dom';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClear } from "react-icons/md";
 import { useLocation } from "react-router-dom";
+import {
+    MdMenuBook,
+    MdArticle,
+    MdInfo,
+    MdCall
+} from "react-icons/md";
 
 export default function Sidebar() {
 
@@ -59,75 +65,81 @@ export default function Sidebar() {
                             Hariday IAS
                         </h1>
 
-                        <ul className="text-black font-medium p-4 space-y-1 bg-[#FDF6EC]">
+                        <ul className="text-black font-medium p-4 space-y-2 bg-[#FDF6EC] mt-4">
 
+                            {/* Courses */}
                             <li>
                                 <a
                                     href="/courses"
-                                    className={`block px-4 py-2 rounded transition-all duration-300
-                ${location.pathname === "/courses"
-                                            ? "bg-[#c37a7a] text-white shadow-sm"
-                                            : "text-[#c87b7b] hover:bg-[#f3e2d2]"
+                                    className={`flex items-center gap-3 px-4 py-3 rounded-md transition-all duration-300 group
+
+                                          ${location.pathname === "/courses"
+                                            ? "bg-gradient-to-r from-[#6B0F0F] to-[#9e4f4f] text-white shadow-md scale-[1.02]"
+                                            : "text-[#6B0F0F] hover:bg-[#f3e2d2] hover:translate-x-1"
                                         }
-            `}
+                                       `}
                                 >
-                                    Courses
+                                    <MdMenuBook className="text-xl" />
+                                    <span className="text-[15px] font-semibold">
+                                        Courses
+                                    </span>
                                 </a>
                             </li>
 
+                            {/* Blog */}
                             <li>
                                 <a
                                     href="/blog"
-                                    className={`block px-4 py-2 rounded transition-all duration-300
-                ${location.pathname === "/blog"
-                                            ? "bg-[#c37a7a] text-white shadow-sm"
-                                            : "text-[#c87b7b] hover:bg-[#f3e2d2]"
+                                    className={`flex items-center gap-3 px-4 py-3 rounded-md transition-all duration-300 group
+
+            ${location.pathname === "/blog"
+                                            ? "bg-gradient-to-r from-[#6B0F0F] to-[#9e4f4f] text-white shadow-md scale-[1.02]"
+                                            : "text-[#6B0F0F] hover:bg-[#f3e2d2] hover:translate-x-1"
                                         }
             `}
                                 >
-                                    Blog
+                                    <MdArticle className="text-xl" />
+                                    <span className="text-[15px] font-semibold">
+                                        Blog
+                                    </span>
                                 </a>
                             </li>
 
-                            <li>
-                                <a
-                                    href="/my-courses"
-                                    className={`block px-4 py-2 rounded transition-all duration-300
-                ${location.pathname === "/my-courses"
-                                            ? "bg-[#c37a7a] text-white shadow-sm"
-                                            : "text-[#c87b7b] hover:bg-[#f3e2d2]"
-                                        }
-            `}
-                                >
-                                    My Course
-                                </a>
-                            </li>
-
+                            {/* About */}
                             <li>
                                 <a
                                     href="/about"
-                                    className={`block px-4 py-2 rounded transition-all duration-300
-                ${location.pathname === "/about"
-                                            ? "bg-[#c37a7a] text-white shadow-sm"
-                                            : "text-[#c87b7b] hover:bg-[#f3e2d2]"
+                                    className={`flex items-center gap-3 px-4 py-3 rounded-md transition-all duration-300 group
+
+            ${location.pathname === "/about"
+                                            ? "bg-gradient-to-r from-[#6B0F0F] to-[#9e4f4f] text-white shadow-md scale-[1.02]"
+                                            : "text-[#6B0F0F] hover:bg-[#f3e2d2] hover:translate-x-1"
                                         }
             `}
                                 >
-                                    About
+                                    <MdInfo className="text-xl" />
+                                    <span className="text-[15px] font-semibold">
+                                        About
+                                    </span>
                                 </a>
                             </li>
 
+                            {/* Contact */}
                             <li>
                                 <a
                                     href="/contact"
-                                    className={`block px-3 py-2 rounded transition-all duration-300
-                                          ${location.pathname === "/contact"
-                                            ? "bg-[#c37a7a] text-white shadow-sm"
-                                            : "text-[#c87b7b] hover:bg-[#f3e2d2]"
+                                    className={`flex items-center gap-3 px-4 py-3 rounded-md transition-all duration-300 group
+
+            ${location.pathname === "/contact"
+                                            ? "bg-gradient-to-r from-[#6B0F0F] to-[#9e4f4f] text-white shadow-md scale-[1.02]"
+                                            : "text-[#6B0F0F] hover:bg-[#f3e2d2] hover:translate-x-1"
                                         }
             `}
                                 >
-                                    Contact
+                                    <MdCall className="text-xl" />
+                                    <span className="text-[15px] font-semibold">
+                                        Contact
+                                    </span>
                                 </a>
                             </li>
 

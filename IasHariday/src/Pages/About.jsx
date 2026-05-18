@@ -119,7 +119,7 @@ const About = () => {
               <p className="text-[#6B0F0F] font-semibold tracking-widest uppercase">
                 Why Students Choose Us
               </p>
-              <div className="w-24 h-1 bg-[#6B0F0F] mx-auto mt-5 rounded-full"></div>
+              <div className="w-24 h-1 bg-[#6B0F0F] mx-auto mt-3 rounded-full"></div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
@@ -128,12 +128,6 @@ const About = () => {
                   key={index}
                   className="group bg-[#FFFAF3] border border-transparent hover:border-[#6B0F0F] p-4 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                 >
-
-                  {/* Number */}
-                  <div className="w-10 h-10 rounded-full bg-[#6B0F0F] text-white flex items-center justify-center text-xl font-bold mb-2">
-                    {index + 1}
-                  </div>
-
                   {/* Title */}
                   <h3 className="text-lg font-bold text-[#6B0F0F] mb-2 leading-snug">
                     {item.title}

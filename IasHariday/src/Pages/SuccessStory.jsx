@@ -83,7 +83,7 @@ const storyData = [
 const SuccessStory = () => {
     return (
 
-        <section className='bg-[#F8EEE4] py-6'>
+        <section className=' py-6'>
 
             {/* Heading */}
             <div className='text-center px-5'>

@@ -20,8 +20,8 @@ const BannerPage2 = () => {
                             Discover a world of knowledge and opportunities with us. Join our community of learners and start your journey towards success today!
                         </p>
                         <Link to="/courses">
-                            <button className="mt-6 bg-[#6B0F0F] text-white px-6 py-3 rounded-full hover:bg-[#571010] transition-all duration-300 flex items-center font-semibold">
-                                Start Learing Today <IoIosArrowRoundForward className="ml-2 text-2xl font-bold" />
+                            <button className="mt-6 bg-[#6B0F0F] text-white px-6 py-3 rounded-full hover:bg-[#571010] transition-all duration-300 flex items-center font-semibold group">
+                                Start Learing Today <IoIosArrowRoundForward className="ml-2 text-2xl font-bold transition-all duration-300 group-hover:translate-x-1.5" />
                             </button>
                         </Link>
                     </div>

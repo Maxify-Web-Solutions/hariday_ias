@@ -22,7 +22,7 @@ const Navbar = () => {
                 {/* Navbar */}
                 <Sidebar />
                 <div className='hidden md:block'>
-                    <ul className="flex items-center gap-6 text-base">
+                    <ul className="flex items-center gap-6 text-[15px]">
                         <Link to="/courses" className='text-[#7C604F]'>Courses</Link>
                         <Link to="/blog" className='text-[#7C604F]'>Blog</Link>
                         <Link to="/about" className='text-[#7C604F]'>About</Link>

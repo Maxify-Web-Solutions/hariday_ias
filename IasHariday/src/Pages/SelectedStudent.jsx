@@ -50,7 +50,7 @@ const SelectedStudent = () => {
             <div>
                 <h1 className='text-xl md:text-3xl font-bold text-center  mt-1 md:mt-3'>Proud Achievers of Hriday IAS</h1>
                 <p className='text-center text-[#7C5A4F] mt-4 text-sm md:text-base px-5'>
-                    Meet our successful students who have achieved their dreams of becoming officers with the support and guidance of Hariday IAS.
+                    Meet our successful students who have achieved their dreams of becoming officers with the support and guidance of Hriday IAS.
                 </p>
                 <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 px-5 md:px-10 lg:px-16 py-10  rounded-xl'>
                     {selectedData.map((student) => (

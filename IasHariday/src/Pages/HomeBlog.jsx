@@ -6,7 +6,7 @@ import planning from '../assets/Images/Planning.png'
 import Rank from '../assets/Images/Rank.png'
 import imp from '../assets/Images/TopicImp.png'
 import { MdOutlineDateRange } from "react-icons/md";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { CgChevronDoubleRight } from "react-icons/cg";
 
 
@@ -14,6 +14,7 @@ import { CgChevronDoubleRight } from "react-icons/cg";
 
 const blogData = [
     {
+        id: 1,
         image: currentAffair,
         highlight: "Current Affairs",
         title: "Top Current Affairs for UPSC 2024",
@@ -23,6 +24,7 @@ const blogData = [
     },
 
     {
+        id: 2,
         image: planning,
         highlight: "Preparation Strategy",
         title: "Ultimate Strategy to Crack UPSC in 1 Year",
@@ -34,6 +36,7 @@ const blogData = [
 
 ];
 const HomeBlog = () => {
+    const navigate = useNavigate()
     return (
         <>
             <div className=' y-7 md:py-5 px-5 md:px-10 lg:px-16'>
@@ -47,7 +50,8 @@ const HomeBlog = () => {
 
                         <div
                             key={index}
-                            className="flex flex-col sm:flex-row gap-4 bg-[#FFFAF3] p-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                            onClick={() => navigate(`/blog/${item.id}`)}
+                            className="flex flex-col sm:flex-row gap-4 bg-[#FFFAF3] p-3 rounded-lg shadow hover:shadow-sm transition-all duration-300 cursor-pointer hover:shadow-[#b48787] mb-2">
 
                             {/* Left Side Image */}
                             <div className="w-full sm:w-52 h-52 flex-shrink-0 overflow-hidden rounded-md">

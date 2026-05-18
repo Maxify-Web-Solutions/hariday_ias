@@ -10,8 +10,10 @@ import { useNavigate } from "react-router-dom";
 
 
 
+
 const blogData = [
   {
+    id: 1,
     image: currentAffair,
     highlight: "Current Affairs",
     title: "Top Current Affairs for UPSC 2024",
@@ -21,6 +23,7 @@ const blogData = [
   },
 
   {
+    id: 2,
     image: planning,
     highlight: "Preparation Strategy",
     title: "Ultimate Strategy to Crack UPSC in 1 Year",
@@ -30,6 +33,7 @@ const blogData = [
   },
 
   {
+    id: 3,
     image: Answer,
     highlight: "Answer Writing",
     title: "Answer Writing Tips for UPSC Mains",
@@ -39,6 +43,7 @@ const blogData = [
   },
 
   {
+    id: 4,
     image: notification,
     highlight: "Latest Notification",
     title: "UPSC Prelims 2026 Notification Released",
@@ -48,6 +53,7 @@ const blogData = [
   },
 
   {
+    id: 5,
     image: Rank,
     highlight: "Toppers Strategy",
     title: "How AIR-5 Cracked UPSC",
@@ -57,6 +63,7 @@ const blogData = [
   },
 
   {
+    id: 6,
     image: imp,
     highlight: "Indian Polity",
     title: "Important Topics in Indian Polity",
@@ -69,7 +76,7 @@ const Blog = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className='mt-16 y-7 md:py-10 px-5 md:px-10 lg:px-16 bg-[#F3E6DD]'>
+      <div className='mt-16 y-7 md:py-10 px-5 md:px-10 lg:px-16 bg-[#FDF6EC]'>
         <div className=''>
           <h1 className='text-[#6B0F0F] md:text-3xl text-lg font-bold text-center pt-6'>Guidance Beyond The Classroom</h1>
         </div>
@@ -79,8 +86,12 @@ const Blog = () => {
 
             <div
               key={index}
-              onClick={() => navigate(`/blog/${index}`)}
-              className="flex flex-col sm:flex-row gap-4 bg-[#FFFAF3] p-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-2 cursor-pointer hover:-translate-y-1"
+              onClick={() => {
+                navigate(`/blog/${item.id}`);
+                scrollToTop();
+              }}
+
+              className="flex flex-col sm:flex-row gap-4 bg-[#FFFAF3] p-3 rounded-lg shadow-sm hover:shadow-md transition-all duration-500 ease-in-out mb-2 cursor-pointer hover:scale-105"
             >
 
               {/* Left Side Image */}
@@ -88,7 +99,7 @@ const Blog = () => {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded"
                 />
               </div>
 

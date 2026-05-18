@@ -31,11 +31,11 @@ const HeroSection = () => {
                         </p>
 
                         {/* CTA Buttons */}
-                        <div className="flex flex-wrap gap-5 mt-8 md:mt-14 md:w-full">
+                        <div className="flex flex-wrap gap-5 mt-8 md:mt-14 md:w-full group">
                             <Link to="/courses">
                                 <button className="bg-[#6B0F0F] text-white px-6 py-3 rounded-full font-medium text-lg transition-all duration-300 hover:bg-[#571010] hover:scale-105 flex items-center gap-2">
                                     More Details
-                                    <HiArrowRightCircle size={28} className='ml-4 font-bold' />
+                                    <HiArrowRightCircle size={28} className='ml-4 font-bold text-2xl transition-all duration-300 group-hover:translate-x-2' />
                                 </button>
                             </Link>
                         </div>
