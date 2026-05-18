@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Hello from '../assets/Images/contact.svg'
+import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
 
 
 
@@ -48,20 +49,74 @@ const Contact = () => {
       <div className='mt-0 md:mt-16 px-3 md:px-20 lg:px-28 py-10 bg-[#FDF6EC]'>
         <div className="flex flex-col lg:flex-row  mt-16 items-center justify-between gap-4">
           <div className="w-full lg:w-[55%]  rounded-xl shadow-md p-4">
-            <div className='px-5'>
-              <h1 className='text-4xl font-bold text-[#6B0F0F]'>Contact Us</h1>
-              <p className=' text-base mt-2 text-[#6B0F0F]'>For any queries, Please reach out to us. Our Support team will get <br /> back to you within 24 hours.</p>
-              <p className='mt-5 text-[#7C5A4F]'>support@gmail.com</p>
-              <p className='mt-3 text-[#7C5A4F]'>+91 9355650923</p>
-              <p className='mt-1 text-[#7C5A4F]'>+91 9667096213</p>
+            <div className="px-5">
+              <h1 className="text-4xl font-bold text-[#6B0F0F]">
+                Contact Us
+              </h1>
+              <p className="text-base mt-3 text-[#7C5A4F] leading-relaxed">
+                For any queries, please reach out to us.
+                Our support team will get back to you within 24 hours.
+              </p>
+              {/* Address */}
+              <div className="flex items-start gap-4 mt-5">
+
+                <div className="h-11 w-11 rounded-full bg-[#6B0F0F] flex items-center justify-center flex-shrink-0">
+                  <MdLocationOn className="text-white text-2xl" />
+                </div>
+
+                <div>
+                  <h2 className="text-xl font-semibold text-[#6B0F0F]">
+                    Address
+                  </h2>
+
+                  <p className="text-[#7C5A4F] mt-1 text-sm">
+                    A-78, Block-A, Sector 2, Noida<br/>
+                    Metro Station Noida Sector 15, Exit Gate No. 3 (201301)
+                  </p>
+                </div>
+
+              </div>
+
+              {/* Email */}
+              <div className="flex items-start gap-4 mt-4">
+                <div className="h-11 w-11 rounded-full bg-[#6B0F0F] flex items-center justify-center flex-shrink-0">
+                  <MdEmail className="text-white text-2xl" />
+                </div>
+                <div>
+                  <h2 className="text-xl font-semibold text-[#6B0F0F]">
+                    Email
+                  </h2>
+                  <p className="text-[#7C5A4F] mt-1 text-sm">
+                    support@gmail.com
+                  </p>
+                </div>
+              </div>
+              {/* Phone */}
+              <div className="flex items-start gap-4 mt-4">
+                <div className="h-11 w-11 rounded-full bg-[#6B0F0F] flex items-center justify-center flex-shrink-0">
+                  <MdPhone className="text-white text-2xl" />
+                </div>
+                <div>
+                  <h2 className="text-xl font-semibold text-[#6B0F0F]">
+                    Phone
+                  </h2>
+                  <p className="text-[#7C5A4F] mt-1 text-sm">
+                    +91 9355650923
+                  </p>
+                  <p className="text-[#7C5A4F] text-sm">
+                    +91 9667096213
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className='mt-8'>
+            <div className='mt-2'>
               <img src={Hello}></img>
             </div>
           </div>
-          <div className="w-full lg:w-[45%] rounded-xl shadow-md  p-6">
-            <form className='flex flex-col mt-7' onSubmit={handleSubmit}>
-
+          <div className="w-full lg:w-[45%] rounded-xl shadow-md p-16">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#6B0F0F] text-center">Have Some Questions?</h2>
+            <div className="w-32 h-1 bg-[#6B0F0F] mx-auto mt-2 rounded-full"></div>
+            <form className='flex flex-col mt-6' onSubmit={handleSubmit}>
               <label>Full Name*</label>
               <input
                 type="text"
@@ -69,7 +124,7 @@ const Contact = () => {
                 value={formData.fullName}
                 onChange={handleChange}
                 placeholder='Enter Name'
-                className='outline-none py-2 border-b-2 mt-1 border-[#7C5D73] rounded pl-2'
+                className='outline-none py-2 border-b-2 mt-1 border-[#7C5D73] rounded pl-2 hover:border'
               />
 
               <label className='mt-5'>Email*</label>
@@ -79,7 +134,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder='Enter Email'
-                className='outline-none py-2 border-b-2 mt-1 border-[#7C5D73] rounded pl-2'
+                className='outline-none py-2 border-b-2 mt-1 border-[#7C5D73] rounded pl-2 hover:border'
               />
 
               <label className='mt-5'>Phone No*</label>
@@ -89,7 +144,7 @@ const Contact = () => {
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder='Enter Number'
-                className='outline-none py-2 border-b-2 border-[#7C5D73] rounded pl-2'
+                className='outline-none py-2 border-b-2 border-[#7C5D73] rounded pl-2 hover:border mt-1'
               />
 
               <textarea
@@ -98,7 +153,7 @@ const Contact = () => {
                 value={formData.message}
                 onChange={handleChange}
                 placeholder='Your Message*'
-                className='mt-7 outline-none py-2 border-b-2 border-[#7C5D73] rounded pl-2'
+                className='mt-7 outline-none py-2 border-b-2 border-[#7C5D73] rounded pl-2 hover:border'
               />
 
               <button

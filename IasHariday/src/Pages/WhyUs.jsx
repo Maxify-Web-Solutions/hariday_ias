@@ -59,7 +59,7 @@ const WhyUs = () => {
                 </p>
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-5 md:px-10 lg:px-16 py-10'>
                     {data.map((item) => (
-                        <div key={item.id} className='rounded-2xl p-6 hover:shadow-sm hover:shadow-[#6B0F0F] transition-all duration-300 hover:scale-105 bg-[#FFFAF3]'>
+                        <div key={item.id} className='rounded-2xl p-6 hover:shadow-sm hover:shadow-[#6B0F0F] transition-all duration-500 hover:scale-[1.02] bg-[#FFFAF3]'>
                             <div className='text-4xl text-[#6B0F0F] mb-4'>
                                 {item.icon}
                             </div>

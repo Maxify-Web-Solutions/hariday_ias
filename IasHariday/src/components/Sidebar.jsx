@@ -71,16 +71,16 @@ export default function Sidebar() {
                             <li>
                                 <a
                                     href="/courses"
-                                    className={`flex items-center gap-3 px-4 py-3 rounded-md transition-all duration-300 group
+                                    className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-all duration-300 group
 
                                           ${location.pathname === "/courses"
-                                            ? "bg-gradient-to-r from-[#6B0F0F] to-[#9e4f4f] text-white shadow-md scale-[1.02]"
-                                            : "text-[#6B0F0F] hover:bg-[#f3e2d2] hover:translate-x-1"
+                                            ? "border-l-4  border-[#711716] text-[#711716]"
+                                            : "text-[#711716] hover:bg-[#F5E6D3]"
                                         }
                                        `}
                                 >
                                     <MdMenuBook className="text-xl" />
-                                    <span className="text-[15px] font-semibold">
+                                    <span className="text-base font-bold">
                                         Courses
                                     </span>
                                 </a>
@@ -90,16 +90,16 @@ export default function Sidebar() {
                             <li>
                                 <a
                                     href="/blog"
-                                    className={`flex items-center gap-3 px-4 py-3 rounded-md transition-all duration-300 group
+                                    className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-all duration-300 group
 
             ${location.pathname === "/blog"
-                                            ? "bg-gradient-to-r from-[#6B0F0F] to-[#9e4f4f] text-white shadow-md scale-[1.02]"
-                                            : "text-[#6B0F0F] hover:bg-[#f3e2d2] hover:translate-x-1"
+                                             ? "border-l-4  border-[#711716] text-[#711716]"
+                                            : "text-[#711716] hover:bg-[#F5E6D3]"
                                         }
             `}
                                 >
                                     <MdArticle className="text-xl" />
-                                    <span className="text-[15px] font-semibold">
+                                    <span className="text-base font-bold">
                                         Blog
                                     </span>
                                 </a>
@@ -109,16 +109,16 @@ export default function Sidebar() {
                             <li>
                                 <a
                                     href="/about"
-                                    className={`flex items-center gap-3 px-4 py-3 rounded-md transition-all duration-300 group
+                                    className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-all duration-300 group
 
             ${location.pathname === "/about"
-                                            ? "bg-gradient-to-r from-[#6B0F0F] to-[#9e4f4f] text-white shadow-md scale-[1.02]"
-                                            : "text-[#6B0F0F] hover:bg-[#f3e2d2] hover:translate-x-1"
+                                            ? "border-l-4  border-[#711716] text-[#711716]"
+                                            : "text-[#711716] hover:bg-[#F5E6D3]"
                                         }
             `}
                                 >
                                     <MdInfo className="text-xl" />
-                                    <span className="text-[15px] font-semibold">
+                                    <span className="text-base font-bold">
                                         About
                                     </span>
                                 </a>
@@ -128,16 +128,16 @@ export default function Sidebar() {
                             <li>
                                 <a
                                     href="/contact"
-                                    className={`flex items-center gap-3 px-4 py-3 rounded-md transition-all duration-300 group
+                                    className={`flex items-center gap-3 px-3 py-1.5 rounded-lg transition-all duration-300 group
 
             ${location.pathname === "/contact"
-                                            ? "bg-gradient-to-r from-[#6B0F0F] to-[#9e4f4f] text-white shadow-md scale-[1.02]"
-                                            : "text-[#6B0F0F] hover:bg-[#f3e2d2] hover:translate-x-1"
+                                            ? "border-l-4  border-[#711716] text-[#711716]"
+                                            : "text-[#711716] hover:bg-[#F5E6D3]"
                                         }
             `}
                                 >
                                     <MdCall className="text-xl" />
-                                    <span className="text-[15px] font-semibold">
+                                    <span className="text-base font-bold">
                                         Contact
                                     </span>
                                 </a>

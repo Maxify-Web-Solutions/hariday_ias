@@ -1,9 +1,10 @@
 import React from 'react'
 import logo from '../assets/Images/logoIas.png'
-import { Link } from "react-router-dom"
 import Sidebar from './Sidebar'
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+    const location = useLocation();
     return (
         <div className='bg-[#FDF6EC] px-8 fixed top-0 left-0 w-full  z-50 shadow-sm'>
             <div className="flex justify-between items-center py-2">
@@ -21,12 +22,59 @@ const Navbar = () => {
                     </div></Link>
                 {/* Navbar */}
                 <Sidebar />
-                <div className='hidden md:block'>
-                    <ul className="flex items-center gap-6 text-[15px]">
-                        <Link to="/courses" className='text-[#7C604F]'>Courses</Link>
-                        <Link to="/blog" className='text-[#7C604F]'>Blog</Link>
-                        <Link to="/about" className='text-[#7C604F]'>About</Link>
-                        <Link to="/contact" className='text-[#7C604F]'>Contact</Link>
+                <div className="hidden md:block">
+                    <ul className="flex items-center gap-3 text-base">
+                        <Link
+                            to="/courses"
+                            className={`px-3 py-1 rounded transition-all duration-300
+
+                                 ${location.pathname === "/courses"
+                                    ? "bg-[#F5E6D3] text-[#6B0F0F] hover:text-[#711716]"
+                                    : "text-[#6B0F0F] hover:bg-[#F5E6D3]"
+                                }
+                               `}
+                        >
+                            Courses
+                        </Link>
+
+                        <Link
+                            to="/blog"
+                            className={`px-3 py-1 rounded-md transition-all duration-300
+
+            ${location.pathname === "/blog"
+                                    ? "bg-[#F5E6D3] text-[#8E443F] hover:text-[#711716]"
+                                    : "text-[#6B0F0F] hover:bg-[#F5E6D3]"
+                                }
+            `}
+                        >
+                            Blog
+                        </Link>
+
+                        <Link
+                            to="/about"
+                            className={`px-3 py-1 rounded-md transition-all duration-300
+
+            ${location.pathname === "/about"
+                                    ? "bg-[#F5E6D3] text-[#8E443F] hover:text-[#711716]"
+                                    : "text-[#6B0F0F] hover:bg-[#F5E6D3]"
+                                }
+            `}
+                        >
+                            About
+                        </Link>
+
+                        <Link
+                            to="/contact"
+                            className={`px-3 py-1 rounded-md transition-all duration-300
+
+            ${location.pathname === "/contact"
+                                    ? "bg-[#F5E6D3] text-[#8E443F] hover:text-[#711716]"
+                                    : "text-[#6B0F0F] hover:bg-[#F5E6D3]"
+                                }
+            `}
+                        >
+                            Contact
+                        </Link>
                     </ul>
                 </div>
 

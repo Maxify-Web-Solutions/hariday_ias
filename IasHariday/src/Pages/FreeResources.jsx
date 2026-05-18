@@ -45,7 +45,7 @@ const FreeResources = () => {
                     {FreeData().map((resource) => (
                         <div
                             key={resource.id}
-                            className='h-[200px] flex flex-col justify-between bg-[#FFFAF3] rounded-xl p-7 shadow-sm transition-all duration-300 hover:shadow-[#6B0F0F] hover:scale-105'
+                            className='h-[200px] flex flex-col justify-between bg-[#FFFAF3] rounded-xl p-7 shadow-sm transition-all duration-500 hover:shadow-[#6B0F0F] hover:scale-[1.02]'
                         >
                             <div>
                                 <h2 className='text-lg md:text-xl font-bold text-[#7A120D]'>

@@ -91,7 +91,7 @@ const Blog = () => {
                 scrollToTop();
               }}
 
-              className="flex flex-col sm:flex-row gap-4 bg-[#FFFAF3] p-3 rounded-lg shadow-sm hover:shadow-md transition-all duration-500 ease-in-out mb-2 cursor-pointer hover:scale-105"
+              className="flex flex-col sm:flex-row gap-4 bg-[#FFFAF3] p-3 rounded-lg shadow-sm hover:shadow-md transition-all duration-500 ease-in-out mb-2 cursor-pointer hover:scale-[1.02]"
             >
 
               {/* Left Side Image */}

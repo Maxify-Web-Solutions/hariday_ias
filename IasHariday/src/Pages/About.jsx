@@ -70,7 +70,7 @@ const About = () => {
           <div className="flex flex-col lg:flex-row gap-8">
 
             {/* Vision */}
-            <div className="w-full lg:w-1/2 p-6 rounded-2xl shadow-sm hover:shadow-sm hover:shadow-[#6B0F0F] transition-all duration-500 hover:scale-105 bg-[#FFFAF3]">
+            <div className="w-full lg:w-1/2 p-6 rounded-2xl shadow-sm hover:shadow-sm hover:shadow-[#6B0F0F] transition-all duration-500 hover:scale-[1.02] bg-[#FFFAF3]">
 
               <div className="flex items-center gap-4 mb-4">
                 <div className="bg-[#6B0F0F] p-2 rounded-full text-white text-2xl">
@@ -91,7 +91,7 @@ const About = () => {
             </div>
 
             {/* Mission */}
-            <div className="w-full lg:w-1/2 p-6 rounded-2xl shadow-sm  hover:shadow-sm hover:shadow-[#6B0F0F] transition-all duration-500 hover:scale-105 bg-[#FFFAF3]">
+            <div className="w-full lg:w-1/2 p-6 rounded-2xl shadow-sm  hover:shadow-sm hover:shadow-[#6B0F0F] transition-all duration-500 hover:scale-[1.02] bg-[#FFFAF3]">
 
               <div className="flex items-center gap-4 mb-4">
                 <div className="bg-[#6B0F0F] p-2 rounded-full text-white text-2xl">
@@ -126,7 +126,7 @@ const About = () => {
               {highlights.map((item, index) => (
                 <div
                   key={index}
-                  className="group bg-[#FFFAF3] border border-transparent hover:border-[#6B0F0F] p-4 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  className="group bg-[#FFFAF3] border border-transparent hover:border-[#6B0F0F] p-4 rounded-2xl transition-all duration-500 hover:-translate-y-0.5 hover:shadow-lg"
                 >
                   {/* Title */}
                   <h3 className="text-lg font-bold text-[#6B0F0F] mb-2 leading-snug">

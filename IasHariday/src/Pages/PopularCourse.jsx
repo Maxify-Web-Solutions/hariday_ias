@@ -87,7 +87,7 @@ const PopularCourse = () => {
                             <img
                                 src={course.image}
                                 alt={course.title}
-                                className='w-full h-full object-cover group-hover:scale-105 transition duration-500'
+                                className='w-full h-full object-cover group-hover:scale-[1.02] transition duration-500'
                             />
                         </div>
                         <div className='p-6 flex flex-col justify-between h-[250px]'>

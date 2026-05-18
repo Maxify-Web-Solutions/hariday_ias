@@ -39,7 +39,7 @@ const Testimonials = () => {
                     {testData.map((testimonial) => (
                         <div
                             key={testimonial.id}
-                            className='h-[120px] flex flex-col justify-center items-center bg-[#FFFAF3] rounded-xl p-6 shadow-sm transition-all duration-300 hover:shadow-[#6B0F0F] hover:scale-105 mb-2'
+                            className='h-[120px] flex flex-col justify-center items-center bg-[#FFFAF3] rounded-xl p-6 shadow-sm transition-all duration-500 hover:shadow-[#6B0F0F] hover:scale-[1.02] mb-2'
                         >
                             <h2 className='text-lg md:text-xl font-bold text-[#7A120D]'>
                                 {testimonial.title}

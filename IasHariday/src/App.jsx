@@ -13,6 +13,7 @@ import TermsCondition from './Pages/TermsCondition'
 import Faq from './Pages/Faq'
 import BlogDetailPage from './Pages/BlogDetailPage'
 import ScrollToTop from './components/ScrollToTop'
+import CourseDetailsPage from './Pages/CourseDetailsPage'
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
           <Route path="/terms" element={<TermsCondition />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/blog/:id" element={<BlogDetailPage />} />
+          <Route path="/course/:id" element={<CourseDetailsPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>

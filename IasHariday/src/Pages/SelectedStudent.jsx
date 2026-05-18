@@ -54,7 +54,7 @@ const SelectedStudent = () => {
                 </p>
                 <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 px-5 md:px-10 lg:px-16 py-10  rounded-xl'>
                     {selectedData.map((student) => (
-                        <div key={student.id} className='h-full w-full bg-[#FFFAF3] border border-[#F1E2C7] rounded-xl shadow-sm  hover:shadow-[#6B0F0F] transition-all duration-300 overflow-hidden hover:scale-105 mb-2'>
+                        <div key={student.id} className='h-full w-full bg-[#FFFAF3] border border-[#F1E2C7] rounded-xl shadow-sm  hover:shadow-[#6B0F0F] transition-all duration-500 overflow-hidden hover:scale-[1.02] mb-2'>
                             <img src={student.image} alt={student.name} className='w-full h-60 object-cover rounded-t-xl hover:scale-105 transition-all duration-700 ease-out' />
                             <div className='p-4 rounded-xl it'>
                                 <h2 className='text-xl font-bold text-center text-[#7A120D]'>{student.name}</h2>

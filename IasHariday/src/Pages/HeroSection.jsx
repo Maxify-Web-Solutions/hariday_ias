@@ -22,7 +22,7 @@ const HeroSection = () => {
                         </p>
 
                         <h1 className="text-3xl sm:text-4xl lg:text-3xl xl:text-6xl font-bold text-black max-w-xl mt-3 leading-relaxed">
-                            Every Great Officer Once Started As An Aspirant
+                            Every Great <span className='text-[#6B0F0F]'>Officer</span> Once Started As An Aspirant
                         </h1>
 
                         <p className="text-[#7C5A4F] text-lg sm:text-xl mt-6 max-w-xl leading-relaxed">
@@ -31,8 +31,8 @@ const HeroSection = () => {
                         </p>
 
                         {/* CTA Buttons */}
-                        <div className="flex flex-wrap gap-5 mt-8 md:mt-14 md:w-full group">
-                            <Link to="/courses">
+                        <div className="flex flex-wrap gap-5 mt-8 md:mt-14 md:w-full">
+                            <Link to="/courses" className='group'>
                                 <button className="bg-[#6B0F0F] text-white px-6 py-3 rounded-full font-medium text-lg transition-all duration-300 hover:bg-[#571010] hover:scale-105 flex items-center gap-2">
                                     More Details
                                     <HiArrowRightCircle size={28} className='ml-4 font-bold text-2xl transition-all duration-300 group-hover:translate-x-2' />
