@@ -1,5 +1,5 @@
 import React from 'react'
-import conditionImage from '../assets/Images/Terms.jpg'
+import conditionImage from '../assets/Images/termsand.webp'
 
 
 import {
@@ -21,11 +21,11 @@ import {
 const TermsCondition = () => {
     return (
         <>
-            <div>
+            <div className='mt-8'>
                 <div className='mt-16'>
-                    <img src={conditionImage} className='w-full h-[350px] md:[550px] object-fit px-2'></img>
+                    <img src={conditionImage} className='w-full h-[320px] md:h-[500px] object-cover px-2 rounded-lg'></img>
                 </div>
-                <section className="w-full py-10 md:py-16 px-[6px] ">
+                <section className="w-full py-5 px-[6px] ">
 
                     <div className="w-full bg-white rounded-2xl shadow-md p-6 md:p-10 lg:p-14">
 

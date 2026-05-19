@@ -40,18 +40,19 @@ const HomeBlog = () => {
     return (
         <>
             <div className=' y-7 md:py-5 px-5 md:px-10 lg:px-16'>
-                <div className='text-center font-bold text-xl md:text-3xl'>
+                <div className='text-center font-bold text-xl md:text-3xl mt-5'>
                     Latest Insights and <span className='text-[#6B0F0F] underline'>Articles</span>
 
                 </div>
-                <div className="grid lg:grid-cols-2 gap-8 mt-8">
+                <div className="grid lg:grid-cols-2 gap-8 mt-10">
 
                     {blogData.map((item, index) => (
 
                         <div
                             key={index}
                             onClick={() => navigate(`/blog/${item.id}`)}
-                            className="flex flex-col sm:flex-row gap-4 bg-[#FFFAF3] p-3 rounded-lg shadow hover:shadow-sm transition-all duration-300 cursor-pointer hover:shadow-[#b48787] mb-2">
+                            className="flex flex-col sm:flex-row gap-4 bg-[#FFFAF3] p-3 rounded-lg transition-all duration-300 cursor-pointer mb-2 shadow-sm  hover:shadow-md 
+                        hover:shadow-[#6B0F0F]/20">
 
                             {/* Left Side Image */}
                             <div className="w-full sm:w-52 h-52 flex-shrink-0 overflow-hidden rounded-md">
@@ -65,7 +66,7 @@ const HomeBlog = () => {
                             {/* Right Side Content */}
                             <div className="flex flex-col justify-between">
                                 {/* Highlight Button */}
-                                <button className="w-fit bg-[#ca8989] text-white px-4 rounded py-2 text-sm font-semibold mt-2">
+                                <button className="w-fit bg-[#F5E6D3] text-[#6B0F0F] px-4 rounded py-2 text-sm font-medium mt-2">
                                     {item.highlight}
                                 </button>
 
@@ -92,8 +93,8 @@ const HomeBlog = () => {
 
                 </div>
                 <Link to="/blog">
-                    <div className='flex items-center justify-center mt-5 group'>
-                        <button className='flex items-center gap-2 px-10 py-3 rounded-3xl bg-[#6B0F0F] text-white font-semibold'>
+                    <div className='flex items-center justify-center mt-5 '>
+                        <button className='flex items-center gap-2 px-10 py-3 rounded-3xl bg-[#6B0F0F] text-white font-semibold group'>
                             View More
                             <CgChevronDoubleRight className='text-2xl transition-all duration-300 group-hover:translate-x-2' />
                         </button>

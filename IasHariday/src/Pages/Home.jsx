@@ -6,7 +6,6 @@ import Expert from './Expert'
 import SuccessStory from './SuccessStory'
 import SelectedStudent from './SelectedStudent'
 import FreeResources from './FreeResources'
-import Testimonials from './Testimonials'
 import BannerPages from './BannerPages'
 import BannerPage2 from './BannerPage2'
 import HomeBlog from './HomeBlog'
@@ -24,7 +23,7 @@ const Home = () => {
                 <SuccessStory/>
                 <SelectedStudent/>
                 <FreeResources/>
-                <Testimonials/>
+               
                 <HomeBlog/>
                 <BannerPage2/>
             </div>

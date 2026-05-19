@@ -27,14 +27,14 @@ const experts = [
     {
         id: 3,
         image: image3,
-        name: "Chand Kubba Sir",
+        name: "R.K Jha Sir",
         designation: "Polity (GS & Optional), Economics",
         experience: "10+ Years Experience"
     },
     {
         id: 4,
         image: image4,
-        name: "Satyarth Sir",
+        name: "Chand Kubba Sir",
         designation: "History (GS & Optional)",
         experience: "20+ Years Experience"
     },
@@ -56,9 +56,9 @@ const experts = [
 
 const Expert = () => {
     return (
-        <section className=' py-2 '>
+        <section className=' bg-[#f8ede1] pb-5'>
             <div className='max-w-4xl mx-auto text-center px-5'>
-                <h1 className='font-bold text-black text-3xl md:text-5xl mt-1'>
+                <h1 className='font-bold text-black text-3xl md:text-5xl pt-5'>
                     The Minds Behind Our Success
                 </h1>
                 <p className='text-[#7C5A4F] mt-3 text-base md:text-base leading-relaxed'>
@@ -97,13 +97,14 @@ const Expert = () => {
                 >
                     {experts.map((expert) => (
                         <SwiperSlide key={expert.id}>
-                            <div className='h-[380px] rounded-2xl transition-all duration-300 group hover:shadow-sm font-semibold mt-1 hover:shadow-[#6B0F0F]  bg-[#FFFAF3] overflow-hidden'>                                <div className='overflow-hidden'>
-                                <img
-                                    src={expert.image}
-                                    alt={expert.name}
-                                    className='w-full h-[250px] object-coverb group-hover:scale-105 transition duration-500'
-                                />
-                            </div>
+                            <div className='h-[380px] rounded-2xl transition-all duration-300 group font-semibold mt-1 overflow-hidden  shadow-sm hover:shadow-md hover:shadow-[#6B0F0F]/20'>
+                                <div className='overflow-hidden'>
+                                    <img
+                                        src={expert.image}
+                                        alt={expert.name}
+                                        className='w-full h-[250px] object-coverb group-hover:scale-105 transition duration-500'
+                                    />
+                                </div>
                                 <div className='p-5'>
                                     <h2 className='text-base font-bold text-[#6B0F0F] mt-1'>
                                         {expert.name}

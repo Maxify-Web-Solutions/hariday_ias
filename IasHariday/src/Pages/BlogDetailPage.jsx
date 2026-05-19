@@ -98,7 +98,7 @@ const BlogDetailPage = () => {
     return (
         <>
 
-            <section className="w-full min-h-screen bg-[#F3E6DD] py-10 px-5 md:px-10 lg:px-20 mt-16">
+            <section className="w-full min-h-screen bg-[#F3E6DD] py-10 px-2 md:px-10 lg:px-20 mt-16">
 
                 <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8">
 
@@ -110,14 +110,14 @@ const BlogDetailPage = () => {
                             <img
                                 src={selectedBlog.image}
                                 alt={selectedBlog.title}
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-cover rounded-md"
                             />
                         </div>
 
                         {/* Content */}
                         <div className="p-6 md:p-10">
 
-                            <button className="bg-[#ca8989] text-white px-4 py-2 rounded-md text-sm font-semibold">
+                            <button className="bg-[#F5E6D3] text-[#6B0F0F] px-4 py-2 rounded-md text-sm font-medium">
                                 {selectedBlog.highlight}
                             </button>
 

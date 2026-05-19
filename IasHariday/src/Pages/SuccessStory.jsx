@@ -126,7 +126,8 @@ const SuccessStory = () => {
 
                         <SwiperSlide key={story.id}>
 
-                            <div className='h-[210px] w-full bg-[#FFFAF3] border border-[#F1E2C7] rounded-xl p-3 shadow-sm  hover:shadow-[#6B0F0F] transition-all duration-300'>
+                            <div className='h-[210px] w-full bg-[#FFFAF3] border border-[#F1E2C7] rounded-xl p-3 transition-all duration-300  shadow-sm hover:shadow-md 
+                        hover:shadow-[#6B0F0F]/20'>
                                 <div className='flex items-center gap-4'>
                                     <img
                                         src={story.image}

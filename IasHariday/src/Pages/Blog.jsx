@@ -76,7 +76,7 @@ const Blog = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className='mt-16 y-7 md:py-10 px-5 md:px-10 lg:px-16 bg-[#FDF6EC]'>
+      <div className='mt-16 y-7 md:py-10 px-2 md:px-10 lg:px-16 bg-[#FDF6EC]'>
         <div className=''>
           <h1 className='text-[#6B0F0F] md:text-3xl text-lg font-bold text-center pt-6'>Guidance Beyond The Classroom</h1>
         </div>
@@ -106,7 +106,7 @@ const Blog = () => {
               {/* Right Side Content */}
               <div className="flex flex-col justify-between">
                 {/* Highlight Button */}
-                <button className="w-fit bg-[#ca8989] text-white px-4 py-2 rounded-md text-sm font-semibold">
+                <button className="w-fit bg-[#F5E6D3] text-[#6B0F0F] px-4 py-2 rounded-md text-sm font-medium">
                   {item.highlight}
                 </button>
 

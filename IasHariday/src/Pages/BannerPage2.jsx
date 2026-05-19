@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const BannerPage2 = () => {
     return (
         <>
-            <div className='mt-16'>
+            <div className='mt-10'>
                 <div className="w-full relative h-[350px] md:h-[450px] bg-[#f5f5f5] flex items-center justify-center overflow-hidden">
                     <img
                         src={banner}

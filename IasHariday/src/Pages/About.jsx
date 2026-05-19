@@ -40,10 +40,10 @@ const highlights = [
 const About = () => {
   return (
     <>
-      <div className='mt-16 bg-[#FDF6EC] px-5 md:px-10 lg:px-16 py-10'>
+      <div className='mt-16 bg-[#FDF6EC] px-3 md:px-10 lg:px-16 py-10'>
         <div className="flex flex-col lg:flex-row items-center gap-10 ">
 
-          <div className="w-full lg:w-1/2 mt-8 md:mt-12">
+          <div className="w-full lg:w-1/2 mt-4 md:mt-10">
             <img
               src={AboutImage}
               alt="About Us"
@@ -114,7 +114,7 @@ const About = () => {
           </div>
         </div>
         {/* <section className="py-10 px-6"> */}
-          <div className=" px-5 md:px-10 lg:px-16 py-10">
+          <div className=" px-2 md:px-10 lg:px-16 py-10">
             <div className="text-center mb-14">
               <p className="text-[#6B0F0F] font-semibold tracking-widest uppercase">
                 Why Students Choose Us
@@ -137,7 +137,6 @@ const About = () => {
                   <p className="text-[#7C5A4F] leading-relaxed text-[15px]">
                     {item.description}
                   </p>
-
                 </div>
               ))}
             </div>

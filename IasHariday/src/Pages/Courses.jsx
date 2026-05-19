@@ -122,7 +122,8 @@ const Courses = () => {
           {courseData.map((course, index) => (
             <div
               key={index}
-              className='bg-white rounded-3xl overflow-hidden border hover:border-[#9c6060] ease-in-out transition-all duration-500 group hover:shadow-[#9c6060] hover:shadow'
+              className='bg-white rounded-3xl overflow-hidden hover:border-[#9c6060] ease-in-out transition-all duration-500 group  shadow-sm hover:shadow-md 
+                        hover:shadow-[#6B0F0F]/20'
             >
               {/* Image */}
               <div className='h-[200px] overflow-hidden'>

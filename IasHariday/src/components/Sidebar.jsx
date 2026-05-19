@@ -74,7 +74,7 @@ export default function Sidebar() {
                                     className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-all duration-300 group
 
                                           ${location.pathname === "/courses"
-                                            ? "border-l-4  border-[#711716] text-[#711716]"
+                                            ? "border-l-4  border-[#711716] text-[#711716] bg-[#F5E6D3]"
                                             : "text-[#711716] hover:bg-[#F5E6D3]"
                                         }
                                        `}
@@ -93,7 +93,7 @@ export default function Sidebar() {
                                     className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-all duration-300 group
 
             ${location.pathname === "/blog"
-                                             ? "border-l-4  border-[#711716] text-[#711716]"
+                                             ? "border-l-4  border-[#711716] text-[#711716] bg-[#F5E6D3]"
                                             : "text-[#711716] hover:bg-[#F5E6D3]"
                                         }
             `}
@@ -112,7 +112,7 @@ export default function Sidebar() {
                                     className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-all duration-300 group
 
             ${location.pathname === "/about"
-                                            ? "border-l-4  border-[#711716] text-[#711716]"
+                                            ? "border-l-4  border-[#711716] text-[#711716] bg-[#F5E6D3]"
                                             : "text-[#711716] hover:bg-[#F5E6D3]"
                                         }
             `}
@@ -131,7 +131,7 @@ export default function Sidebar() {
                                     className={`flex items-center gap-3 px-3 py-1.5 rounded-lg transition-all duration-300 group
 
             ${location.pathname === "/contact"
-                                            ? "border-l-4  border-[#711716] text-[#711716]"
+                                            ? "border-l-4  border-[#711716] text-[#711716] bg-[#F5E6D3]"
                                             : "text-[#711716] hover:bg-[#F5E6D3]"
                                         }
             `}

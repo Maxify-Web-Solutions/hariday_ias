@@ -14,9 +14,9 @@ const Privacy = () => {
         <>
             <div className=''>
                 <div className='rounded-full'>
-                    <img src={PrivacyImage} className='w-full h-[350px] md:h-[500px] object-fit px-2'></img>
+                    <img src={PrivacyImage} className='w-full h-[320px] md:h-[500px] object-fit px-2'></img>
                 </div>
-                <section className="w-full py-10 md:py-16 px-[6px]">
+                <section className="w-full py-5 px-[6px]">
 
                     <div className="w-full bg-white rounded-2xl shadow-md p-6 md:p-10 lg:p-14">
 
