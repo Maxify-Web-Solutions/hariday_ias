@@ -50,7 +50,7 @@ const SuccessStory = () => {
                         },
                     }}
                 >
-                    {reviews.map((story) => (
+                    {reviews?.map((story) => (
                         <SwiperSlide key={story.id}>
                             <ReviewCard story={story} />
                         </SwiperSlide>

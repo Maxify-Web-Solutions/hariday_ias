@@ -45,7 +45,7 @@ const HomeBlog = () => {
                 </div>
                 <div className="grid lg:grid-cols-2 gap-8 mt-5">
 
-                    {blogs.slice(0, 2).map((item) => (
+                    {blogs?.slice(0, 2).map((item) => (
 
                         <div
                             key={item._id}

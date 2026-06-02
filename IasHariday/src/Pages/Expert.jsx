@@ -56,7 +56,7 @@ const Expert = () => {
                         },
                     }}
                 >
-                    {faculties.map((expert) => (
+                    {faculties?.map((expert) => (
                         <SwiperSlide key={expert.id}>
                             <div className='h-[380px] rounded-2xl transition-all duration-300 group font-semibold mt-1 overflow-hidden shadow-sm hover:shadow-md hover:shadow-[#6B0F0F]/20 flex flex-col'>
                                 <div className='overflow-hidden'>
@@ -67,7 +67,7 @@ const Expert = () => {
                                     />
                                 </div>
 
-                                <div className='p-5 flex-1'>
+                                <div className='p-5 flex-1 bg-[#FFFAF3]'>
                                     <h2 className='text-base font-bold text-[#6B0F0F] line-clamp-2'>
                                         Name : {expert.name}
                                     </h2>
@@ -83,7 +83,7 @@ const Expert = () => {
                             </div>
 
 
-                            
+
                         </SwiperSlide>
                     ))}
                 </Swiper>

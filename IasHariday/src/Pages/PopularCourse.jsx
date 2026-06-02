@@ -56,8 +56,7 @@ const PopularCourse = () => {
             {/* Courses Grid */}
             <div className='grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-8 mt-4 md:mt-8'>
 
-                {courses.slice(0, 4).map((course, index) => (
-
+                {courses?.slice(0, 4).map((course, index) => (
                     <motion.div
                         key={course._id}
                         onClick={() => navigate(`/course/${course._id}`)}
