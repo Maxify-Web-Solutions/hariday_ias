@@ -58,26 +58,32 @@ const Expert = () => {
                 >
                     {faculties.map((expert) => (
                         <SwiperSlide key={expert.id}>
-                            <div className='h-[385px] rounded-2xl transition-all duration-300 group font-semibold mt-1 overflow-hidden  shadow-sm hover:shadow-md hover:shadow-[#6B0F0F]/20'>
+                            <div className='h-[380px] rounded-2xl transition-all duration-300 group font-semibold mt-1 overflow-hidden shadow-sm hover:shadow-md hover:shadow-[#6B0F0F]/20 flex flex-col'>
                                 <div className='overflow-hidden'>
                                     <img
                                         src={expert.image}
                                         alt={expert.name}
-                                        className='w-full h-[250px] object-coverb group-hover:scale-105 transition duration-500'
+                                        className='w-full h-[250px] object-cover group-hover:scale-105 transition duration-500'
                                     />
                                 </div>
-                                <div className='p-5'>
-                                    <h2 className='text-base font-bold text-[#6B0F0F] -mt-1'>
+
+                                <div className='p-5 flex-1'>
+                                    <h2 className='text-base font-bold text-[#6B0F0F] line-clamp-2'>
                                         Name : {expert.name}
                                     </h2>
-                                    <p className='text-[#7C5A4F] text-sm mt-1'>
-                                       Designation : {expert.designation}
+
+                                    <p className='text-[#7C5A4F] text-sm mt-1 line-clamp-2'>
+                                        Designation : {expert.designation}
                                     </p>
+
                                     <p className='text-[#6B0F0F] text-sm mt-0.5'>
-                                       Experience: {expert.experience}+ Years
+                                        Experience: {expert.experience}+ Years
                                     </p>
                                 </div>
                             </div>
+
+
+                            
                         </SwiperSlide>
                     ))}
                 </Swiper>

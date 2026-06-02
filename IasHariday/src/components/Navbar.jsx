@@ -13,7 +13,7 @@ const Navbar = () => {
                     <div className="flex items-center gap-2">
                         <img
                             src={logo}
-                            alt="Logo"
+                            alt="Logo1"
                             className="w-14 h-14 object-contain"
                         />
                         <h3 className="text-2xl font-bold text-[#6B0F0F]">

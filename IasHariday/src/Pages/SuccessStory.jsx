@@ -90,56 +90,66 @@ const ReviewCard = ({ story }) => {
     }
 
     return (
-        <div className='h-[225px] w-full bg-[#FFFAF3] border border-[#F1E2C7] rounded-xl p-3 transition-all duration-300 shadow-sm hover:shadow-md hover:shadow-[#6B0F0F]/20 flex flex-col'>           
-         <div className='flex items-center gap-4'>
-            <img
-                src={story.image}
-                alt={story.name}
-                className='w-14 h-14 rounded-full object-cover'
-            />
-            <div>
-                <h2 className='text-base font-bold text-[#7A120D]'>
-                    {story.reviewer_name}
-                </h2>
-                <h3 className="text-xs text-[#846458] mt-1">
-                    {story?.date
-                        ? new Date(story.date).toLocaleDateString("en-IN", {
-                            day: "numeric",
-                            month: "short",
-                            year: "numeric",
-                        })
-                        : ""}
-                </h3>
+        <div
+            className={`w-full bg-[#FFFAF3] border border-[#F1E2C7] rounded-xl p-3 transition-all duration-300 shadow-sm hover:shadow-md hover:shadow-[#6B0F0F]/20 flex flex-col ${isExpanded ? "h-auto min-h-[225px]" : "h-[225px]"
+                }`}
+        >
+            <div className='flex items-center gap-4'>
+                <img
+                    src={story.image}
+                    alt={story.name}
+                    className='w-14 h-14 rounded-full object-cover flex-shrink-0'
+                />
 
+                <div>
+                    <h2 className='text-base font-bold text-[#7A120D]'>
+                        {story.reviewer_name}
+                    </h2>
+
+                    <h3 className="text-xs text-[#846458] mt-1">
+                        {story?.date
+                            ? new Date(story.date).toLocaleDateString("en-IN", {
+                                day: "numeric",
+                                month: "short",
+                                year: "numeric",
+                            })
+                            : ""}
+                    </h3>
+                </div>
             </div>
-        </div>
-            <div className='flex-1'>
+
+            <div className='flex-1 flex flex-col'>
                 <div className="flex items-center text-lg mt-2">
-                    {(() => {
+                    {[1, 2, 3, 4, 5].map((star) => {
                         const rating = Number(story?.rating || 0);
 
-                        return [1, 2, 3, 4, 5].map((star) => {
-                            return (
-                                <span key={star}>
-                                    {rating >= star ? (
-                                        <FaStar className="text-[#D4A017] text-sm" />
-                                    ) : rating >= star - 0.5 ? (
-                                        <FaStarHalfAlt className="text-[#D4A017] text-sm" />
-                                    ) : (
-                                        <FaRegStar className="text-[#D9C7B8] text-sm" />
-                                    )}
-                                </span>
-                            );
-                        });
-                    })()}
+                        return (
+                            <span key={star}>
+                                {rating >= star ? (
+                                    <FaStar className="text-[#D4A017] text-sm" />
+                                ) : rating >= star - 0.5 ? (
+                                    <FaStarHalfAlt className="text-[#D4A017] text-sm" />
+                                ) : (
+                                    <FaRegStar className="text-[#D9C7B8] text-sm" />
+                                )}
+                            </span>
+                        );
+                    })}
                 </div>
-                <p className='text-[#7C5A4F] italic text-[14px] mt-2 font-medium md:line-clamp-4 line-clamp-3 min-h-[75px]'>
-                    "{getDisplayText()}"
+
+                <p
+                    className={`text-[#7C5A4F] italic text-[14px] mt-2 font-medium ${!isExpanded
+                        ? "line-clamp-4 min-h-[80px]"
+                        : ""
+                        }`}
+                >
+                    "{story.review}"
                 </p>
+
                 {showButton && (
                     <button
                         onClick={toggleExpand}
-                        className='text-[#7A120D] text-xs font-semibold mt-1 hover:text-[#D1A328] transition-colors duration-200 focus:outline-none'
+                        className='text-[#7A120D] text-xs font-semibold mt-auto pt-2 hover:text-[#D1A328] transition-colors duration-200 focus:outline-none text-start'
                     >
                         {isExpanded ? 'View Less ↑' : 'View More ↓'}
                     </button>
