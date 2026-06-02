@@ -1,430 +1,421 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect } from "react";
+import {
+    useDispatch,
+    useSelector
+} from "react-redux";
+import {
+    useParams
+} from "react-router-dom";
 
-/* Teacher Images */
-import image1 from "../assets/Images/image1.png";
-import image2 from "../assets/Images/image2.png";
-import image3 from "../assets/Images/image3.png";
-import image4 from "../assets/Images/image4.png";
-import image5 from "../assets/Images/image5.png";
-import image6 from "../assets/Images/image6.png";
+import {
+    getSingleCourse
+} from "../Redux/Slicer/courseSlice";
 
-/* Course Images */
-import UpscPre from "../assets/Images/UPSCPre.png";
-import UpscMain from "../assets/Images/UPSCMain.png";
-import UppcsEx from "../assets/Images/UPPCS.png";
-import SSCEx from "../assets/Images/SSCExam.png";
-
-const courseData = [
-    {
-        id: 1,
-        courseImage: UpscPre,
-        subjects: [
-            "Ethics",
-            "Geography",
-            "Answer Writing",
-            "Current Affairs",
-            "Mock Tests",
-        ],
-
-        teachers: [
-            {
-                name: "Ruksana Ma'am",
-                designation: "Ethics Faculty",
-                experience: "4+ Years Experience",
-                image: image1,
-            },
-            {
-                name: "Rishabh Sharma Sir",
-                designation: "Geography Expert",
-                experience: "6+ Years Experience",
-                image: image2,
-            },
-        ],
-
-        courseTitle: "UPSC Ethics & Geography Batch",
-        description:
-            "Complete preparation for Ethics and Geography with comprehensive classroom programs, answer writing practice, weekly mock tests, personalized mentorship, current affairs discussions, and strategic guidance designed to help aspirants excel in both Prelims and Mains examination.",
-        price: "₹12,999",
-        discountPrice: "₹8,999",
-        duration: "12 Months",
-        students: "15,000+",
-    },
-
-    {
-        id: 2,
-        courseImage: UpscMain,
-        subjects: [
-            "Environment",
-            "Ecology",
-            "International Relations",
-            "Current Affairs",
-            "Answer Writing",
-        ],
-
-        teachers: [
-            {
-                name: "Rishabh Sharma Sir",
-                designation: "Environment Faculty",
-                experience: "5+ Years Experience",
-                image: image2,
-            },
-            {
-                name: "R.K Jha Sir",
-                designation: "Current Affairs Expert",
-                experience: "7+ Years Experience",
-                image: image3,
-            },
-        ],
-
-        courseTitle: "Environment & Current Affairs",
-        description:
-            "Comprehensive course covering Environment, Ecology, International Relations, and Current Affairs with in-depth conceptual learning, daily news analysis, expert mentorship, answer writing practice, and regular mock tests designed for UPSC Prelims and Mains preparation.",
-        discountPrice: "₹9,999",
-        price: "₹11,499",
-        duration: "10 Months",
-        students: "12,000+",
-    },
-
-    {
-        id: 3,
-        courseImage: UppcsEx,
-        subjects: [
-            "Polity",
-            "Governance",
-            "Economics",
-            "Constitution",
-            "Current Affairs",
-        ],
-
-        teachers: [
-            {
-                name: "R.K Jha Sir",
-                designation: "Polity Faculty",
-                experience: "10+ Years Experience",
-                image: image3,
-            },
-            {
-                name: "Chand Kubba Sir",
-                designation: "Economics Mentor",
-                experience: "8+ Years Experience",
-                image: image4,
-            },
-        ],
-
-        courseTitle: "Polity & Economics Masterclass",
-        description:
-            "Advanced UPSC preparation course for Polity, Governance, and Economics featuring detailed concept clarity, constitutional analysis, economic understanding, answer writing practice, current affairs integration, and expert mentorship for Prelims and Mains success.",
-        discountPrice: "₹8,999",
-        price: "₹11,999",
-        duration: "14 Months",
-        students: "18,000+",
-    },
-
-    {
-        id: 4,
-        courseImage: SSCEx,
-        subjects: [
-            "Ancient History",
-            "Medieval History",
-            "Modern History",
-            "GS Preparation",
-            "Test Series",
-        ],
-
-        teachers: [
-            {
-                name: "Chand Kubba Sir",
-                designation: "History Faculty",
-                experience: "20+ Years Experience",
-                image: image4,
-            },
-            {
-                name: "Arvind Sir",
-                designation: "GS Mentor",
-                experience: "9+ Years Experience",
-                image: image5,
-            },
-        ],
-
-        courseTitle: "History Optional & GS",
-        description:
-            "Detailed History preparation for General Studies and Optional subjects with comprehensive notes, conceptual clarity, chronological analysis, answer writing practice, regular mock tests, and expert mentorship for UPSC Prelims and Mains.",
-        discountPrice: "₹8,999",
-        price: "₹10,999",
-        duration: "15 Months",
-        students: "20,000+",
-    },
-
-    {
-        id: 5,
-        courseImage: UpscPre,
-        subjects: [
-            "Aptitude",
-            "Logical Reasoning",
-            "Comprehension",
-            "Decision Making",
-            "Quantitative Techniques",
-        ],
-
-        teachers: [
-            {
-                name: "Arvind Sir",
-                designation: "CSAT Faculty",
-                experience: "15+ Years Experience",
-                image: image5,
-            },
-            {
-                name: "Ruksana Ma'am",
-                designation: "Reasoning Expert",
-                experience: "6+ Years Experience",
-                image: image1,
-            },
-        ],
-
-        courseTitle: "CSAT Complete Preparation",
-        description:
-            "Focused CSAT preparation program covering aptitude, logical reasoning, quantitative techniques, decision making, and reading comprehension with practice sessions, shortcut techniques, mock tests, and expert guidance for UPSC Prelims.",
-        discountPrice: "₹8,999",
-        price: "₹10,999",
-        duration: "8 Months",
-        students: "10,000+",
-    },
-
-    {
-        id: 6,
-        courseImage: UpscMain,
-        subjects: [
-            "Hindi Literature",
-            "Literary Analysis",
-            "Essay Writing",
-            "PYQ Discussion",
-            "Answer Writing",
-        ],
-
-        teachers: [
-            {
-                name: "Ashok Singh Sir",
-                designation: "Hindi Literature Mentor",
-                experience: "22+ Years Experience",
-                image: image6,
-            },
-            {
-                name: "Rishabh Sharma Sir",
-                designation: "Answer Writing Expert",
-                experience: "12+ Years Experience",
-                image: image2,
-            },
-        ],
-
-        courseTitle: "Hindi Literature Optional",
-        description:
-            "Structured Hindi Literature course with comprehensive syllabus coverage, previous year question analysis, detailed literary discussions, answer writing practice, personalized mentorship, and strategic guidance for UPSC Optional preparation.",
-        discountPrice: "₹8,999",
-        price: "₹10,999",
-        duration: "16 Months",
-        students: "8,000+",
-    },
-
-    {
-        id: 7,
-        courseImage: UpscMain,
-        subjects: [
-            "Quantitative Aptitude",
-            "Reasoning",
-            "English",
-            "Banking Awareness",
-            "Current Affairs",
-        ],
-
-        teachers: [
-            {
-                name: "Ashok Singh Sir",
-                designation: "Banking Faculty",
-                experience: "22+ Years Experience",
-                image: image6,
-            },
-            {
-                name: "R.K Jha Sir",
-                designation: "Quant Expert",
-                experience: "11+ Years Experience",
-                image: image3,
-            },
-        ],
-
-        courseTitle: "IBPS PO",
-        description:
-            "Complete IBPS PO preparation course covering quantitative aptitude, reasoning, English language, banking awareness, current affairs, mock tests, interview guidance, and shortcut techniques designed for competitive banking examinations.",
-        discountPrice: "₹8,999",
-        price: "₹10,999",
-        duration: "16 Months",
-        students: "8,000+",
-    },
-
-    {
-        id: 8,
-        courseImage: UpscMain,
-        subjects: [
-            "SBI Preparation",
-            "Reasoning",
-            "Quantitative Aptitude",
-            "English",
-            "Interview Preparation",
-        ],
-
-        teachers: [
-            {
-                name: "Ashok Singh Sir",
-                designation: "Banking Mentor",
-                experience: "22+ Years Experience",
-                image: image6,
-            },
-            {
-                name: "Chand Kubba Sir",
-                designation: "SBI Specialist",
-                experience: "10+ Years Experience",
-                image: image4,
-            },
-        ],
-
-        courseTitle: "Banking Exams",
-        description:
-            "All-in-one banking preparation course for SBI exams covering quantitative aptitude, reasoning, English language, banking awareness, current affairs, mock tests, interview preparation, and speed-building techniques for complete exam readiness.",
-        discountPrice: "₹8,999",
-        price: "₹10,999",
-        duration: "16 Months",
-        students: "8,000+",
-    },
-];
+import {
+    Clock3,
+    Globe,
+    CalendarDays,
+    BookOpen,
+    CheckCircle2,
+    PlayCircle,
+    Users,
+    Award,
+    IndianRupee,
+    Sparkles
+} from "lucide-react";
 
 const CourseDetailsPage = () => {
-    const { id } = useParams();
 
-    const course = courseData.find(
-        (item) => item.id === parseInt(id)
+    const dispatch = useDispatch();
+
+    const { singleCourse, loading } = useSelector(
+        (state) => state.course
     );
 
-    if (!course) {
+    const { id } = useParams();
+
+    useEffect(() => {
+        dispatch(getSingleCourse(id));
+    }, [dispatch, id]);
+
+    const course = singleCourse;
+
+    if (loading) {
         return (
-            <div className="text-center mt-20 text-3xl font-bold">
-                Course Not Found
+            <div className="min-h-screen flex items-center justify-center bg-[#FFF9F5]">
+                <div className="text-center">
+                    <div className="w-14 h-14 border-4 border-[#6B0F0F] border-t-transparent rounded-full animate-spin mx-auto"></div>
+                    <p className="mt-5 text-[#6B0F0F] font-semibold text-lg">
+                        Loading Course...
+                    </p>
+                </div>
             </div>
         );
     }
 
-    return (
-        <div className="bg-[#FDF6EC] min-h-screen px-5 md:px-10 lg:px-28 py-12 mt-16">
-
-            {/* Main Section */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-
-                {/* Left Side */}
-                <div>
-                    <img
-                        src={course.courseImage}
-                        alt={course.courseTitle}
-                        className="w-full h-[450px] object-cover rounded-2xl shadow-xl"
-                    />
+    if (!course) {
+        return (
+            <div className="min-h-screen flex items-center justify-center bg-[#FFF9F5]">
+                <div className="bg-white p-10 rounded-3xl shadow-lg text-center">
+                    <h2 className="text-3xl font-bold text-[#6B0F0F]">
+                        Course Not Found
+                    </h2>
                 </div>
+            </div>
+        );
+    }
 
-                {/* Right Side */}
-                <div>
+    const formatDate = (dateString) => {
+        if (!dateString) return "N/A";
 
-                    {/* Title */}
-                    <h1 className="text-2xl md:text-4xl font-bold text-[#6B0F0F] leading-relaxed">
-                        {course.courseTitle}
-                    </h1>
+        return new Date(dateString).toLocaleDateString("en-IN", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+        });
+    };
 
-                    {/* Description */}
-                    <p className="mt-3 text-[#7C604F] text-lg leading-relaxed">
-                        {course.description}
-                    </p>
+    const discountPercentage =
+        course.price > 0 &&
+            course.discount_price > 0 &&
+            course.discount_price < course.price
+            ? Math.round(
+                ((course.price - course.discount_price) /
+                    course.price) *
+                100
+            )
+            : 0;
 
-                    {/* Price */}
-                    <div className="mt-6 flex gap-2 items-center">
-                        <h2 className="text-3xl font-bold text-black">
-                            {course.discountPrice}
-                        </h2>
+    return (
+        <div className="bg-[#FFF9F5] min-h-screen mt-12">
 
-                        <h3 className="line-through text-lg font-semibold text-[#7C604F]">
-                            {course.price}
-                        </h3>
-                    </div>
+            {/* HERO SECTION */}
+            <div className="relative overflow-hidden">
 
-                    {/* Teachers Section */}
-                    <div className="flex flex-wrap gap-4 mt-5">
+                <div className="absolute inset-0 bg-[#F8EDE1]" />
+                <div className="relative max-w-7xl mx-auto px-5 md:px-8 lg:px-12 py-14 lg:py-16">
 
-                        {course.teachers.map((teacher, index) => (
-                            <div
-                                key={index}
-                                className="flex items-center gap-3 bg-white p-2 rounded-xl shadow-sm flex-1 min-w-[260px]"
-                            >
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+
+                        {/* LEFT CONTENT */}
+                        <div className="text-white">
+                            {/* CATEGORY */}
+                            {course.category_id && (
+                                <div className="mb-5">
+                                    <span className=" backdrop-blur-md px-3 py-1.5 bg-[#F5E6D3]  text-[#7C5A4F] border-[#F1DED0] rounded-full text-sm font-semibold border border-white/20">
+                                        {course.category_id.name}
+                                    </span>
+                                </div>
+                            )}
+
+                            {/* TITLE */}
+                            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-[#6B0F0F]">
+                                {course.title}
+                            </h1>
+
+                            {/* SHORT DESC */}
+                            <p className="mt-3 text-[#7C5A4F] text-lg leading-8 max-w-2xl">
+                                {course.short_description}
+                            </p>
+
+                            {/* TAGS */}
+                            <div className="flex flex-wrap gap-4 mt-5">
+
+                                <div className="px-4 py-2 rounded-lg  flex items-center gap-2 bg-[#F5E6D3] text-[#7C5A4F] border-[#F1DED0]">
+                                    <Globe size={16} />
+                                    <span className="font-medium text-sm">
+                                        {course.language}
+                                    </span>
+                                </div>
+
+                                <div className="px-4 py-2 rounded-lg  flex items-center gap-2 bg-[#F5E6D3]  text-[#7C5A4F] border-[#F1DED0]">
+                                    <Clock3 size={16} />
+                                    <span className="font-medium text-sm">
+                                        {course.course_duration || "N/A"}
+                                    </span>
+                                </div>
+
+                                {course.batch_start && (
+                                    <div className="px-4 py-1.5 rounded-lg  flex items-center gap-2 bg-[#F5E6D3]  text-[#7C5A4F] border-[#F1DED0] ">
+                                        <CalendarDays size={16} />
+                                        <span className="font-medium text-sm">
+                                            {formatDate(course.batch_start)}
+                                        </span>
+                                    </div>
+                                )}
+
+                            </div>
+
+                            {/* PRICE SECTION */}
+                            <div className="mt-8 flex flex-wrap items-center gap-5">
+
+                                {course.discount_price > 0 || course.price > 0 ? (
+                                    <>
+                                        <div className="flex items-center gap-4">
+
+                                            <h2 className="text-3xl font-bold text-[#6B0F0F]">
+                                                ₹
+                                                {course.discount_price?.toLocaleString()}
+                                            </h2>
+
+                                            {course.price > 0 && (
+                                                <h3 className="line-through text-xl text-[#7C5A4F] font-semibold">
+                                                    ₹{course.price?.toLocaleString()}
+                                                </h3>
+                                            )}
+
+                                        </div>
+
+                                        {discountPercentage > 0 && (
+                                            <div className="bg-green-500 text-white px-4 py-2 rounded-full font-bold">
+                                                {discountPercentage}% OFF
+                                            </div>
+                                        )}
+                                    </>
+                                ) : (
+                                    <div className="bg-green-500 px-4 py-1.5 rounded-md">
+                                        <h2 className="text-base font-bold">
+                                            FREE
+                                        </h2>
+                                    </div>
+                                )}
+
+                            </div>
+
+                        </div>
+
+                        {/* RIGHT IMAGE */}
+                        <div className="relative -mt-2">
+
+                            <div className="absolute -inset-5 bg-white/10 rounded-[40px] blur-2xl"></div>
+
+                            <div className="relative bg-white/10 backdrop-blur-xl p-1 rounded-[35px] border border-white/10">
 
                                 <img
-                                    src={teacher.image}
-                                    alt={teacher.name}
-                                    className="h-20 w-20 rounded-xl object-cover border border-[#6B0F0F]"
+                                    src={course.image}
+                                    alt={course.title}
+                                    className="w-full md:h-[420px] h-[320px] object-cover rounded-[20px]"
                                 />
+                                {/* PREMIUM BADGE */}
+                                {course.premium && (
+                                    <div className="absolute -top-3.5 -left-3 md:-left-10 bg-[#d7c7b2] text-[#835b4d] px-4 py-2 rounded-xl shadow-2xl flex items-center gap-2 font-bold">
+                                        <Sparkles size={20} />
+                                        Premium Course
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* MAIN CONTENT */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 antialiased selection:bg-[#6B0F0F]/10">
 
-                                <div>
-                                    <h3 className="text-lg font-bold text-[#6B0F0F]">
-                                        {teacher.name}
-                                    </h3>
-
-                                    <p className="text-sm text-[#7C604F] mt-1">
-                                        {teacher.designation}
-                                    </p>
-
-                                    <p className="text-xs text-[#7C604F] mt-1">
-                                        {teacher.experience}
-                                    </p>
+                {/* TEACHERS SECTION */}
+                <div className="">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                        {course.teacher.map((teacher, index) => (
+                            <div
+                                key={index}
+                                className="bg-white p-3 rounded-2xl shadow-sm border border-[#F1E4D8]/60 hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 group"
+                            >
+                                <div className="flex items-start gap-5">
+                                    <img
+                                        src={teacher.image}
+                                        alt={teacher.name}
+                                        className="w-20 h-20 rounded-xl object-cover border-2 border-[#F8E7D6] flex-shrink-0 group-hover:scale-[1.02] transition-transform duration-300"
+                                    />
+                                    <div className="flex-1 min-w-0 pt-0.5">
+                                        <h3 className="text-lg font-bold text-[#6B0F0F] truncate group-hover:text-[#8A1A1A] transition-colors">
+                                            {teacher.name}
+                                        </h3>
+                                        <p className="text-[#7C5A4F] text-xs font-medium mt-0.5 tracking-wide uppercase">
+                                            {teacher.designation}
+                                        </p>
+                                        <div className="mt-3.5 inline-flex bg-[#F5E6DA]/60 text-[#6B0F0F] px-2.5 py-1 rounded-md text-xs font-medium border border-[#F1E4D8]/50">
+                                            {teacher.experience} Experience
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         ))}
                     </div>
-
-                    {/* Extra Information */}
-                    <div className="flex flex-nowrap sm:flex-wrap gap-4 sm:gap-10 mt-5">
-                        <div className="bg-white px-2 py-4 rounded-2xl shadow-sm flex-1 text-center">
-                            <h4 className="font-bold text-2xl text-[#6B0F0F]">
-                                {course.duration}
-                            </h4>
-
-                            <p className="text-[#7C604F] mt-1">
-                                Course Duration
-                            </p>
-                        </div>
-                        <div className="bg-white px-4 py-4 rounded-2xl shadow-sm flex-1 text-center">
-                            <h4 className="font-bold text-2xl text-[#6B0F0F]">
-                                {course.students}
-                            </h4>
-                            <p className="text-[#7C604F] mt-1">
-                                Students Enrolled
-                            </p>
-                        </div>
-                    </div>
-                    {/* Subjects Section */}
                 </div>
-                    <div className="mt-1">
 
-                        <h2 className="text-2xl font-bold text-[#6B0F0F] mb-4">
-                            Subjects Included
+                {/* SUBJECTS SECTION */}
+                {course.subject && course.subject.length > 0 && (
+                    <div className="mt-7 border-t border-[#F1E4D8]/50 pt-3">
+                        <h2 className="text-lg font-bold tracking-tight text-[#6B0F0F] mb-3 flex items-center gap-2">
+                            <span className="w-1.5 h-5 rounded-sm bg-[#6B0F0F]"></span>
+                            Subjects Covered
                         </h2>
-
-                        <div className="flex flex-wrap gap-3">
-
-                            {course.subjects.map((subject, index) => (
+                        <div className="flex flex-wrap gap-2.5">
+                            {course.subject.map((subject, index) => (
                                 <div
-                                    key={index}
-                                    className="bg-white border border-[#6B0F0F] text-[#6B0F0F] px-4 py-2 rounded-full text-sm font-medium shadow-sm"
+                                    key={subject._id || index}
+                                    className="bg-white border border-[#EAD7C8] text-xs px-4 py-2 rounded-lg font-medium text-[#6B0F0F] shadow-xs hover:bg-[#6B0F0F]/5 transition-all duration-200 cursor-default"
                                 >
-                                    {subject}
+                                    {typeof subject === "string"
+                                        ? subject
+                                        : subject.name || subject}
                                 </div>
                             ))}
-
                         </div>
                     </div>
+                )}
+
+                {/* LEARNING SECTION */}
+                {course.learns && course.learns.length > 0 && (
+                    <div className="mt-5">
+                        {/* SECTION HEADER */}
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className="w-1.5 h-8 rounded-full bg-[#6B0F0F]" />
+                            <div>
+                                <h2 className="text-2xl font-bold text-[#6B0F0F]">
+                                    What You Will Learn
+                                </h2>
+                                <p className="text-sm text-[#846458] mt-1">
+                                    Key skills and knowledge you will gain from this course.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* LEARNING CARDS */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            {course.learns.map((item, index) => (
+                                <div
+                                    key={index}
+                                    className="group relative overflow-hidden rounded-2xl bg-white border border-[#F1E4D8] p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-500"
+                                >
+                                    {/* Hover Accent */}
+                                    <div className="absolute left-0 top-0 h-full w-1 bg-[#6B0F0F] scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top" />
+
+                                    <div className="flex items-start gap-4">
+                                        {/* Icon */}
+                                        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#FFF3E8] border border-[#F5D7C3] flex-shrink-0">
+                                            <CheckCircle2
+                                                size={20}
+                                                className="text-[#6B0F0F]"
+                                            />
+                                        </div>
+
+                                        {/* Content */}
+                                        <div>
+                                            <h3 className="text-sm font-semibold text-[#6B0F0F] mb-1">
+                                                Learning Outcome {index + 1}
+                                            </h3>
+
+                                            <p className="text-sm leading-relaxed text-[#555] group-hover:text-black transition-colors">
+                                                {item}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+                {/* STATS SECTION */}
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-8">
+                    {/* Subjects Card */}
+                    <div className="bg-white rounded-2xl p-5 border border-[#F1E4D8]/70 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between min-h-[130px]">
+                        <div className="w-10 h-10 rounded-xl bg-[#6B0F0F]/5 flex items-center justify-center">
+                            <BookOpen className="text-[#6B0F0F]" size={22} />
+                        </div>
+                        <div>
+                            <h3 className="text-2xl font-bold tracking-tight text-[#6B0F0F] mt-3">
+                                {course.subject?.length || 0}
+                            </h3>
+                            <p className="text-[#7C604F]/90 text-xs font-medium uppercase tracking-wider mt-1">
+                                Subjects Included
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Teachers Card */}
+                    <div className="bg-white rounded-2xl p-5 border border-[#F1E4D8]/70 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between min-h-[130px]">
+                        <div className="w-10 h-10 rounded-xl bg-[#6B0F0F]/5 flex items-center justify-center">
+                            <Users className="text-[#6B0F0F]" size={22} />
+                        </div>
+                        <div>
+                            <h3 className="text-2xl font-bold tracking-tight text-[#1E1E1E] mt-3">
+                                {course.teacher?.length || 0}
+                            </h3>
+                            <p className="text-[#7C604F]/90 text-xs font-medium uppercase tracking-wider mt-1">
+                                Expert Teachers
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Registration Card */}
+                    <div className="bg-white rounded-2xl p-5 border border-[#F1E4D8]/70 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between min-h-[130px]">
+                        <div className="w-10 h-10 rounded-xl bg-[#6B0F0F]/5 flex items-center justify-center">
+                            <Award className="text-[#6B0F0F]" size={22} />
+                        </div>
+                        <div>
+                            <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold mt-3 ${course.registration_open
+                                ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
+                                : "bg-rose-50 text-rose-700 border border-rose-200"
+                                }`}>
+                                {course.registration_open ? "Open" : "Closed"}
+                            </span>
+                            <p className="text-[#7C604F]/90 text-xs font-medium uppercase tracking-wider mt-1.5">
+                                Registration
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                {/* COURSE INCLUDES SECTION */}
+                {course.includes && course.includes.length > 0 && (
+                    <div className="mt-8">
+                        <h2 className="text-lg font-bold tracking-tight text-[#6B0F0F] mb-5 flex items-center gap-2">
+                            <span className="w-1.5 h-5 rounded-sm bg-[#6B0F0F]"></span>
+                            This Course Includes
+                        </h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {course.includes.map((item, index) => (
+                                <div
+                                    key={index}
+                                    className="bg-white rounded-2xl p-4 shadow-sm border border-[#F1E4D8]/60 flex items-start gap-3.5 hover:shadow-md transition-all duration-300"
+                                >
+                                    <div className="bg-[#FFF3E8] p-1.5 rounded-lg border border-[#F1E4D8]/60 flex-shrink-0 mt-0.5">
+                                        <PlayCircle className="text-[#6B0F0F]" size={18} />
+                                    </div>
+                                    <div className="flex-1">
+                                        <p className="text-[#444] text-sm leading-relaxed font-normal">
+                                            {typeof item === "string"
+                                                ? item
+                                                : item.text || item}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                {/* DESCRIPTION SECTION */}
+                {course.description && (
+                    <div className="mt-8 border-t border-[#F1E4D8]/50 pt-8">
+                        <h2 className="text-lg font-bold tracking-tight text-[#6B0F0F] mb-4 flex items-center gap-2">
+                            <span className="w-1.5 h-5 rounded-sm bg-[#6B0F0F]"></span>
+                            Course Description
+                        </h2>
+                        <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#F1E4D8]/60">
+                            <div
+                                className="prose prose-sm max-w-none prose-headings:text-[#6B0F0F] prose-headings:font-bold prose-p:text-[#555] prose-p:leading-relaxed prose-strong:text-[#1E1E1E]"
+                                dangerouslySetInnerHTML={{
+                                    __html: course.description,
+                                }}
+                            />
+                        </div>
+                    </div>
+                )}
             </div>
+
         </div>
     );
 };

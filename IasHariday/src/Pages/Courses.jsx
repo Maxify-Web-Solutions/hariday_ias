@@ -1,111 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import UpscPre from '../assets/Images/UPSCPre.png'
 import UpscMain from '../assets/Images/UPSCMain.png'
 import UppcsEx from '../assets/Images/UPPCS.png'
 import SSCEx from '../assets/Images/SSCExam.png'
 import { FaStar } from "react-icons/fa";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { getAllCourses } from '../Redux/Slicer/courseSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
-
-const courseData = [
-  {
-    id: 1,
-    image: UpscPre,
-    courseTitle: "UPSC Prelims 2026",
-    description:
-      "Comprehensive preparation for UPSC Prelims including GS, CSAT.",
-    rating: 4.8,
-    price: "₹12,999",
-    discountPrice: "₹8,999",
-    button: "View More",
-  },
-
-  {
-    id: 2,
-    image: UpscMain,
-    courseTitle: "UPSC Mains 2026",
-    description:
-      "Advanced answer writing program with GS papers.",
-    rating: 4.9,
-    price: "₹14,999",
-    discountPrice: "₹9,999",
-    button: "View More",
-  },
-
-  {
-    id: 3,
-    image: UppcsEx,
-    courseTitle: "UPPCS Preparation",
-    description:
-      "Complete UPPCS preparation course covering prelims, mains.",
-    rating: 4.7,
-    price: "₹10,999",
-    discountPrice: "₹6,999",
-    button: "View More",
-  },
-
-  {
-    id: 4,
-    image: SSCEx,
-    courseTitle: "SSC CGL Complete Batch",
-    description:
-      "Full SSC CGL course with quantitative aptitude, reasoning, English.",
-    rating: 4.6,
-    price: "₹8,999",
-    discountPrice: "₹4,999",
-    button: "View More",
-  },
-
-  {
-    id: 5,
-    image: UpscPre,
-    courseTitle: "CDS Preparation",
-    description:
-      "Focused CDS preparation with mathematics, English, GK.",
-    rating: 4.8,
-    price: "₹13,999",
-    discountPrice: "₹9,999",
-    button: "View More",
-  },
-
-  {
-    id: 6,
-    image: UpscMain,
-    courseTitle: "CTET Preparation",
-    description:
-      "Structured CTET course including pedagogy, child development.",
-    rating: 4.9,
-    price: "₹11,999",
-    discountPrice: "₹8,999",
-    button: "View More",
-  },
-
-  {
-    id: 7,
-    image: UppcsEx,
-    courseTitle: "IBPS PO",
-    description:
-      "Complete IBPS PO preparation with banking awareness.",
-    rating: 4.7,
-    price: "₹7,999",
-    discountPrice: "₹3,999",
-    button: "View More",
-  },
-
-  {
-    id: 8,
-    image: SSCEx,
-    courseTitle: "Banking Exams",
-    description:
-      "All-in-one banking preparation course for SBI.",
-    rating: 4.6,
-    price: "₹6,999",
-    discountPrice: "₹2,599",
-    button: "View More",
-  },
-];
 
 const Courses = () => {
+
+  const navigate = useNavigate()
+
+  const dispatch = useDispatch()
+  const { courses, loading, error } = useSelector(
+    (state) => state.course
+  )
+  useEffect(() => {
+    dispatch(getAllCourses())
+  }, [dispatch])
+
   return (
     <>
       <div className='mt-16 px-3 md:px-6 lg:px-28 py-10 bg-[#FDF6EC]'>
@@ -118,54 +34,123 @@ const Courses = () => {
           </p>
         </div>
         {/* Course Cards */}
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-5'>
-          {courseData.map((course, index) => (
+        <div className='grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-5 mt-5'>
+          {courses.map((course, index) => (
             <div
-              key={index}
-              className='bg-white rounded-3xl overflow-hidden hover:border-[#9c6060] ease-in-out transition-all duration-500 group  shadow-sm hover:shadow-md 
-                        hover:shadow-[#6B0F0F]/20'
+              key={course._id}
+              onClick={() => navigate(`/course/${course._id}`)}
+
+              className='bg-white rounded-3xl overflow-hidden 
+      shadow-sm hover:shadow-md hover:shadow-[#6B0F0F]/20
+      transition-all duration-500 flex flex-col h-full cursor-pointer'
             >
+
               {/* Image */}
-              <div className='h-[200px] overflow-hidden'>
+              <div className='w-full h-[180px] overflow-hidden flex-shrink-0'>
                 <img
                   src={course.image}
-                  alt={course.courseTitle}
-                  className='w-full h-full object-cover hover:scale-105 ease-in-out transition-all duration-500 '
+                  alt={course.title}
+                  className='w-full h-full object-cover hover:scale-105 transition-all duration-500'
                 />
               </div>
+
               {/* Content */}
-              <div className='p-4'>
-                {/* Rating */}
-                <div className='flex items-center gap-2'>
-                  <FaStar className='text-yellow-500' />
-                  <span className='font-medium text-[#7C604F]'>
-                    {course.rating}
-                  </span>
-                </div>
-                {/* Title */}
-                <h2 className='text-xl font-bold mt-2 text-[#6B0F0F] leading-snug'>
-                  {course.courseTitle}
-                </h2>
-                <h4 className='text-[#7C604F]'>{course.description}</h4>
-                {/* Price */}
-                <div className='flex items-center gap-3 mt-2'>
-                  <h3 className='text-2xl font-bold text-black'>
-                    {course.discountPrice}
-                  </h3>
-                  <p className='text-[#7C604F] textb-sm line-through'>
-                    {course.price}
+              <div className='p-4 flex flex-col flex-1 justify-between'>
+                <div>
+                  <div className='flex items-center justify-between  border-[#E7D8CC] gap-1'>
+                    {/* LEFT */}
+                    <div className='flex items-center gap-1'>
+
+                      {/* STARS */}
+                      <div className='flex items-center'>
+                        {[1, 2, 3, 4, 5].map((star) => {
+                          const rating = Number(course.average_rating || 0);
+
+                          if (rating >= star) {
+                            return (
+                              <FaStar
+                                key={star}
+                                className='text-[#D4A017] text-sm'
+                              />
+                            );
+                          }
+
+                          if (rating >= star - 0.5) {
+                            return (
+                              <FaStarHalfAlt
+                                key={star}
+                                className='text-[#D4A017] text-sm'
+                              />
+                            );
+                          }
+
+                          return (
+                            <FaRegStar
+                              key={star}
+                              className='text-[#D9C7B8] text-sm'
+                            />
+                          );
+                        })}
+                      </div>
+
+                      {/* RATING */}
+                      <span className='font-semibold text-[#6B0F0F] text-sm'>
+                        {Number(course.average_rating || 0).toFixed(1)}
+                      </span>
+
+                    </div>
+
+                    {/* RIGHT - START DATE */}
+                    <div className="bg-[#FFF4EA] border border-[#F1DED0] px-1.5 py-1 rounded-xl flex items-center gap-0.5 shadow-sm w-fit shrink-0 whitespace-nowrap">
+                      <span className='text-xs font-medium uppercase tracking-wide text-[#B08968] block md:hidden'>
+                        Start :
+                      </span>
+
+                      <span className='text-xs font-bold text-[#6B0F0F]'>
+                        {new Date(course.batch_start).toLocaleDateString(
+                          "en-GB",
+                          {
+                            day: "2-digit",
+                            month: "short",
+                            year: "numeric",
+                          }
+                        )}
+                      </span>
+                    </div>
+
+                  </div>
+                  {/* Title */}
+                  <h2 className='text-lg font-bold mt-1 text-[#6B0F0F] line-clamp-2 min-h-[56px]'>
+                    {course.title}
+                  </h2>
+
+                  {/* Description */}
+                  <p className='text-[#7C604F] text-sm mt-1 line-clamp-2 min-h-[20px] break-words overflow-hidden'>
+                    {course.description}
                   </p>
+
+                  {/* Price */}
+                  <div className='flex items-center gap-3 mt-2'>
+                    <h3 className='text-xl font-bold text-black'>
+                      ₹{course.discount_price}
+                    </h3>
+
+                    <p className='text-[#7C604F] text-sm line-through'>
+                      ₹{course.price}
+                    </p>
+                  </div>
                 </div>
-                <Link to={`/course/${course.id}`}>
-                  <button className='w-full mt-5 bg-[#6B0F0F] text-white py-2.5 rounded-3xl text-lg font-medium hover:bg-[#571010] transition-all duration-300'>
-                    {course.button}
+
+                {/* Button */}
+                <Link to={`/course/${course._id}`} className='mt-3'>
+                  <button className='w-full bg-[#6B0F0F] text-white py-2.5 rounded-3xl text-lg font-medium hover:bg-[#571010] transition-all duration-300'>
+                    More Details
                   </button>
                 </Link>
-              </div>
 
+              </div>
             </div>
           ))}
-
         </div>
       </div>
     </>

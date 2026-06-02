@@ -48,7 +48,7 @@ const SelectedStudent = () => {
     return (
         <>
             <div>
-                <h1 className='text-xl md:text-3xl font-bold text-center  mt-1 md:mt-3'>Proud Achievers of Hriday IAS</h1>
+                <h1 className='text-xl md:text-3xl font-bold text-center  mt-1 md:mt-2'>Proud Achievers of Hriday IAS</h1>
                 <p className='text-center text-[#7C5A4F] mt-4 text-sm md:text-base px-5'>
                     Meet our successful students who have achieved their dreams of becoming officers with the support and guidance of Hriday IAS.
                 </p>

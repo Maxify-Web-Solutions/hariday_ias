@@ -1,266 +1,252 @@
 import { Link } from "react-router-dom";
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from '../assets/Images/logoIas.png'
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { CiLinkedin } from "react-icons/ci";
 import { motion } from "framer-motion";
-
+import { useDispatch, useSelector } from "react-redux";
+import { clearSubscriberState, subscriberUser } from "../Redux/Slicer/subscribeSlice";
+import { toast } from "react-toastify";
 
 const quickLinks = [
-    {
-        id: 1,
-        title: "About Us",
-        path: "/about",
-    },
-
-    {
-        id: 2,
-        title: "Our Blogs",
-        path: "/blog",
-    },
-
-    {
-        id: 3,
-        title: "Contact Us",
-        path: "/contact",
-    },
+    { id: 1, title: "About Us", path: "/about" },
+    { id: 2, title: "Our Blogs", path: "/blog" },
+    { id: 3, title: "Contact Us", path: "/contact" },
 ];
 
 const policyLinks = [
-    {
-        id: 1,
-        title: "Privacy Policy",
-        path: "/privacy",
-    },
-
-    {
-        id: 2,
-        title: "Refund Policy",
-        path: "/refund",
-    },
-
-    {
-        id: 3,
-        title: "Terms & Conditions",
-        path: "/terms",
-    },
-
-    {
-        id: 4,
-        title: "FAQ",
-        path: "/faq",
-    },
+    { id: 1, title: "Privacy Policy", path: "/privacy" },
+    { id: 2, title: "Refund Policy", path: "/refund" },
+    { id: 3, title: "Terms & Conditions", path: "/terms" },
+    { id: 4, title: "FAQ", path: "/faq" },
 ];
 
 const courseLinks = [
-    {
-        id: 1,
-        title: "UPSC Preparation",
-        path: "/courses",
-    },
-
-    {
-        id: 2,
-        title: "SSC Coaching",
-        path: "/courses",
-    },
-
-    {
-        id: 3,
-        title: "State PCS",
-        path: "/courses",
-    },
+    { id: 1, title: "UPSC Preparation", path: "/courses" },
+    { id: 2, title: "SSC Coaching", path: "/courses" },
+    { id: 3, title: "State PCS", path: "/courses" },
 ];
 
 const Footer = () => {
+    const [email, setEmail] = useState("");
+    const dispatch = useDispatch();
+
+    const { loading, success, message, error } = useSelector(
+        (state) => state.subscribe
+    );
+
+    const handleSubscribe = (e) => {
+        e.preventDefault();
+        console.log(email);
+        dispatch(
+            subscriberUser({
+                email,
+            })
+        );
+    };
+
+    useEffect(() => {
+        if (success) {
+            toast.success(message);
+            setEmail("");
+            dispatch(clearSubscriberState());
+        }
+        if (error) {
+            toast.error(error);
+            dispatch(clearSubscriberState());
+        }
+    }, [success, error, message, dispatch]);
+
     return (
-        <>
-            <div className=''>
-                <div className=' py-6 px-5 md:px-10 lg:px-16 '>
+        <footer className="w-full bg-[#FCFBF9] border-t border-[#EAD7C8]/60 antialiased">
+            {/* Top Container */}
+            <div className="max-w-7xl mx-auto px-9 sm:px-6 lg:px-8 py-12">
 
-                    <div className='flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-between gap-6 lg:gap-12 mt-2 md:mt-12'>
-                        {/* Logo Section */}
-                        <div className='flex flex-col w-full md:w-[45%] lg:w-[22%]'>
-                            <Link to="/">
-                                <div className="flex gap-2">
-                                    <img
-                                        src={logo}
-                                        alt="Logo"
-                                        className="w-20 h-20 object-contain"
-                                    />
-                                    <h2 className=" mt-6 text-3xl font-bold text-[#6B0F0F]">Hriday IAS</h2>
+                {/* Newsletter & Social Links Section */}
+                <div className="bg-white rounded-2xl border border-[#F1E4D8]/70 p-6 md:p-8 lg:p-10 shadow-xs">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 
-                                </div>
-                            </Link>
-                            <h3 className="text-sm mt-3 leading-relaxed text-[#846458]">
-                                Turning Aspirations
-                                Into Achievements
-                                With Expert Guidance & Smart Preparation
+                        {/* Left Side: Text and Input */}
+                        <div className="lg:col-span-8 flex flex-col gap-4">
+                            <div>
+                                <h2 className="text-lg md:text-xl font-bold text-[#6B0F0F] tracking-tight uppercase">
+                                    Join Our Newsletter
+                                </h2>
+                                <p className="text-sm text-[#846458] mt-1">
+                                    Stay updated with the latest exam notifications, preparation strategies, and study materials.
+                                </p>
+                            </div>
+
+                            <form
+                                onSubmit={handleSubscribe}
+                                className="flex flex-col sm:flex-row items-stretch gap-2.5 max-w-xl w-full"
+                            >
+                                <input
+                                    type="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    placeholder="Enter Your Email Address"
+                                    required
+                                    className="flex-1 outline-none px-4 py-3 border border-[#D6C2B5] rounded-xl bg-white text-sm focus:border-[#6B0F0F] focus:ring-1 focus:ring-[#6B0F0F] transition-all"
+                                />
+                                <button
+                                    type="submit"
+                                    disabled={loading}
+                                    className="bg-[#6B0F0F] hover:bg-[#541010] active:scale-[0.98] transition-all duration-200 px-6 py-3 rounded-xl text-white font-medium text-sm whitespace-nowrap disabled:opacity-50 shadow-sm"
+                                >
+                                    {loading ? "Subscribing..." : "Subscribe Now"}
+                                </button>
+                            </form>
+                        </div>
+
+                        {/* Right Side: Social Media Branding */}
+                        <div className="lg:col-span-4 flex flex-col items-start lg:items-end gap-3 lg:border-l lg:border-[#F1E4D8] lg:pl-8">
+                            <h3 className="text-sm font-semibold text-[#6B0F0F] uppercase tracking-wider">
+                                Follow Our Journey
                             </h3>
-
-                            <div className="flex gap-4 mt-5">
-
+                            <div className="flex items-center gap-3">
                                 <a
                                     href="https://twitter.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="hover:text-[#6B0F0F] transition-all duration-300"
+                                    className="text-[#846458] hover:text-[#6B0F0F] hover:scale-110 transition-all duration-200"
                                 >
-                                    <AiFillTwitterCircle size={28} />
+                                    <AiFillTwitterCircle size={26} />
                                 </a>
-
                                 <a
                                     href="https://facebook.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="hover:text-[#6B0F0F] transition-all duration-300"
+                                    className="text-[#846458] hover:text-[#6B0F0F] hover:scale-110 transition-all duration-200"
                                 >
-                                    <FaFacebook size={28} />
+                                    <FaFacebook size={23} />
                                 </a>
-
                                 <a
                                     href="https://instagram.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="hover:text-[#6B0F0F] transition-all duration-300"
+                                    className="text-[#846458] hover:text-[#6B0F0F] hover:scale-110 transition-all duration-200"
                                 >
-                                    <FaInstagram size={28} />
+                                    <FaInstagram size={23} />
                                 </a>
-
                                 <a
                                     href="https://linkedin.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="hover:text-[#6B0F0F] transition-all duration-300"
+                                    className="text-[#846458] hover:text-[#6B0F0F] hover:scale-110 transition-all duration-200"
                                 >
-                                    <CiLinkedin size={28} />
+                                    <CiLinkedin size={25} />
                                 </a>
-
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        {/* Quick Links */}
-                        <div className="flex flex-col gap-4 w-full sm:w-[45%] lg:w-auto">
+                {/* Footer Directories Section */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-8 md:gap-6 lg:gap-12 pt-4">
 
-                            <h1 className="text-xl font-bold text-[#6B0F0F] underline">
-                                Quick Links
-                            </h1>
+                    {/* Brand / Logo Info Column */}
+                    <div className="flex flex-col gap-3 md:col-span-5 lg:col-span-4">
+                        <Link to="/" className="w-fit group">
+                            <div className="flex gap-3 items-center">
+                                <img
+                                    src={logo}
+                                    alt="Logo"
+                                    className="w-14 h-14 object-contain group-hover:scale-105 transition-transform duration-200"
+                                />
+                                <h2 className="text-2xl font-bold tracking-tight text-[#6B0F0F]">
+                                    Hriday IAS
+                                </h2>
+                            </div>
+                        </Link>
+                        <p className="text-sm leading-relaxed text-[#846458] max-w-sm">
+                            Turning Aspirations Into Achievements With Expert Guidance & Smart Preparation.
+                        </p>
+                    </div>
 
+                    {/* Quick Links Column */}
+                    <div className="flex flex-col gap-3.5 md:col-span-2 lg:col-span-2 md:pl-4">
+                        <h4 className="text-sm font-bold text-[#6B0F0F] uppercase tracking-wider">
+                            Quick Links
+                        </h4>
+                        <div className="flex flex-col gap-3">
                             {quickLinks.map((link) => (
                                 <Link
                                     key={link.id}
                                     to={link.path}
-                                    className="relative w-fit text-[#846458] hover:text-[#6B0F0F]
-                                     after:absolute after:left-0 after:-bottom-1
-                                     after:h-[3px] after:w-0 after:bg-[#6B0F0F]
-                                     after:transition-all after:duration-300
-                                     hover:after:w-full transition-all duration-300"
+                                    className="relative w-fit text-sm text-[#846458] hover:text-[#6B0F0F]
+                       after:absolute after:left-0 after:-bottom-1
+                       after:h-[2px] after:w-0 after:bg-[#6B0F0F]
+                       after:transition-all after:duration-500
+                       hover:after:w-full transition-all duration-500"
                                 >
                                     {link.title}
                                 </Link>
                             ))}
-
                         </div>
-                        {/* Policy */}
-                        <div className="flex flex-col gap-4 w-full sm:w-[45%] lg:w-auto">
+                    </div>
 
-                            <h1 className="text-xl font-bold text-[#6B0F0F] underline">
-                                Policy
-                            </h1>
-
+                    {/* Policy Column */}
+                    <div className="flex flex-col gap-3.5 md:col-span-3 lg:col-span-3">
+                        <h4 className="text-sm font-bold text-[#6B0F0F] uppercase tracking-wider">
+                            Policy
+                        </h4>
+                        <div className="flex flex-col gap-3">
                             {policyLinks.map((link) => (
-                                <motion.div
+                                <Link
                                     key={link.id}
-                                    whileHover={{ x: 0 }}
-                                    transition={{ type: "spring", stiffness: 300 }}
+                                    to={link.path}
+                                    className="relative w-fit text-sm text-[#846458] hover:text-[#6B0F0F]
+                       after:absolute after:left-0 after:-bottom-1
+                       after:h-[2px] after:w-0 after:bg-[#6B0F0F]
+                       after:transition-all after:duration-500
+                       hover:after:w-full transition-all duration-500"
                                 >
-                                    <Link
-                                        to={link.path}
-                                        className="relative w-fit text-[#846458] hover:text-[#6B0F0F]
-                                    after:absolute after:left-0 after:-bottom-1
-                                    after:h-[3px] after:w-0 after:bg-[#6B0F0F]
-                                    after:transition-all after:duration-300
-                                    hover:after:w-full transition-all duration-300"
-                                    >
-                                        {link.title}
-                                    </Link>
-                                </motion.div>
+                                    {link.title}
+                                </Link>
                             ))}
-
                         </div>
+                    </div>
 
-                        {/* Courses */}
-                        <div className="flex flex-col gap-4 w-full sm:w-[45%] lg:w-auto">
-
-                            <h1 className="text-xl font-bold text-[#6B0F0F] underline">
-                                Courses
-                            </h1>
-
+                    {/* Courses Column */}
+                    <div className="flex flex-col gap-3.5 md:col-span-2 lg:col-span-3">
+                        <h4 className="text-sm font-bold text-[#6B0F0F] uppercase tracking-wider">
+                            Courses
+                        </h4>
+                        <div className="flex flex-col gap-3">
                             {courseLinks.map((link) => (
-                                <motion.div
+                                <Link
                                     key={link.id}
-                                    whileHover={{ x: 0 }}
-                                    transition={{ type: "spring", stiffness: 300 }}
+                                    to={link.path}
+                                    className="relative w-fit text-sm text-[#846458] hover:text-[#6B0F0F]
+                       after:absolute after:left-0 after:-bottom-1
+                       after:h-[2px] after:w-0 after:bg-[#6B0F0F]
+                       after:transition-all after:duration-500
+                       hover:after:w-full transition-all duration-500"
                                 >
-                                    <Link
-                                        to={link.path}
-                                        className="relative w-fit text-[#846458] hover:text-[#6B0F0F]
-                                        after:absolute after:left-0 after:-bottom-1
-                                        after:h-[3px] after:w-0 after:bg-[#6B0F0F]
-                                        after:transition-all after:duration-300
-                hover:after:w-full transition-all duration-300"
-                                    >
-                                        {link.title}
-                                    </Link>
-                                </motion.div>
+                                    {link.title}
+                                </Link>
                             ))}
-
-                        </div>
-                        {/* Subscribe */}
-                        <div className="flex flex-col gap-3 w-full sm:w-[45%] lg:w-[25%]">
-
-                            <h1 className="text-xl font-bold text-[#6B0F0F] underline">
-                                Subscribe
-                            </h1>
-
-                            <p className="text-[#846458] leading-relaxed text-sm">
-                                Join our community to receive the latest updates.
-                            </p>
-
-                            <form className="flex flex-col gap-3">
-
-                                <input
-                                    type="email"
-                                    placeholder="Enter Your Email"
-                                    className="outline-none px-4 py-2.5 border border-[#D6C2B5] rounded-lg bg-white text-sm"
-                                />
-
-                                <button className="bg-[#6B0F0F] hover:bg-[#541010] transition-all duration-300 px-4 py-3 rounded-lg text-white font-medium">
-                                    Subscribe Now
-                                </button>
-
-                            </form>
-
-                            <p className="text-sm text-[#846458] leading-relaxed">
-                                By subscribing, you agree to our Privacy Policy
-                                and consent to receive updates from Hriday IAS.
-                            </p>
-
                         </div>
                     </div>
 
                 </div>
-                <div className="w-[96%] h-[1px] bg-[#e3d7c5] mx-auto"></div>
-                <div className="flex items-center justify-center text-center mt-2 mb-4">
-                    <h1 className="text-[#6B0F0F] text-sm font-semibold">© 2025 Hriday IAS. All rights reserved.</h1>
+
+                {/* Bottom Border Isolation */}
+                <div className="w-full h-[1px] bg-[#EAD7C8]/40 mt-12 mb-6"></div>
+
+                {/* Copyright Segment */}
+                <div className="flex flex-col sm:flex-row items-center justify-center text-center">
+                    <p className="text-[#846458]/80 text-xs font-medium tracking-wide">
+                        &copy; 2025 Hriday IAS. All rights reserved.
+                    </p>
                 </div>
+
             </div>
-
-
-        </>
+        </footer>
     )
 }
 
-export default Footer
+export default Footer;

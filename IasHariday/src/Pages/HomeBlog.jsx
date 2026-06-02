@@ -1,42 +1,25 @@
 import React from 'react'
-import Answer from '../assets/Images/Answer.png'
-import currentAffair from '../assets/Images/CurrentAffairs.png'
-import notification from '../assets/Images/Notification.png'
-import planning from '../assets/Images/Planning.png'
-import Rank from '../assets/Images/Rank.png'
-import imp from '../assets/Images/TopicImp.png'
+import { useEffect } from 'react';
 import { MdOutlineDateRange } from "react-icons/md";
 import { Link, useNavigate } from 'react-router-dom'
 import { CgChevronDoubleRight } from "react-icons/cg";
+import { getAllBlogs } from '../Redux/Slicer/blogSlice'
+import { useDispatch, useSelector } from "react-redux";
+import { ArrowRight } from "lucide-react";
 
 
-
-
-const blogData = [
-    {
-        id: 1,
-        image: currentAffair,
-        highlight: "Current Affairs",
-        title: "Top Current Affairs for UPSC 2024",
-        date: "12 May 2026",
-        description:
-            "Stay updated with the most important national and international current affairs for UPSC and State PCS preparation.",
-    },
-
-    {
-        id: 2,
-        image: planning,
-        highlight: "Preparation Strategy",
-        title: "Ultimate Strategy to Crack UPSC in 1 Year",
-        date: "15 May 2026",
-        description:
-            "Learn a complete one-year preparation roadmap with smart study planning, revision techniques, and time management.",
-    },
-
-
-];
 const HomeBlog = () => {
+
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const { blogs, loading, error } = useSelector(
+        (state) => state.blog
+    )
+
+    useEffect(() => {
+        dispatch(getAllBlogs());
+    }, [dispatch]);
+
     return (
         <>
             <div className=' y-7 md:py-5 px-5 md:px-10 lg:px-16'>
@@ -44,13 +27,29 @@ const HomeBlog = () => {
                     Latest Insights and <span className='text-[#6B0F0F] underline'>Articles</span>
 
                 </div>
-                <div className="grid lg:grid-cols-2 gap-8 mt-10">
+                <div className="flex items-end justify-end mt-3">
+                    <Link
+                        to="/blog"
+                        className="relative w-fit text-[#846458] font-semibold hover:text-[#6B0F0F]
+    after:absolute after:left-0 after:-bottom-1
+    after:h-[3px] after:w-0 after:bg-[#6B0F0F]
+    after:transition-all after:duration-300
+    hover:after:w-full transition-all duration-300 flex items-center gap-1 group"
+                    >
+                        View All
+                        <ArrowRight
+                            size={18}
+                            className="transition-transform duration-300 group-hover:translate-x-1"
+                        />
+                    </Link>
+                </div>
+                <div className="grid lg:grid-cols-2 gap-8 mt-5">
 
-                    {blogData.map((item, index) => (
+                    {blogs.slice(0, 2).map((item) => (
 
                         <div
-                            key={index}
-                            onClick={() => navigate(`/blog/${item.id}`)}
+                            key={item._id}
+                            onClick={() => navigate(`/blog/${item._id}`)}
                             className="flex flex-col sm:flex-row gap-4 bg-[#FFFAF3] p-3 rounded-lg transition-all duration-300 cursor-pointer mb-2 shadow-sm  hover:shadow-md 
                         hover:shadow-[#6B0F0F]/20">
 
@@ -76,14 +75,20 @@ const HomeBlog = () => {
                                 </h3>
 
                                 {/* Description */}
-                                <p className="text-[#7C5A4F] text-base mt-1">
+                                <p className="text-xs text-gray-600 line-clamp-2 break-all overflow-hidden w-full">
                                     {item.description}
                                 </p>
 
                                 {/* Date */}
                                 <div className="flex items-center gap-1 text-sm b mt-1">
                                     <MdOutlineDateRange className='text-xl font-bold' />
-                                    <p>{item.date}</p>
+                                    <p>
+                                        {new Date(item.date).toLocaleDateString("en-GB", {
+                                            day: "2-digit",
+                                            month: "short",
+                                            year: "numeric",
+                                        })}
+                                    </p>
                                 </div>
                             </div>
 
@@ -92,15 +97,7 @@ const HomeBlog = () => {
                     ))}
 
                 </div>
-                <Link to="/blog">
-                    <div className='flex items-center justify-center mt-5 '>
-                        <button className='flex items-center gap-2 px-10 py-3 rounded-3xl bg-[#6B0F0F] text-white font-semibold group'>
-                            View More
-                            <CgChevronDoubleRight className='text-2xl transition-all duration-300 group-hover:translate-x-2' />
-                        </button>
 
-                    </div>
-                </Link>
             </div>
         </>
     )

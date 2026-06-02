@@ -51,10 +51,10 @@ const WhyUs = () => {
     return (
         <>
             <div>
-                <h1 className='w-full text-center font-bold py-2 text-black text-2xl md:text-4xl px-8'>
+                <h1 className='w-full text-center font-bold py-4 text-black text-[20px] md:text-[32px] px-8'>
                     Why Choose Hriday IAS for Your career guidance?
                 </h1>
-                <p className='text-[#6B0F0F] text-center text-base px-5 md:px-10 lg:px-16 py-0'>
+                <p className='text-[#6B0F0F] text-center text-base px-5 md:px-10 lg:px-16 -mt-3'>
                     Discover the reasons why thousands of students trust Hriday IAS for their UPSC preparation.
                 </p>
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-5 md:px-10 lg:px-16 py-10'>

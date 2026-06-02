@@ -23,7 +23,6 @@ const Home = () => {
                 <SuccessStory/>
                 <SelectedStudent/>
                 <FreeResources/>
-               
                 <HomeBlog/>
                 <BannerPage2/>
             </div>

@@ -53,7 +53,7 @@ const About = () => {
 
           {/* Right Side Content */}
           <div className="w-full lg:w-1/2">
-            <h2 className="text-2xl md:text-4xl font-bold mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold mb-4 md:text-left text-center">
               About
               <span className='text-[#6B0F0F] ps-2'>Hriday IAS</span>
             </h2>
