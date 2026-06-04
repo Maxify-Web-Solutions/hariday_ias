@@ -58,12 +58,12 @@ const Expert = () => {
                 >
                     {faculties?.map((expert) => (
                         <SwiperSlide key={expert.id}>
-                            <div className='h-[380px] rounded-2xl transition-all duration-300 group font-semibold mt-1 overflow-hidden shadow-sm hover:shadow-md hover:shadow-[#6B0F0F]/20 flex flex-col'>
+                            <div className='h-[390px] rounded-2xl transition-all duration-300 group font-semibold mt-1 overflow-hidden shadow-sm hover:shadow-md hover:shadow-[#6B0F0F]/20 flex flex-col'>
                                 <div className='overflow-hidden'>
                                     <img
                                         src={expert.image}
                                         alt={expert.name}
-                                        className='w-full h-[250px] object-cover group-hover:scale-105 transition duration-500'
+                                        className='w-full h-[355px] object-cover group-hover:scale-105 transition duration-500'
                                     />
                                 </div>
 

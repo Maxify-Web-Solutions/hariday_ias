@@ -198,7 +198,7 @@ const CourseDetailsPage = () => {
                                 />
                                 {/* PREMIUM BADGE */}
                                 {course.premium && (
-                                    <div className="absolute -top-3.5 -left-3 md:-left-10 bg-[#d7c7b2] text-[#835b4d] px-4 py-2 rounded-xl shadow-2xl flex items-center gap-2 font-bold">
+                                    <div className="absolute -top-3.5 -left-3 md:-left-7 bg-[#d7c7b2] text-[#835b4d] px-4 py-2 rounded-xl shadow-2xl flex items-center gap-2 font-bold">
                                         <Sparkles size={20} />
                                         Premium Course
                                     </div>

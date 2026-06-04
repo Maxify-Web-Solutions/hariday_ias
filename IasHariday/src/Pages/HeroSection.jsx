@@ -10,7 +10,7 @@ const HeroSection = () => {
         <>
             <div className='mt-[40px]'>
 
-                <div className="w-full flex flex-col-reverse lg:flex-row items-center justify-between px-10 lg:px-16 py-8 md:py-10 gap-10">
+                <div className="w-full flex flex-col-reverse lg:flex-row items-center justify-between gap-10 py-2 md:py-5 px-5 md:px-10 lg:px-16">
                     <motion.div
                         initial={{ opacity: 0, x: -70 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -46,14 +46,14 @@ const HeroSection = () => {
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         transition={{
                             duration: 1,
-                            ease: "easeOut",
+                            ease: "easeout",
                         }}
-                        className="w-full lg:w-1/2 flex justify-center overflow-hidden rounded-2xl"
+                        className="w-full lg:w-1/2 flex justify-center overflow-hidden rounded-xl"
                     >
                         <motion.img
                             src={Hero}
                             alt="Hero"
-                            className="w-full max-w-3xl object-contain mt-5 "
+                            className="w-full max-w-3xl object-contain mt-12"
                             initial={{ scale: 1.2 }}
                             animate={{ scale: 1.1 }}
                             transition={{ duration: 1.2, ease: "easeOut" }}

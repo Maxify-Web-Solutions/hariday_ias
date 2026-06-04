@@ -35,7 +35,7 @@ const Courses = () => {
         </div>
         {/* Course Cards */}
         <div className='grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-5 mt-5'>
-          {courses.map((course, index) => (
+          {courses?.map((course, index) => (
             <div
               key={course._id}
               onClick={() => navigate(`/course/${course._id}`)}
