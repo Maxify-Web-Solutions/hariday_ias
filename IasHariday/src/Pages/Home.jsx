@@ -4,11 +4,11 @@ import PopularCourse from './PopularCourse'
 import WhyUs from './WhyUs'
 import Expert from './Expert'
 import SuccessStory from './SuccessStory'
-import SelectedStudent from './SelectedStudent'
 import FreeResources from './FreeResources'
 import BannerPages from './BannerPages'
 import BannerPage2 from './BannerPage2'
 import HomeBlog from './HomeBlog'
+import FAQPage from './FAQPage'
 
 
 const Home = () => {
@@ -21,7 +21,7 @@ const Home = () => {
                 <Expert/>
                 <BannerPages/>
                 <SuccessStory/>
-                <SelectedStudent/>
+                <FAQPage/>
                 <FreeResources/>
                 <HomeBlog/>
                 <BannerPage2/>

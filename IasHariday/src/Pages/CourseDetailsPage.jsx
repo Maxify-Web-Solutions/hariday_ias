@@ -146,42 +146,6 @@ const CourseDetailsPage = () => {
 
                             </div>
 
-                            {/* PRICE SECTION */}
-                            <div className="mt-8 flex flex-wrap items-center gap-5">
-
-                                {course.discount_price > 0 || course.price > 0 ? (
-                                    <>
-                                        <div className="flex items-center gap-4">
-
-                                            <h2 className="text-3xl font-bold text-[#6B0F0F]">
-                                                ₹
-                                                {course.discount_price?.toLocaleString()}
-                                            </h2>
-
-                                            {course.price > 0 && (
-                                                <h3 className="line-through text-xl text-[#7C5A4F] font-semibold">
-                                                    ₹{course.price?.toLocaleString()}
-                                                </h3>
-                                            )}
-
-                                        </div>
-
-                                        {discountPercentage > 0 && (
-                                            <div className="bg-green-500 text-white px-4 py-2 rounded-full font-bold">
-                                                {discountPercentage}% OFF
-                                            </div>
-                                        )}
-                                    </>
-                                ) : (
-                                    <div className="bg-green-500 px-4 py-1.5 rounded-md">
-                                        <h2 className="text-base font-bold">
-                                            FREE
-                                        </h2>
-                                    </div>
-                                )}
-
-                            </div>
-
                         </div>
 
                         {/* RIGHT IMAGE */}

@@ -128,21 +128,10 @@ const Courses = () => {
                   <p className='text-[#7C604F] text-sm mt-1 line-clamp-2 min-h-[20px] break-words overflow-hidden'>
                     {course.description}
                   </p>
-
-                  {/* Price */}
-                  <div className='flex items-center gap-3 mt-2'>
-                    <h3 className='text-xl font-bold text-black'>
-                      ₹{course.discount_price}
-                    </h3>
-
-                    <p className='text-[#7C604F] text-sm line-through'>
-                      ₹{course.price}
-                    </p>
-                  </div>
                 </div>
 
                 {/* Button */}
-                <Link to={`/course/${course._id}`} className='mt-3'>
+                <Link to={`/course/${course._id}`} className='mt-5'>
                   <button className='w-full bg-[#6B0F0F] text-white py-2.5 rounded-3xl text-lg font-medium hover:bg-[#571010] transition-all duration-300'>
                     More Details
                   </button>

@@ -16,10 +16,14 @@ const Navbar = () => {
                             alt="Logo1"
                             className="w-14 h-14 object-contain"
                         />
-                        <h3 className="text-2xl font-bold text-[#6B0F0F]">
-                            Hriday IAS
-                        </h3>
-                    </div></Link>
+                        <div className="flex flex-col">
+                            <h3 className="text-2xl font-bold bg-gradient-to-b from-[#590711] to-[#bd5c6b] bg-clip-text text-transparent font-serif">
+                                HRIDAY IAS
+                            </h3>
+                            <h6 className='text-[10px] text-[#7C5A4F] tracking-wide text-center -mt-1 pe-0.5'>KARMA BEATS THE DESTINY</h6>
+                        </div>
+                    </div>
+                </Link>
                 {/* Navbar */}
                 <Sidebar />
                 <div className="hidden md:block">
@@ -60,7 +64,7 @@ const Navbar = () => {
                                 }
             `}
                         >
-                            About
+                            Director
                         </Link>
 
                         <Link

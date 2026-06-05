@@ -29,17 +29,16 @@ const PopularCourse = () => {
             {/* Heading */}
             <div className='text-center max-w-3xl mx-auto'>
 
-                <h1 className='text-2xl sm:text-[30px] md:text-[34px] font-bold'>
-                    We Provide Career-Oriented Courses
+                <h1 className='text-2xl sm:text-[30px] md:text-[36px] font-bold'>
+                    Empowering Future <span className='text-[#6B0F0F]'> Civil Servants</span>
                 </h1>
 
                 <p className='text-[#6B0F0F] mt-3 text-[10px] sm:text-base'>
-                    Prepare for India’s top competitive examinations with
-                    expert guidance, structured learning, and quality study material.
+                    Expert guidance and quality resources to help you crack the UPSC examination.
                 </p>
             </div>
 
-            <div className="flex items-end justify-end mt-2">
+            <div className="flex items-end justify-end">
                 <Link
                     to="/courses"
                     className="relative w-fit text-[#846458] font-semibold hover:text-[#6B0F0F]
@@ -54,7 +53,7 @@ const PopularCourse = () => {
             </div>
 
             {/* Courses Grid */}
-            <div className='grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-8 mt-4 md:mt-8'>
+            <div className='grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-8 mt-3 md:mt-5'>
 
                 {courses?.slice(0, 4).map((course, index) => (
                     <motion.div
@@ -166,19 +165,8 @@ const PopularCourse = () => {
                                 {course.description}
                             </p>
 
-                            {/* PRICE */}
-                            <div className="flex items-center gap-3 mt-2">
-                                <span className="text-xl font-bold text-[#6B0F0F]">
-                                    ₹{course.discount_price}
-                                </span>
-
-                                <span className="text-gray-500 line-through text-sm">
-                                    ₹{course.price}
-                                </span>
-                            </div>
-
                             {/* BUTTON */}
-                            <div className="mt-auto pt-3">
+                            <div className="mt-auto pt-5">
                                 <Link to={`/course/${course._id}`}>
                                     <button className="bg-[#6B0F0F] text-white px-9 py-3 rounded-full hover:bg-[#571010] transition w-full">
                                         Explore
