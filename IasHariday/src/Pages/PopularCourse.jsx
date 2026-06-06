@@ -24,8 +24,7 @@ const PopularCourse = () => {
     }, [dispatch]);
 
     return (
-        <section className='w-full py-2 md:py-5 px-5 md:px-10 lg:px-16'>
-
+        <section className='w-full py-2 md:py-2 px-5 md:px-10 lg:px-16'>
             {/* Heading */}
             <div className='text-center max-w-3xl mx-auto'>
 

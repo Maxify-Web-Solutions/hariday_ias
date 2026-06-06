@@ -27,7 +27,7 @@ const Navbar = () => {
                 {/* Navbar */}
                 <Sidebar />
                 <div className="hidden md:block">
-                    <ul className="flex items-center gap-3 text-base">
+                    <ul className="flex items-center lg:gap-3 md:gap-0.5 text-base">
                         <Link
                             to="/courses"
                             className={`px-3 py-1 rounded transition-all duration-300
@@ -65,6 +65,28 @@ const Navbar = () => {
             `}
                         >
                             Director
+                        </Link>
+
+                         <Link
+                            to="/mentor"
+                            className={`px-3 py-1 rounded-md transition-all duration-300
+    ${location.pathname === "/mentor"
+                                    ? "bg-[#F5E6D3] text-[#8E443F] hover:text-[#711716]"
+                                    : "text-[#6B0F0F] hover:bg-[#F5E6D3]"
+                                }`}
+                        >
+                            Mentors
+                        </Link>
+
+                        <Link
+                            to="/about_page"
+                            className={`px-3 py-1 rounded-md transition-all duration-300
+    ${location.pathname === "/about_page"
+                                    ? "bg-[#F5E6D3] text-[#8E443F] hover:text-[#711716]"
+                                    : "text-[#6B0F0F] hover:bg-[#F5E6D3]"
+                                }`}
+                        >
+                            About Us
                         </Link>
 
                         <Link

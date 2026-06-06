@@ -63,7 +63,7 @@ const FAQPage = () => {
         <section className="bg-[#FDF6EC] px-5 md:px-10 lg:px-16">
             <div className="">
                 <div className="text-center max-w-3xl mx-auto">
-                    <h1 className="w-full font-bold text-black text-[24px] md:text-[36px]">
+                    <h1 className="w-full font-bold text-black text-[24px] md:text-[36px] mt-5">
                         Frequently Asked <span className="text-[#6B0F0F]">Questions</span>
                     </h1>
 
@@ -106,7 +106,7 @@ const FAQPage = () => {
                         </div>
                     </aside>
 
-                    <div className="space-y-4">
+                    <div className="space-y-3">
                         {faqData.map((item, index) => {
                             const isOpen = openIndex === index;
 
@@ -141,13 +141,18 @@ const FAQPage = () => {
                                         </span>
                                     </button>
 
-                                    {isOpen && (
+                                    <div
+                                        className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen
+                                                ? "max-h-96 opacity-100"
+                                                : "max-h-0 opacity-0"
+                                            }`}
+                                    >
                                         <div className="px-5 md:px-6 pb-5 md:pb-6">
                                             <p className="text-[#7C5A4F] text-sm md:text-base leading-relaxed pl-10 border-l-2 border-[#E6C8B4]">
                                                 {item.a}
                                             </p>
                                         </div>
-                                    )}
+                                    </div>
                                 </div>
                             );
                         })}

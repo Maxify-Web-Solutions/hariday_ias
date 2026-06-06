@@ -19,8 +19,8 @@ const Home = () => {
                 <PopularCourse/>
                 <WhyUs/>
                 <Expert/>
-                <BannerPages/>
                 <SuccessStory/>
+                <BannerPages/>
                 <FAQPage/>
                 <FreeResources/>
                 <HomeBlog/>

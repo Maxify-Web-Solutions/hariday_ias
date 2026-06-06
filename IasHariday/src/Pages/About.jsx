@@ -6,43 +6,11 @@ import { HiOutlineLightBulb } from "react-icons/hi";
 import { GoGoal } from "react-icons/go";
 
 
-const highlights = [
-  {
-    title: "Expert Faculty & Personalized Mentorship",
-    description:
-      "Learn from experienced educators who guide you personally through every stage of your preparation.",
-  },
-  {
-    title: "Comprehensive UPSC Preparation",
-    description:
-      "Structured courses covering Prelims, Mains, and Interview with integrated strategy for all exams.",
-  },
-  {
-    title: "Daily Current Affairs & Answer Writing Practice",
-    description:
-      "Stay updated and sharpen your writing skills with daily practice sessions and expert feedback.",
-  },
-  {
-    title: "Regular Mock Tests & Performance Analysis",
-    description:
-      "Evaluate your progress through frequent tests and detailed performance insights.",
-  },
-  {
-    title: "Student-Centric Learning Environment",
-    description:
-      "A supportive atmosphere that encourages collaboration, discipline, and growth.",
-  },
-  {
-    title: "Focus on Discipline, Consistency & Strategy",
-    description:
-      "Build habits and strategies that ensure long-term success in your civil services journey.",
-  },
-];
 
 
 const About = () => {
   return (
-    <div className="mt-16 max-w-6xl mx-auto px-5 md:px-6 lg:px-0 mb-5">
+    <div className="mt-16 max-w-6xl mx-auto px-5 md:px-6 mb-5 lg:px-[120px]">
 
       {/* Heading */}
       <div className="pt-8">
@@ -55,14 +23,22 @@ const About = () => {
       </div>
 
       {/* Card */}
-      <div className="relative bg-[#FDF6EC] border-2 border-[#D4A44B] rounded-[30px] overflow-visible">
+      <div className="relative bg-[#FDF6EC] border-2 border-[#D4A44B] rounded-[30px] overflow-visible mt-2 ">
 
         {/* Mobile Image */}
         <div className="flex justify-center pt-3 lg:hidden">
           <img
             src={founder}
             alt="Founder"
-            className="w-[300px] h-[300]  object-contain"
+            className="w-[500px] h-[500px]
+           
+            sm:w-[260px]
+            sm:h-[280px]
+             md:w-[320px]
+             md:h-[320px]
+             rounded-full
+             object-cover
+             "
           />
         </div>
 
@@ -117,26 +93,23 @@ const About = () => {
               src={about1}
               alt="Our Mindset"
               className="
-        w-[300px]
-        h-[300px]
-        sm:w-[260px]
-        sm:h-[280px]
-        md:w-[320px]
-        md:h-[320px]
-        rounded-full
-        object-cover
-        shadow-xl
-        border-4 border-[#D4A44B]
-      "
+           w-[300px]
+             h-[300px]
+            sm:w-[260px]
+            sm:h-[280px]
+             md:w-[320px]
+             md:h-[320px]
+             rounded-full
+             object-cover
+             shadow-xl
+              border-4 border-[#D4A44B]
+              "
             />
           </div>
 
           {/* Content Card */}
           <div className=" bg-[#FFF8EF] rounded-[30px] p-6 md:p-10 lg:pl-[280px] pt-20 ">
 
-            <div className="inline-block px-4 py-1 rounded-full bg-[#6B0F0F]/10 text-[#6B0F0F] font-semibold mb-4">
-              Our Philosophy
-            </div>
 
             <div className="border-l-4 border-[#6B0F0F] pl-4">
               <p className="text-xl md:text-2xl font-semibold text-[#6B0F0F] italic">
@@ -169,10 +142,6 @@ const About = () => {
           {/* Content Card */}
           <div className="bg-[#FFF8EF] rounded-[30px] p-6 md:p-10 lg:pr-[280px]">
 
-            <div className="inline-block px-4 py-1 rounded-full bg-[#6B0F0F]/10 text-[#6B0F0F] font-semibold mb-4">
-              Our Philosophy
-            </div>
-
             {/* Highlight Quote */}
             <div className="border-l-4 border-[#6B0F0F] pl-4 mb-6">
               <p className="text-xl md:text-2xl font-semibold text-[#6B0F0F] italic">
@@ -197,7 +166,7 @@ const About = () => {
           </div>
 
           {/* Desktop Image - Right Overlap */}
-          <div className="hidden lg:flex absolute -right-24 top-1/2 -translate-y-1/2 z-10">
+          <div className="hidden lg:flex absolute -right-24 top-1/3 -translate-y-1/2 z-10">
             <img
               src={about2}
               alt="Our Philosophy"
@@ -210,8 +179,18 @@ const About = () => {
             <img
               src={about2}
               alt="Our Philosophy"
-              className="w-[300px] h-[300px] sm:w-[280px] sm:h-[340px] rounded-full object-cover shadow-xl border-4 border-[#D4A44B]"
-            />
+              className="
+        w-[300px]
+        h-[300px]
+        sm:w-[260px]
+        sm:h-[280px]
+        md:w-[320px]
+        md:h-[320px]
+        rounded-full
+        object-cover
+        shadow-xl
+        border-4 border-[#D4A44B]
+         "            />
           </div>
 
         </div>
@@ -262,34 +241,6 @@ const About = () => {
             </p>
           </div>
 
-        </div>
-      </div>
-      {/* <section className="py-10 px-6"> */}
-      <div className="">
-        <div className="text-center mb-16">
-          <p className="text-[#6B0F0F] font-semibold tracking-widest uppercase mt-10">
-            Why Students Choose Us
-          </p>
-          <div className="w-24 h-1 bg-[#6B0F0F] mx-auto mt-3 rounded-full"></div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-
-          {highlights.map((item, index) => (
-            <div
-              key={index}
-              className="group bg-[#FFFAF3] border hover:border-[#6B0F0F] p-5 rounded-2xl border-[#F1E2C7] transition-all duration-500 hover:-translate-y-0.5 hover:shadow-lg"
-            >
-              {/* Title */}
-              <h3 className="text-lg font-bold text-[#6B0F0F] mb-2 leading-snug">
-                {item.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-[#7C5A4F] leading-relaxed text-[15px]">
-                {item.description}
-              </p>
-            </div>
-          ))}
         </div>
       </div>
 

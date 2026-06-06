@@ -16,6 +16,7 @@ const Expert = () => {
         dispatch(getAllFaculty())
 
     }, [dispatch])
+    
     return (
         <section className=' bg-[#f8ede1] pb-5'>
             <div className='max-w-4xl mx-auto text-center px-5'>

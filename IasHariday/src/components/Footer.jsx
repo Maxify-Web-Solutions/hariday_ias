@@ -11,7 +11,8 @@ import { clearSubscriberState, subscriberUser } from "../Redux/Slicer/subscribeS
 import { toast } from "react-toastify";
 
 const quickLinks = [
-    { id: 1, title: "About Us", path: "/about" },
+    { id: 1, title: "Mentors", path: "/mentor" },
+    { id: 1, title: "About Us", path: "/about_page" },
     { id: 2, title: "Our Blogs", path: "/blog" },
     { id: 3, title: "Contact Us", path: "/contact" },
 ];
@@ -25,8 +26,8 @@ const policyLinks = [
 
 const courseLinks = [
     { id: 1, title: "UPSC Preparation", path: "/courses" },
-    { id: 2, title: "SSC Coaching", path: "/courses" },
-    { id: 3, title: "State PCS", path: "/courses" },
+    { id: 2, title: "Director", path: "/about" },
+    { id: 3, title: "Courses", path: "/courses" },
 ];
 
 const Footer = () => {
@@ -62,10 +63,10 @@ const Footer = () => {
     return (
         <footer className="w-full bg-[#FCFBF9] border-t border-[#EAD7C8]/60 antialiased">
             {/* Top Container */}
-            <div className="max-w-7xl mx-auto px-9 sm:px-6 lg:px-8 py-12">
+            <div className="max-w-7xl mx-auto px-12 sm:px-6 lg:px-8 py-12">
 
                 {/* Newsletter & Social Links Section */}
-                <div className="bg-white rounded-2xl border border-[#F1E4D8]/70 p-6 md:p-8 lg:p-10 shadow-xs">
+                <div className="bg-white rounded-2xl border border-[#F1E4D8]/70 p-6 md:p-8 lg:p-10 shadow-xs ">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 
                         {/* Left Side: Text and Input */}

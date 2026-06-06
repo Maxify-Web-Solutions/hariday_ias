@@ -22,7 +22,7 @@ const SuccessStory = () => {
             <div className='text-center px-5'>
                 <h1 className='text-3xl md:text-4xl font-bold'>
                     What Our <span className='text-[#6B0F0F]'>Students Say</span>
-                </h1>``
+                </h1>
                 <p className='text-[#7C5A4F] mt-3 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed'>
                     Real feedback from UPSC aspirants who have experienced the guidance, mentorship, and learning environment at <span className='underline text-[#6B0F0F]'>HRIDAY IAS.</span>
                 </p>
