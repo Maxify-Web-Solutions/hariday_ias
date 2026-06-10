@@ -3,64 +3,74 @@ import Hero from '../assets/Images/HeroImage.jpg'
 import { motion } from "framer-motion";
 import { HiArrowRightCircle } from "react-icons/hi2";
 import { Link } from 'react-router-dom';
-
+import { ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
     return (
         <>
-            <div className='mt-[40px]'>
+            <div className="w-full py-10 md:py-12 px-5 md:px-10 lg:px-16 mt-12">
 
-                <div className="w-full flex flex-col-reverse lg:flex-row items-center justify-between px-10 lg:px-16 py-8 md:py-10 gap-10">
+                {/* MAIN SECTION */}
+                <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-5 lg:gap-10">
+
+                    {/* LEFT SIDE */}
                     <motion.div
-                        initial={{ opacity: 0, x: -70 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, ease: "ease-in-Out" }}
-                        className="w-full lg:w-1/2 flex flex-col justify-center mt-2 md:mt-10"
+                        initial={{ opacity: 0, x: -80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        viewport={{ once: true }}
+                        className="w-full lg:w-[50%] flex flex-col justify-center"
                     >
-                        <p className="text-[#6B0F0F] font-semibold text-xl -mt-4 md:mt-0 ">
-                            India’s Trusted Platform For Government Exam Preparation
+                        {/* Top Label */}
+                        <p className="text-sm md:text-base font-medium uppercase tracking-wider text-[#6B0F0F]">
+                            India's Trusted Platform for UPSC Preparation
                         </p>
 
-                        <h1 className="text-3xl sm:text-4xl lg:text-3xl xl:text-6xl font-bold text-black max-w-xl mt-3 leading-normal md:leading-relaxed">
-                            Every Great <span className='text-[#6B0F0F]'>Officer</span> Once Started As An Aspirant
+                        {/* Main Heading */}
+                        <h1 className="mt-2 text-4xl md:text-[52px] font-bold leading-[1.15] text-black">
+                            Turn Your <span className='text-[#6B0F0F]'>UPSC Dream</span> 
+                            <br />
+                            Into Reality with{" "}
+                            <span className="">
+                                Expert Guidance
+                            </span>
                         </h1>
 
-                        <p className="text-[#7C5A4F] text-lg sm:text-xl mt-6 max-w-xl leading-relaxed">
-                            Take the first step toward your civil services dream with expert guidance,
-                            disciplined preparation, and the right learning environment.
+                        {/* Description */}
+                        <p className="mt-3 text-[#7C604F] text-base md:text-lg leading-relaxed max-w-lg">
+                            Learn from experienced mentors, follow a proven strategy,
+                            and build the consistency needed to succeed in the Civil Services Examination.
                         </p>
 
-                        {/* CTA Buttons */}
-                        <div className="flex flex-wrap gap-5 mt-6 md:mt-12 md:w-full">
-                            <Link to="/courses" className='group'>
-                                <button className="bg-[#6B0F0F] text-white px-6 py-3 rounded-full font-medium text-lg transition-all duration-300 hover:bg-[#571010] hover:scale-105 flex items-center gap-2">
-                                    More Details
-                                    <HiArrowRightCircle size={28} className='ml-4 font-bold text-2xl transition-all duration-300 group-hover:translate-x-2' />
+                        {/* CTA */}
+                        <div className="mt-5">
+                            <Link to="/courses">
+                                <button className="flex items-center gap-2 bg-[#6B0F0F] text-white px-6 py-3 rounded-lg hover:bg-[#4e0b0b] transition-all duration-300 shadow-md">
+                                    Explore Courses
+                                    <ArrowRight size={18} />
                                 </button>
                             </Link>
                         </div>
                     </motion.div>
-                    {/* Right Image */}
+
+                    {/* RIGHT SIDE IMAGE (FULL SIZE RESPECT) */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.5, y: 30 }}
-                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                        transition={{
-                            duration: 1,
-                            ease: "easeOut",
-                        }}
-                        className="w-full lg:w-1/2 flex justify-center overflow-hidden rounded-2xl"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1, ease: "easeOut" }}
+                        viewport={{ once: true }}
+                        className="w-full lg:w-[50%] flex justify-center items-center mt-4"
                     >
                         <motion.img
                             src={Hero}
-                            alt="Hero"
-                            className="w-full max-w-3xl object-contain mt-5 "
-                            initial={{ scale: 1.2 }}
-                            animate={{ scale: 1.1 }}
-                            transition={{ duration: 1.2, ease: "easeOut" }}
+                            alt="Hriday IAS Hero"
+                            className="w-full h-auto object-contain rounded-2xl"
+                            whileHover={{ scale: 1.03 }}
+                            transition={{ duration: 0.4 }}
                         />
                     </motion.div>
-                </div>
 
+                </div>
             </div>
         </>
     )

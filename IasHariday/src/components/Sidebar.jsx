@@ -3,6 +3,10 @@ import { createPortal } from 'react-dom';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClear } from "react-icons/md";
 import { useLocation } from "react-router-dom";
+import { UserRound } from "lucide-react";
+import { Building2 } from "lucide-react";
+import { GraduationCap } from "lucide-react";
+
 import {
     MdMenuBook,
     MdArticle,
@@ -65,7 +69,7 @@ export default function Sidebar() {
                             Hariday IAS
                         </h1>
 
-                        <ul className="text-black font-medium p-4 space-y-2 bg-[#FDF6EC] mt-4">
+                        <ul className="text-black font-medium p-4 space-y-3 bg-[#FDF6EC] mt-4">
 
                             {/* Courses */}
                             <li>
@@ -117,9 +121,47 @@ export default function Sidebar() {
                                         }
             `}
                                 >
-                                    <MdInfo className="text-xl" />
+                                    <UserRound className="text-xl" />
                                     <span className="text-base font-bold">
-                                        About
+                                        Director
+                                    </span>
+                                </a>
+                            </li>
+
+                             {/* About Us */}
+                            <li>
+                                <a
+                                    href="/about_page"
+                                    className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-all duration-300 group
+
+            ${location.pathname === "/about_page"
+                                            ? "border-l-4  border-[#711716] text-[#711716] bg-[#F5E6D3]"
+                                            : "text-[#711716] hover:bg-[#F5E6D3]"
+                                        }
+            `}
+                                >
+                                    <Building2  className="text-xl" />
+                                    <span className="text-base font-bold">
+                                        About Us
+                                    </span>
+                                </a>
+                            </li>
+
+                             {/* Mentor */}
+                            <li>
+                                <a
+                                    href="/mentor"
+                                    className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-all duration-300 group
+
+            ${location.pathname === "/mentor"
+                                            ? "border-l-4  border-[#711716] text-[#711716] bg-[#F5E6D3]"
+                                            : "text-[#711716] hover:bg-[#F5E6D3]"
+                                        }
+            `}
+                                >
+                                    <GraduationCap className="text-xl" />
+                                    <span className="text-base font-bold">
+                                        Mentors
                                     </span>
                                 </a>
                             </li>

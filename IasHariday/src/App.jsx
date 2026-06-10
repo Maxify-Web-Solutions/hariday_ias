@@ -14,6 +14,8 @@ import Faq from './Pages/Faq'
 import BlogDetailPage from './Pages/BlogDetailPage'
 import ScrollToTop from './components/ScrollToTop'
 import CourseDetailsPage from './Pages/CourseDetailsPage'
+import AboutNewPage from './Pages/AboutNewPage'
+import Mentors from './Pages/Mentors'
 
 function App() {
 
@@ -25,8 +27,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/courses" element={<Courses />} />
+          <Route path="/about_page" element={<AboutNewPage />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/about" element={<About />} />
+          <Route path="/mentor" element={<Mentors />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/refund" element={<RefundPolicy />} />
@@ -34,6 +38,7 @@ function App() {
           <Route path="/faq" element={<Faq />} />
           <Route path="/blog/:id" element={<BlogDetailPage />} />
           <Route path="/course/:id" element={<CourseDetailsPage />} />
+
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -16,20 +16,18 @@ const Expert = () => {
         dispatch(getAllFaculty())
 
     }, [dispatch])
+    
     return (
         <section className=' bg-[#f8ede1] pb-5'>
             <div className='max-w-4xl mx-auto text-center px-5'>
-                <h1 className='font-bold text-black text-3xl md:text-5xl pt-5'>
-                    The Minds Behind Our Success
+                <h1 className='font-bold text-black text-[20px] md:text-[36px] pt-5'>
+                    Guidance from the <span className='text-[#6B0F0F]'>Best Mentors</span>
                 </h1>
-                <p className='text-[#7C5A4F] mt-3 text-base md:text-base leading-relaxed'>
-                    Our faculty comprises experienced educators, subject specialists,
-                    and dedicated mentors committed to helping aspirants achieve
-                    success in competitive examinations through quality guidance
-                    and strategic preparation.
+                <p className='text-[#7C5A4F] text-base md:text-base leading-relaxed'>
+                    Get expert support, strategic preparation, and valuable insights from mentors who understand the demands of the UPSC examination.
                 </p>
             </div>
-            <div className='mt-10 px-5 md:px-10 lg:px-16'>
+            <div className='mt-7 px-5 md:px-10 lg:px-16'>
                 <Swiper
                     modules={[Autoplay]}
                     spaceBetween={30}
@@ -58,12 +56,12 @@ const Expert = () => {
                 >
                     {faculties?.map((expert) => (
                         <SwiperSlide key={expert.id}>
-                            <div className='h-[380px] rounded-2xl transition-all duration-300 group font-semibold mt-1 overflow-hidden shadow-sm hover:shadow-md hover:shadow-[#6B0F0F]/20 flex flex-col'>
+                            <div className='h-[390px] rounded-2xl transition-all duration-300 group font-semibold mt-1 overflow-hidden shadow-sm hover:shadow-md hover:shadow-[#6B0F0F]/20 flex flex-col'>
                                 <div className='overflow-hidden'>
                                     <img
                                         src={expert.image}
                                         alt={expert.name}
-                                        className='w-full h-[250px] object-cover group-hover:scale-105 transition duration-500'
+                                        className='w-full h-[355px] object-cover group-hover:scale-105 transition duration-500'
                                     />
                                 </div>
 

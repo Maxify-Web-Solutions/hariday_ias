@@ -21,15 +21,14 @@ const SuccessStory = () => {
             {/* Heading */}
             <div className='text-center px-5'>
                 <h1 className='text-3xl md:text-4xl font-bold'>
-                    Success Stories
+                    What Our <span className='text-[#6B0F0F]'>Students Say</span>
                 </h1>
                 <p className='text-[#7C5A4F] mt-3 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed'>
-                    Discover the inspiring journeys of our successful candidates
-                    who achieved their dreams with Hariday IAS.
+                    Real feedback from UPSC aspirants who have experienced the guidance, mentorship, and learning environment at <span className='underline text-[#6B0F0F]'>HRIDAY IAS.</span>
                 </p>
             </div>
 
-            <div className='mt-12 px-5 md:px-10 lg:px-16'>
+            <div className='mt-8 px-5 md:px-10 lg:px-16'>
                 <Swiper
                     modules={[Autoplay]}
                     spaceBetween={30}

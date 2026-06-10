@@ -125,7 +125,7 @@ const Contact = () => {
                   </h2>
 
                   <p className="text-[#7C5A4F] mt-1 text-sm">
-                    support@gmail.com
+                    info@hridayias.com
                   </p>
 
                 </div>
