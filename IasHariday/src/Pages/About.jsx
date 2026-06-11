@@ -14,9 +14,9 @@ const About = () => {
 
       {/* Heading */}
       <div className="pt-8">
-        <h1 className="text-center text-2xl md:text-4xl font-bold text-black mb-12 md:mb-20">
-          Leading with Integrity -
-          <span className="block text-[#6B0F0F] mt-2">
+        <h1 className="text-center text-2xl md:text-4xl font-bold text-black mb-12 md:mb-20 flex">
+          Leading with Integrity - {" "}
+          <span className="block bg-gradient-to-b from-[#590711] to-[#bd5c6b] bg-clip-text text-transparent">
             A Message from the Director
           </span>
         </h1>
@@ -76,7 +76,7 @@ const About = () => {
               </p>
 
               <p className="text-xl md:text-2xl font-semibold mt-2">
-                <span className='text-blue-400'>Empowered Minds</span>,<span className='text-[#6B0F0F]'> Ethical Souls.</span>
+                <span className='text-blue-600'>Empowered Minds</span>,<span className='text-[#6B0F0F]'> Ethical Souls.</span>
               </p>
             </div>
           </div>

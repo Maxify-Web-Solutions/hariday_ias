@@ -24,7 +24,7 @@ const HomeBlog = () => {
         <>
             <div className=' y-7 md:py-5 px-5 md:px-10 lg:px-16'>
                 <div className='text-center font-bold text-xl md:text-3xl mt-5'>
-                    Latest Insights and <span className='text-[#6B0F0F] underline'>Articles</span>
+                    Latest Insights and <span className='text-[#6B0F0F]'>Articles</span>
 
                 </div>
                 <div className="flex items-end justify-end mt-3">

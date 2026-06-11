@@ -5,12 +5,12 @@ const router = express.Router();
 const { isAuthenticated, isAdmin } = require("../middleware/authMiddleware");
 
 
-router.post("/create-course", upload.single("image"), createCourse);
+router.post("/create-course",isAuthenticated, isAdmin, upload.single("image"), createCourse);
 
 
-router.get("/all", isAuthenticated, isAdmin,getAllCourses);
+router.get("/all",getAllCourses);
 
-router.get("/:id",isAuthenticated, isAdmin, getCourse);
+router.get("/:id", getCourse);
 
 router.put("/update/:id", isAuthenticated, isAdmin,upload.single("image"), updateCourse);
 

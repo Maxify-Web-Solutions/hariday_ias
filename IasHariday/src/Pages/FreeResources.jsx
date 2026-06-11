@@ -67,7 +67,7 @@ const FreeResources = () => {
     return (
         <>
             <div className=''>
-                <h1 className='text-3xl font-bold text-center mt-8'>Free Learning Resources</h1>
+                <h1 className='text-3xl font-bold text-center mt-8'>Free Learning <span className='text-[#6B0F0F]'> Resources </span></h1>
                 <p className='text-center text-[#7C5A4F] mt-2 text-base'>
                     Explore our collection of free resources, including study materials, practice questions, and insightful articles to support your IAS preparation journey.
                 </p>

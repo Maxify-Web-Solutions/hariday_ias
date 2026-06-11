@@ -62,27 +62,27 @@ const Footer = () => {
 
     return (
         <footer className="w-full bg-[#FCFBF9] border-t border-[#EAD7C8]/60 antialiased">
-            {/* Top Container */}
-            <div className="max-w-7xl mx-auto px-12 sm:px-6 lg:px-8 py-12">
+            {/* Top Container - Changed to 7xl max width */}
+            <div className="max-w-[100rem] mx-auto px-8  py-12 md:py-6 lg:py-8">
 
-                {/* Newsletter & Social Links Section */}
-                <div className="bg-white rounded-2xl border border-[#F1E4D8]/70 p-6 md:p-8 lg:p-10 shadow-xs ">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                {/* Newsletter & Social Links Section - Enhanced spacing for 7xl */}
+                <div className="bg-white rounded-2xl border border-[#F1E4D8]/70 p-8 md:p-10 lg:p-12 xl:p-14 shadow-xs">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-12 items-center">
 
                         {/* Left Side: Text and Input */}
-                        <div className="lg:col-span-8 flex flex-col gap-4">
+                        <div className="lg:col-span-8 flex flex-col gap-5 xl:gap-6">
                             <div>
-                                <h2 className="text-lg md:text-xl font-bold text-[#6B0F0F] tracking-tight uppercase">
+                                <h2 className="text-xl md:text-2xl font-bold text-[#6B0F0F] tracking-tight uppercase">
                                     Join Our Newsletter
                                 </h2>
-                                <p className="text-sm text-[#846458] mt-1">
+                                <p className="text-base text-[#846458] mt-2">
                                     Stay updated with the latest exam notifications, preparation strategies, and study materials.
                                 </p>
                             </div>
 
                             <form
                                 onSubmit={handleSubscribe}
-                                className="flex flex-col sm:flex-row items-stretch gap-2.5 max-w-xl w-full"
+                                className="flex flex-col sm:flex-row items-stretch gap-3 max-w-2xl w-full"
                             >
                                 <input
                                     type="email"
@@ -90,12 +90,12 @@ const Footer = () => {
                                     onChange={(e) => setEmail(e.target.value)}
                                     placeholder="Enter Your Email Address"
                                     required
-                                    className="flex-1 outline-none px-4 py-3 border border-[#D6C2B5] rounded-xl bg-white text-sm focus:border-[#6B0F0F] focus:ring-1 focus:ring-[#6B0F0F] transition-all"
+                                    className="flex-1 outline-none px-5 py-3.5 border border-[#D6C2B5] rounded-xl bg-white text-base focus:border-[#6B0F0F] focus:ring-2 focus:ring-[#6B0F0F]/20 transition-all"
                                 />
                                 <button
                                     type="submit"
                                     disabled={loading}
-                                    className="bg-[#6B0F0F] hover:bg-[#541010] active:scale-[0.98] transition-all duration-200 px-6 py-3 rounded-xl text-white font-medium text-sm whitespace-nowrap disabled:opacity-50 shadow-sm"
+                                    className="bg-[#6B0F0F] hover:bg-[#541010] active:scale-[0.98] transition-all duration-200 px-8 py-3.5 rounded-xl text-white font-semibold text-base whitespace-nowrap disabled:opacity-50 shadow-md hover:shadow-lg"
                                 >
                                     {loading ? "Subscribing..." : "Subscribe Now"}
                                 </button>
@@ -103,18 +103,18 @@ const Footer = () => {
                         </div>
 
                         {/* Right Side: Social Media Branding */}
-                        <div className="lg:col-span-4 flex flex-col items-start lg:items-end gap-3 lg:border-l lg:border-[#F1E4D8] lg:pl-8">
-                            <h3 className="text-sm font-semibold text-[#6B0F0F] uppercase tracking-wider">
+                        <div className="lg:col-span-4 flex flex-col items-start lg:items-end gap-4 lg:border-l lg:border-[#F1E4D8] lg:pl-10">
+                            <h3 className="text-base font-semibold text-[#6B0F0F] uppercase tracking-wider">
                                 Follow Our Journey
                             </h3>
-                            <div className="flex items-center gap-3">
+                            <div className="flex items-center gap-4">
                                 <a
                                     href="https://twitter.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-[#846458] hover:text-[#6B0F0F] hover:scale-110 transition-all duration-200"
                                 >
-                                    <AiFillTwitterCircle size={26} />
+                                    <AiFillTwitterCircle size={28} />
                                 </a>
                                 <a
                                     href="https://facebook.com"
@@ -122,7 +122,7 @@ const Footer = () => {
                                     rel="noopener noreferrer"
                                     className="text-[#846458] hover:text-[#6B0F0F] hover:scale-110 transition-all duration-200"
                                 >
-                                    <FaFacebook size={23} />
+                                    <FaFacebook size={25} />
                                 </a>
                                 <a
                                     href="https://instagram.com"
@@ -130,7 +130,7 @@ const Footer = () => {
                                     rel="noopener noreferrer"
                                     className="text-[#846458] hover:text-[#6B0F0F] hover:scale-110 transition-all duration-200"
                                 >
-                                    <FaInstagram size={23} />
+                                    <FaInstagram size={25} />
                                 </a>
                                 <a
                                     href="https://linkedin.com"
@@ -138,46 +138,46 @@ const Footer = () => {
                                     rel="noopener noreferrer"
                                     className="text-[#846458] hover:text-[#6B0F0F] hover:scale-110 transition-all duration-200"
                                 >
-                                    <CiLinkedin size={25} />
+                                    <CiLinkedin size={27} />
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                {/* Footer Directories Section */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-8 md:gap-6 lg:gap-12 pt-4">
+                {/* Footer Directories Section - Enhanced grid for 7xl */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 xl:gap-12 pt-8 lg:pt-10">
 
                     {/* Brand / Logo Info Column */}
-                    <div className="flex flex-col gap-3 md:col-span-5 lg:col-span-4">
+                    <div className="flex flex-col gap-4 lg:col-span-4 xl:col-span-4">
                         <Link to="/" className="w-fit group">
-                            <div className="flex gap-3 items-center">
+                            <div className="flex gap-4 items-center">
                                 <img
                                     src={logo}
                                     alt="Logo"
-                                    className="w-14 h-14 object-contain group-hover:scale-105 transition-transform duration-200"
+                                    className="w-16 h-16 object-contain group-hover:scale-105 transition-transform duration-200"
                                 />
-                                <h2 className="text-2xl font-bold tracking-tight text-[#6B0F0F]">
+                                <h2 className="text-3xl font-bold tracking-tight text-[#6B0F0F]">
                                     Hriday IAS
                                 </h2>
                             </div>
                         </Link>
-                        <p className="text-sm leading-relaxed text-[#846458] max-w-sm">
+                        <p className="text-base leading-relaxed text-[#846458] max-w-md">
                             Turning Aspirations Into Achievements With Expert Guidance & Smart Preparation.
                         </p>
                     </div>
 
                     {/* Quick Links Column */}
-                    <div className="flex flex-col gap-3.5 md:col-span-2 lg:col-span-2 md:pl-4">
-                        <h4 className="text-sm font-bold text-[#6B0F0F] uppercase tracking-wider">
+                    <div className="flex flex-col gap-4 lg:col-span-2 xl:col-span-2">
+                        <h4 className="text-base font-bold text-[#6B0F0F] uppercase tracking-wider">
                             Quick Links
                         </h4>
-                        <div className="flex flex-col gap-3">
+                        <div className="flex flex-col gap-3.5">
                             {quickLinks.map((link) => (
                                 <Link
                                     key={link.id}
                                     to={link.path}
-                                    className="relative w-fit text-sm text-[#846458] hover:text-[#6B0F0F]
+                                    className="relative w-fit text-base text-[#846458] hover:text-[#6B0F0F]
                        after:absolute after:left-0 after:-bottom-1
                        after:h-[2px] after:w-0 after:bg-[#6B0F0F]
                        after:transition-all after:duration-500
@@ -190,16 +190,16 @@ const Footer = () => {
                     </div>
 
                     {/* Policy Column */}
-                    <div className="flex flex-col gap-3.5 md:col-span-3 lg:col-span-3">
-                        <h4 className="text-sm font-bold text-[#6B0F0F] uppercase tracking-wider">
+                    <div className="flex flex-col gap-4 lg:col-span-3 xl:col-span-3">
+                        <h4 className="text-base font-bold text-[#6B0F0F] uppercase tracking-wider">
                             Policy
                         </h4>
-                        <div className="flex flex-col gap-3">
+                        <div className="flex flex-col gap-3.5">
                             {policyLinks.map((link) => (
                                 <Link
                                     key={link.id}
                                     to={link.path}
-                                    className="relative w-fit text-sm text-[#846458] hover:text-[#6B0F0F]
+                                    className="relative w-fit text-base text-[#846458] hover:text-[#6B0F0F]
                        after:absolute after:left-0 after:-bottom-1
                        after:h-[2px] after:w-0 after:bg-[#6B0F0F]
                        after:transition-all after:duration-500
@@ -212,16 +212,16 @@ const Footer = () => {
                     </div>
 
                     {/* Courses Column */}
-                    <div className="flex flex-col gap-3.5 md:col-span-2 lg:col-span-3">
-                        <h4 className="text-sm font-bold text-[#6B0F0F] uppercase tracking-wider">
+                    <div className="flex flex-col gap-4 lg:col-span-3 xl:col-span-3">
+                        <h4 className="text-base font-bold text-[#6B0F0F] uppercase tracking-wider">
                             Courses
                         </h4>
-                        <div className="flex flex-col gap-3">
+                        <div className="flex flex-col gap-3.5">
                             {courseLinks.map((link) => (
                                 <Link
                                     key={link.id}
                                     to={link.path}
-                                    className="relative w-fit text-sm text-[#846458] hover:text-[#6B0F0F]
+                                    className="relative w-fit text-base text-[#846458] hover:text-[#6B0F0F]
                        after:absolute after:left-0 after:-bottom-1
                        after:h-[2px] after:w-0 after:bg-[#6B0F0F]
                        after:transition-all after:duration-500
@@ -236,11 +236,11 @@ const Footer = () => {
                 </div>
 
                 {/* Bottom Border Isolation */}
-                <div className="w-full h-[1px] bg-[#EAD7C8]/40 mt-12 mb-6"></div>
+                <div className="w-full h-[1px] bg-[#EAD7C8]/40 mt-12 mb-8"></div>
 
                 {/* Copyright Segment */}
                 <div className="flex flex-col sm:flex-row items-center justify-center text-center">
-                    <p className="text-[#846458]/80 text-xs font-medium tracking-wide">
+                    <p className="text-[#846458]/80 text-sm font-medium tracking-wide">
                         &copy; 2025 Hriday IAS. All rights reserved.
                     </p>
                 </div>
