@@ -24,11 +24,11 @@ const Blog = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className='mt-16 y-7 md:py-10 px-2 md:px-10 lg:px-16 bg-[#FDF6EC]'>
+      <div className='py-1 md:py-2 px-2 md:px-10 lg:px-16 bg-[#FDF6EC]'>
         <div className=''>
-          <h1 className='text-[#6B0F0F] md:text-3xl text-lg font-bold text-center pt-6'>Guidance Beyond The Classroom</h1>
+          <h1 className='text-[#6B0F0F] md:text-3xl text-lg font-bold text-center pt-5'>Guidance Beyond The Classroom</h1>
         </div>
-        <div className="grid lg:grid-cols-2 gap-8 mt-6">
+        <div className="grid lg:grid-cols-2 gap-8 mt-2">
 
           {blogs?.map((item, index) => (
 

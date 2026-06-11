@@ -56,8 +56,8 @@ const BlogDetailPage = () => {
     }
 
     return (
-        <section className="w-full min-h-screen bg-[#F3E6DD] py-10 px-2 md:px-10 lg:px-20 mt-16">
-            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8">
+        <section className="w-full min-h-screen bg-[#F3E6DD] py-5 px-2 md:px-10 lg:px-20 ">
+            <div className=" mx-auto flex flex-col lg:flex-row gap-8">
                 {/* LEFT SIDE - MAIN BLOG (70%) */}
                 <div className="lg:w-[70%] w-full bg-[#FFFAF3] p-3 shadow-md overflow-hidden rounded-lg">
                     {/* Image */}

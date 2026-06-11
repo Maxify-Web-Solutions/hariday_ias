@@ -4,45 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllFaculty } from "../Redux/Slicer/facultySlice";
 
 
-// const mentors = [
-//     {
-//         id: 1,
-//         name: "Dr. Rajesh Sharma",
-//         role: "Senior UPSC Mentor",
-//         image: "https://randomuser.me/api/portraits/men/32.jpg",
-//     },
-//     {
-//         id: 2,
-//         name: "Anjali Verma",
-//         role: "Ethics Faculty",
-//         image: "https://randomuser.me/api/portraits/women/44.jpg",
-//     },
-//     {
-//         id: 3,
-//         name: "Amit Kumar",
-//         role: "GS Foundation Mentor",
-//         image: "https://randomuser.me/api/portraits/men/55.jpg",
-//     },
-//     {
-//         id: 4,
-//         name: "Neha Singh",
-//         role: "Current Affairs Expert",
-//         image: "https://randomuser.me/api/portraits/women/68.jpg",
-//     },
-//     {
-//         id: 5,
-//         name: "Vikash Yadav",
-//         role: "Answer Writing Mentor",
-//         image: "https://randomuser.me/api/portraits/men/71.jpg",
-//     },
-//     {
-//         id: 6,
-//         name: "Priya Mishra",
-//         role: "Interview Guidance Expert",
-//         image: "https://randomuser.me/api/portraits/women/26.jpg",
-//     },
-// ];
-
 const Mentors = () => {
 
 
@@ -56,12 +17,12 @@ const Mentors = () => {
     }, [dispatch])
 
     return (
-        <div className="max-w-7xl mx-auto px-5 md:px-8 py-16">
+        <div className="max-w-7xl mx-auto px-5 md:px-8 ">
 
             {/* Heading */}
             <div className="text-center mb-14 mt-8">
                 <h2 className="text-3xl md:text-4xl font-bold text-black">
-                    Meet Our <span className="text-[#6B0F0F] underline">Mentors</span>
+                    Meet Our <span className="text-[#6B0F0F]">Mentors</span>
                 </h2>
                 <p className="mt-3 text-[#7C604F] max-w-2xl mx-auto">
                     Learn from experienced educators and UPSC experts dedicated to

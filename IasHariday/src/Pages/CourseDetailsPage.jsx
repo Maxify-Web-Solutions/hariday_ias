@@ -87,13 +87,13 @@ const CourseDetailsPage = () => {
             : 0;
 
     return (
-        <div className="bg-[#FFF9F5] min-h-screen mt-12">
+        <div className="bg-[#FFF9F5] min-h-screen">
 
             {/* HERO SECTION */}
             <div className="relative overflow-hidden">
 
                 <div className="absolute inset-0 bg-[#F8EDE1]" />
-                <div className="relative max-w-7xl mx-auto px-5 md:px-8 lg:px-12 py-14 lg:py-16">
+                <div className="relative mx-auto px-5 md:px-8 lg:px-12 py-7 lg:py-8">
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
@@ -173,7 +173,7 @@ const CourseDetailsPage = () => {
                 </div>
             </div>
             {/* MAIN CONTENT */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 antialiased selection:bg-[#6B0F0F]/10">
+            <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-10 antialiased selection:bg-[#6B0F0F]/10">
 
                 {/* TEACHERS SECTION */}
                 <div className="">

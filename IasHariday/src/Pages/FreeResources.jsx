@@ -107,7 +107,7 @@ const FreeResources = () => {
 
                                 {/* Button */}
                                 <a
-                                    href={resource.link}
+                                    href="https://www.youtube.com/@HridayIas" target='_blank'
                                     className='mt-4 text-[#6B0F0F] font-semibold flex items-center gap-2 hover:gap-3 transition-all duration-300'
                                 >
                                     Learn More →

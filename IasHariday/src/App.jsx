@@ -16,6 +16,7 @@ import ScrollToTop from './components/ScrollToTop'
 import CourseDetailsPage from './Pages/CourseDetailsPage'
 import AboutNewPage from './Pages/AboutNewPage'
 import Mentors from './Pages/Mentors'
+import RoadMap from './Pages/RoadMap'
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/mentor" element={<Mentors />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/upsc-roadmap" element={<RoadMap />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/refund" element={<RefundPolicy />} />
           <Route path="/terms" element={<TermsCondition />} />

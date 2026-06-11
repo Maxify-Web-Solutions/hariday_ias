@@ -63,17 +63,17 @@ const highlights = [
 
 const AboutNewPage = () => {
     return (
-        <div className="bg-[#FDF6EC] py-16 px-4 md:px-10 lg:px-16">
+        <div className="bg-[#FDF6EC] py-4 px-4 md:px-10 lg:px-16">
 
-            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+            <div className="mx-auto flex flex-col lg:flex-row items-center gap-12">
 
                 {/* LEFT IMAGE */}
                 <div className="w-full lg:w-1/2 relative">
-                    <div className="rounded-2xl overflow-hidden shadow-2xl">
+                    <div className="rounded-2xl overflow-hidden shadow-md h-[350px] md:h-[400px] lg:h-[550px] xl:h-[570px]">
                         <img
                             src={aboutUsNewImage}
                             alt="About Hriday IAS"
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                            className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500"
                         />
                     </div>
 
@@ -93,7 +93,7 @@ const AboutNewPage = () => {
 
                     {/* QUOTE CARD */}
                     <div className="bg-white/70 backdrop-blur-md border border-[#F5E6D3] p-3 rounded-xl shadow-sm mt-3">
-                        <p className="italic text-[] leading-relaxed">
+                        <p className="italic text-lg leading-relaxed">
                             "In the garden of life, one flower blooms above all others – the flower of awareness."
                         </p>
                     </div>
@@ -101,21 +101,26 @@ const AboutNewPage = () => {
                     {/* MAIN TEXT */}
                     <div className="space-y-2 text-gray-700 leading-relaxed text-base md:text-lg mt-4">
 
-                        <p className="text-base text-[#7C5A4F]">
-                            At <span className="font-semibold text-[#6B0F0F]">Hriday IAS</span>, we nurture awareness, intelligence, and compassion in every aspirant.
-                            Inspired by Osho and Buddha, we believe true preparation is not just knowledge but transformation of self.
-                        </p>
+                        <p className="text-[18px] text-[#7C5A4F] leading-relaxed">
 
-                        <p className="text-base text-[#7C5A4F]">
-                            Success in UPSC comes when you embrace uncertainty, overcome fear of the unknown, and evolve into a mindful thinker.
+                            At <span className="font-semibold text-[#6B0F0F]">Hriday IAS</span>, we nurture this flower,
+                            cultivating awareness, intelligence, and compassion in every aspirant.
+                            Inspired by the wisdom of <span className="text-[#6B0F0F] font-semibold underline"> Osho and Buddha</span> , we recognize that
+                            <span className="italic">
+                                {" "}<span className="text-[#6B0F0F] text-[20px]"> “the ultimate source of all anxiety is the fear of the unknown.”</span>
+                            </span>{" "}
+                            Our approach to UPSC preparation is not just about acquiring knowledge but
+                            about transforming ourselves, embracing the unknown, and discovering our
+                            true potential.
                         </p>
 
                         <div className="">
                             <h3 className="text-xl font-semibold text-[#6B0F0F]">
                                 Join Our <span className="underline">Journey</span>
                             </h3>
-                            <p className="text-base text-[#7C5A4F]">
-                                Together, let’s build a generation of leaders who serve with awareness, courage, and compassion.
+                            <p className=" text-[#7C5A4F] leading-relaxed text-[18px] mt-1.5">
+                                At Hriday IAS, we invite you to embark on a path of self-discovery, intellectual growth and civic responsibility. Together, let us explore the depths of human knowledge and emerge as leaders who will shape the future of our nation with awareness, compassion and courage.
+
                             </p>
                         </div>
                     </div>
@@ -134,9 +139,9 @@ const AboutNewPage = () => {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto">
+            <div className=" mx-auto">
                 <div className="text-center mb-10">
-                    <p className="text-[#6B0F0F] font-semibold tracking-widest uppercase mt-10">
+                    <p className="text-[#6B0F0F] font-semibold tracking-widest uppercase mt-10 text-xl">
                         Why Students Choose Us
                     </p>
                     <div className="w-24 h-1 bg-[#6B0F0F] mx-auto mt-3 rounded-full"></div>
@@ -149,12 +154,12 @@ const AboutNewPage = () => {
                             className="group bg-[#FFFAF3] border hover:border-[#6B0F0F] p-5 rounded-2xl border-[#F1E2C7] transition-all duration-500 hover:-translate-y-0.5 hover:shadow-lg"
                         >
                             {/* Title */}
-                            <h3 className="text-lg font-bold text-[#6B0F0F] mb-2 leading-snug">
+                            <h3 className="text-xl font-bold text-[#6B0F0F] mb-2 leading-snug">
                                 {item.title}
                             </h3>
 
                             {/* Description */}
-                            <p className="text-[#7C5A4F] leading-relaxed text-[15px]">
+                            <p className="text-[#7C5A4F] leading-relaxed text-[16px]">
                                 {item.description}
                             </p>
                         </div>
@@ -163,14 +168,14 @@ const AboutNewPage = () => {
             </div>
 
             {/* OUR CORE VALUES */}
-            <div className="max-w-7xl mx-auto mt-8">
+            <div className=" mx-auto mt-8">
 
                 <div className="text-center mb-10">
                     <p className="text-[#6B0F0F] font-semibold tracking-widest uppercase">
                         Our Foundation
                     </p>
 
-                    <h2 className="text-3xl md:text-4xl font-bold mt-2">
+                    <h2 className="text-3xl md:text-4xl font-bold mt-2 text-[#6B0F0F]">
                         Our Core Values
                     </h2>
 
@@ -195,11 +200,11 @@ const AboutNewPage = () => {
                                 </span>
                             </div>
 
-                            <h3 className="text-xl font-bold text-[#6B0F0F] mb-3">
+                            <h3 className="font-bold text-[#6B0F0F] mb-3 text-2xl">
                                 {value.title}
                             </h3>
 
-                            <p className="text-[#7C5A4F] leading-relaxed text-[15px]">
+                            <p className="text-[#7C5A4F] leading-relaxed text-[16px]">
                                 {value.description}
                             </p>
                         </div>

@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { clearSubscriberState, subscriberUser } from "../Redux/Slicer/subscribeSlice";
 import { toast } from "react-toastify";
+import { FaTelegramPlane } from "react-icons/fa";
 
 const quickLinks = [
     { id: 1, title: "Mentors", path: "/mentor" },
@@ -109,37 +110,30 @@ const Footer = () => {
                             </h3>
                             <div className="flex items-center gap-4">
                                 <a
-                                    href="https://twitter.com"
+                                    href="t.me/HridayIAS"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-[#846458] hover:text-[#6B0F0F] hover:scale-110 transition-all duration-200"
                                 >
-                                    <AiFillTwitterCircle size={28} />
+                                    <FaTelegramPlane size={28} />
                                 </a>
                                 <a
-                                    href="https://facebook.com"
+                                    href="https://www.facebook.com/profile.php?id=61587483425025"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-[#846458] hover:text-[#6B0F0F] hover:scale-110 transition-all duration-200"
                                 >
-                                    <FaFacebook size={25} />
+                                    <FaFacebook size={28} />
                                 </a>
                                 <a
-                                    href="https://instagram.com"
+                                    href="https://www.instagram.com/hriday_ias/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-[#846458] hover:text-[#6B0F0F] hover:scale-110 transition-all duration-200"
                                 >
-                                    <FaInstagram size={25} />
+                                    <FaInstagram size={28} />
                                 </a>
-                                <a
-                                    href="https://linkedin.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-[#846458] hover:text-[#6B0F0F] hover:scale-110 transition-all duration-200"
-                                >
-                                    <CiLinkedin size={27} />
-                                </a>
+
                             </div>
                         </div>
                     </div>

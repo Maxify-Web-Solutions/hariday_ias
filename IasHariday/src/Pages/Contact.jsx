@@ -64,10 +64,11 @@ const Contact = () => {
 
   return (
     <>
-      <div className="mt-0 md:mt-16 px-3 md:px-20 lg:px-28 py-10 bg-[#FDF6EC]">
+      <div className=" px-3 md:px-20 lg:px-28 py-6 bg-[#FDF6EC]">
         <h1 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold text-[#6B0F0F]">
           Reach Out to Us Anytime
-        </h1>        <div className="flex flex-col lg:flex-row mt-8 items-center justify-between gap-4">
+        </h1>
+          <div className="flex flex-col lg:flex-row mt-5 items-center justify-between gap-4">
 
           {/* Left Side */}
           <div className="w-full lg:w-[55%] rounded-2xl shadow-md p-4 bg-white">

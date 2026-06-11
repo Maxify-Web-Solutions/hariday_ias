@@ -10,20 +10,19 @@ import { GoGoal } from "react-icons/go";
 
 const About = () => {
   return (
-    <div className="mt-16 max-w-6xl mx-auto px-5 md:px-6 mb-5 lg:px-[120px]">
+    <div className="mt-2 max-w-6xl mx-auto px-5 md:px-6 mb-5 lg:px-[120px]">
 
-      {/* Heading */}
       <div className="pt-8">
-        <h1 className="text-center text-2xl md:text-4xl font-bold text-black mb-12 md:mb-20 flex">
-          Leading with Integrity - {" "}
-          <span className="block bg-gradient-to-b from-[#590711] to-[#bd5c6b] bg-clip-text text-transparent">
-            A Message from the Director
+        <h1 className="text-center text-lg sm:text-xl md:text-4xl font-bold text-black mb-12 md:mb-20">
+          Leading with Integrity -
+          <span className="text-[#6B0F0F]">
+            {" "}A Message from the Director
           </span>
         </h1>
       </div>
 
       {/* Card */}
-      <div className="relative bg-[#FDF6EC] border-2 border-[#D4A44B] rounded-[30px] overflow-visible mt-2 ">
+      <div className="relative bg-[#FDF6EC] border-2 border-[#D4A44B] rounded-[30px] overflow-visible mt-4">
 
         {/* Mobile Image */}
         <div className="flex justify-center pt-3 lg:hidden">
@@ -76,7 +75,7 @@ const About = () => {
               </p>
 
               <p className="text-xl md:text-2xl font-semibold mt-2">
-                <span className='text-blue-600'>Empowered Minds</span>,<span className='text-[#6B0F0F]'> Ethical Souls.</span>
+                <span className='text-[#6B0F0F]'>Empowered Minds</span>,<span className='text-[#6B0F0F]'> Ethical Souls.</span>
               </p>
             </div>
           </div>

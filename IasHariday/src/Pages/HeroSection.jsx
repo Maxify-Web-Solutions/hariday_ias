@@ -8,10 +8,10 @@ import { ArrowRight } from "lucide-react";
 const HeroSection = () => {
     return (
         <>
-            <div className="w-full py-10 md:py-12 px-5 md:px-10 lg:px-16 mt-12">
+            <div className="w-full py-2 md:py-10 px-5 md:px-10 lg:px-16">
 
                 {/* MAIN SECTION */}
-                <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-5 lg:gap-10">
+                <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-4 lg:gap-7">
 
                     {/* LEFT SIDE */}
                     <motion.div
@@ -22,24 +22,23 @@ const HeroSection = () => {
                         className="w-full lg:w-[50%] flex flex-col justify-center"
                     >
                         {/* Top Label */}
-                        <p className="text-sm md:text-base font-medium uppercase tracking-wider text-[#6B0F0F]">
+                        <p className="text-base md:text-base font-medium uppercase tracking-wider text-[#6B0F0F]">
                             India's Trusted Platform for UPSC Preparation
                         </p>
 
                         {/* Main Heading */}
-                        <h1 className="mt-2 text-4xl md:text-[52px] font-bold leading-[1.15] text-black">
-                            Turn Your <span className='text-[#6B0F0F]'>UPSC Dream</span> 
+                        <h1 className="mt-3 text-4xl md:text-[54px] font-bold leading-[1.15] text-black">
+                            Turn Your <span className='text-[#6B0F0F]'>UPSC Dream</span> Into
                             <br />
-                            Into Reality with{" "}
+                             Reality with{" "}
                             <span className="">
                                 Expert Guidance
                             </span>
                         </h1>
 
                         {/* Description */}
-                        <p className="mt-3 text-[#7C604F] text-base md:text-lg leading-relaxed max-w-lg">
-                            Learn from experienced mentors, follow a proven strategy,
-                            and build the consistency needed to succeed in the Civil Services Examination.
+                        <p className="mt-4 text-[#7C604F] text-[18px] md:text-[22px] leading-relaxed max-w-3xl">
+                            Learn from experienced mentors, follow a proven strategy, and build the consistency, confidence, and analytical skills needed to succeed in the Civil Services Examination and achieve your dream career in public service.
                         </p>
 
                         {/* CTA */}
@@ -59,7 +58,7 @@ const HeroSection = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1, ease: "easeOut" }}
                         viewport={{ once: true }}
-                        className="w-full lg:w-[50%] flex justify-center items-center mt-4"
+                        className="w-full lg:w-[50%] flex justify-center items-center mt-1"
                     >
                         <motion.img
                             src={Hero}
