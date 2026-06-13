@@ -64,7 +64,7 @@ const Footer = () => {
     return (
         <footer className="w-full bg-[#FCFBF9] border-t border-[#EAD7C8]/60 antialiased">
             {/* Top Container - Changed to 7xl max width */}
-            <div className="max-w-[100rem] mx-auto px-8  py-12 md:py-6 lg:py-8">
+            <div className="max-w-[110rem] mx-auto px-8  py-12 md:py-6 lg:py-8">
 
                 {/* Newsletter & Social Links Section - Enhanced spacing for 7xl */}
                 <div className="bg-white rounded-2xl border border-[#F1E4D8]/70 p-8 md:p-10 lg:p-12 xl:p-14 shadow-xs">

@@ -21,7 +21,7 @@ export default function Sidebar() {
 
     return (
         <>
-            <div className="block md:hidden">
+            <div className="block lg:hidden">
 
                 <button
                     className="mt-2"

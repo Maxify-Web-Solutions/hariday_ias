@@ -31,8 +31,8 @@ const Navbar = () => {
     return (
         <>
             <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled
-                ? 'bg-[#FDF6EC]/90 backdrop-blur-xl shadow-2xl py-2'
-                : 'bg-[#FDF6EC] shadow-lg py-3'
+                ? 'bg-[#FDF6EC]/90 backdrop-blur-xl shadow-md py-2'
+                : 'bg-[#FDF6EC] shadow-md py-3'
                 }`}>
                 <div className="px-3 mx-auto md:px-6 lg:px-10">
                     <div className="flex justify-between items-center">
@@ -67,7 +67,7 @@ const Navbar = () => {
                         </Link>
 
                         {/* Navigation Links - Right Side */}
-                        <div className="hidden md:flex items-center gap-2">
+                        <div className="hidden lg:flex items-center gap-2">
                             <ul className="flex items-center gap-1">
                                 {navLinks.map((link) => {
                                     const isActive = location.pathname === link.path;
@@ -106,7 +106,7 @@ const Navbar = () => {
                         </div>
 
                         {/* Mobile Menu Button - Sidebar Trigger */}
-                        <div className="md:hidden">
+                        <div className="lg:hidden">
                             <Sidebar />
                         </div>
                     </div>
