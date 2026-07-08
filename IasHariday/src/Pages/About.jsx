@@ -1,7 +1,7 @@
 import React from 'react';
 import founder from '../assets/Images/Founder.png';
-import about1 from '../assets/Images/UPSCMain.png'
-import about2 from '../assets/Images/UPSCPre.png'
+import about1 from '../assets/Images/Budhha.jpg.jpeg'
+import about2 from '../assets/Images/Osho.png'
 import { HiOutlineLightBulb } from "react-icons/hi";
 import { GoGoal } from "react-icons/go";
 
@@ -13,8 +13,8 @@ const About = () => {
     <div className="mt-2 max-w-6xl mx-auto px-5 md:px-6 mb-5 lg:px-[120px]">
 
       <div className="pt-8">
-        <h1 className="text-center text-lg sm:text-xl md:text-4xl font-bold text-black mb-12 md:mb-20">
-          Leading with Integrity -
+        <h1 className="text-center text-lg sm:text-xl md:text-4xl font-bold text-[#6B0F0F] mb-12 md:mb-20">
+          Leading with Integrity :
           <span className="text-[#6B0F0F]">
             {" "}A Message from the Director
           </span>
@@ -57,7 +57,7 @@ const About = () => {
               Founder's Vision
             </h2>
 
-            <p className="text-base md:text-lg lg:text-xl leading-relaxed text-[#3D2A20] font-serif">
+            <p className="text-lg md:text-xl lg:text-2xl leading-relaxed text-black font-serif">
               A technocrat by education and a spiritual seeker by soul,
               our Director embodies the
               <span className="text-[#6B0F0F] font-semibold">
@@ -70,13 +70,10 @@ const About = () => {
             </p>
 
             <div className="mt-5">
-              <p className="text-lg md:text-xl font-bold text-[#6B0F0F]">
-                Her Vision is Simple :
+              <p className="md:text-lg lg:text-xl text-base font-serif text-[#6B0F0F]">
+                <span className='text-black font-medium'>Her Vision is Simple : </span><span className='text-[#182769]'>Empowered Minds</span>,<span className='text-[#6B0F0F]'> Ethical Souls.</span>
               </p>
 
-              <p className="text-xl md:text-2xl font-semibold mt-2">
-                <span className='text-[#6B0F0F]'>Empowered Minds</span>,<span className='text-[#6B0F0F]'> Ethical Souls.</span>
-              </p>
             </div>
           </div>
         </div>
@@ -107,59 +104,36 @@ const About = () => {
           </div>
 
           {/* Content Card */}
-          <div className=" bg-[#FFF8EF] rounded-[30px] p-6 md:p-10 lg:pl-[280px] pt-20 ">
+          <div className="bg-[#FFF8EF] rounded-[30px] p-6 md:p-10 lg:pl-[280px] pt-20">
 
-
-            <div className="border-l-4 border-[#6B0F0F] pl-4">
-              <p className="text-xl md:text-2xl font-semibold text-[#6B0F0F] italic">
-                "अप्प दीपो भवः"
-              </p>
-
-              <p className="text-lg text-[#6B0F0F] mt-1">
-                “Be a light unto yourself”
-              </p>
-            </div>
-
-            <p className="text-[#5B4338] text-lg leading-relaxed mt-2">
-              Said the <span className="font-semibold text-[#6B0F0F]">Buddha</span>.
-              At <span className="font-semibold text-[#6B0F0F]">Hriday IAS</span>,
-              we echo this call to awareness, encouraging each aspirant to become
-              a source of light in a world filled with darkness.
-            </p>
-
-            <p className="text-[#5B4338] text-lg leading-relaxed mt-2">
-              We believe that the journey of UPSC preparation is a journey of
-              self-discovery, where one confronts fears, doubts, and limitations,
-              and emerges stronger, wiser, and more compassionate.
+            <p className="text-lg md:text-xl lg:text-2xl leading-relaxed text-black font-serif">
+              <span className="text-[#182769]">
+                "अप्प दीपो भवः" (“Be a light unto yourself”),
+              </span>{" "}
+              said the <span className="font-semibold text-[#6B0F0F]">Buddha</span>.
+              At <span className="text-black text-xl font-medium">Hriday IAS,</span> we echo this call to awareness, encouraging each aspirant
+              to become a source of light in a world filled with darkness. We believe
+              that the journey of UPSC preparation is a journey of self-discovery,
+              where one confronts one's fears, doubts, and limitations, and emerges
+              stronger, wiser, and more compassionate.
             </p>
 
           </div>
         </div>
 
         <div className="relative mt-10 overflow-visible">
-
           {/* Content Card */}
           <div className="bg-[#FFF8EF] rounded-[30px] p-6 md:p-10 lg:pr-[280px]">
 
-            {/* Highlight Quote */}
-            <div className="border-l-4 border-[#6B0F0F] pl-4 mb-6">
-              <p className="text-xl md:text-2xl font-semibold text-[#6B0F0F] italic">
-                "Osho taught"
-              </p>
-
-              <p className="text-lg text-[#6B0F0F] mt-1">
-                “Life is not a problem to be solved, but a mystery to be lived”
-              </p>
-            </div>
-
-            <p className="text-[#5B4338] text-lg leading-relaxed">
-              We at this platform, strive to create an environment where aspirants can
-              live life fully, embracing its mysteries, complexities, and challenges.
-            </p>
-
-            <p className="text-[#5B4338] text-lg leading-relaxed mt-2">
-              Our approach is holistic, focusing not just on intellectual growth but
-              also on emotional intelligence, creativity, and spiritual awareness.
+            <p className="text-lg md:text-xl lg:text-2xl leading-relaxed text-black font-serif">
+              As <span className='font-semibold text-[#6B0F0F]'>Osho</span> taught,
+              <span className="text-[#182769]">
+                “Life is not a problem to be solved, but a mystery to be lived,”
+              </span>{" "}
+              We at this platform strive to create an environment where aspirants can live life fully, embracing it
+              mysteries, complexities, and challenges. Our approach is holistic, focusing not just on intellectual
+              growth but also on emotional intelligence, creativity, and spiritual
+              awareness.
             </p>
 
           </div>

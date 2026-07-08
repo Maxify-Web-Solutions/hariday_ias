@@ -21,8 +21,8 @@ const Mentors = () => {
 
             {/* Heading */}
             <div className="text-center mb-14 mt-8">
-                <h2 className="text-3xl md:text-4xl font-bold text-black">
-                    Meet Our <span className="text-[#6B0F0F]">Mentors</span>
+                <h2 className="text-3xl md:text-4xl font-bold text-[#6B0F0F]">
+                    Meet Our <span className="text-[#6B0F0F]">faculty</span>
                 </h2>
                 <p className="mt-3 text-[#7C604F] max-w-2xl mx-auto">
                     Learn from experienced educators and UPSC experts dedicated to

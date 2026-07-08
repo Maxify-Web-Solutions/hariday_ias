@@ -7,13 +7,13 @@ const faqData = [
     {
         question: "What courses are offered by Hriday IAS?",
         answer:
-            "Hriday IAS offers comprehensive preparation programs for UPSC Civil Services Examination and various State PCS examinations including Prelims, Mains, Interview Guidance, Test Series, and Mentorship Programs.",
+            "Hriday IAS offers comprehensive preparation programs for UPSC Civil Services Examination including Prelims, Mains, Interview Guidance, Test Series, and Mentorship Programs.",
     },
 
     {
         question: "Do you provide both online and offline classes?",
         answer:
-            "No, Hriday IAS provides only offline learning programs so students can prepare according to their convenience and learning preferences.",
+            "Yes, Hriday IAS provides Online , Offline affordable and low fees learning programs so students can prepare according to their convenience and learning preferences.",
     },
 
 
@@ -38,7 +38,7 @@ const faqData = [
     {
         question: "Do you provide current affairs preparation?",
         answer:
-            "Yes, daily current affairs updates, analysis, and important exam-oriented discussions are regularly provided for UPSC and State PCS aspirants.",
+            "Yes, daily current affairs updates, analysis, and important exam-oriented discussions are regularly provided for UPSC aspirants.",
     },
 
     {

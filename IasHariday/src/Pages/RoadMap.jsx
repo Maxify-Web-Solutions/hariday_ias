@@ -14,7 +14,7 @@ const RoadMap = () => {
                     <div className="text-center max-w-3xl mx-auto relative">
                         <div className="inline-block">
                         </div>
-                        <h2 className="text-3xl md:text-5xl font-bold text-black tracking-tight">
+                        <h2 className="text-3xl md:text-5xl font-bold text-[#6B0F0F] tracking-tight">
                             UPSC Civil Services <span className="text-[#6B0F0F]">Examination</span>
                         </h2>
                         <div className="w-24 h-1 bg-gradient-to-r from-[#6B0F0F] to-amber-500 rounded-full mx-auto mt-4 mb-5"></div>
@@ -22,97 +22,176 @@ const RoadMap = () => {
                     </div>
 
                     {/* STAGES - Enhanced with modern cards, gradients, and better visual hierarchy */}
-                    <div className="mt-9">
-                        <div className="grid md:grid-cols-3 gap-7 lg:gap-9 mt-2">
+                    {/* UPSC 3 Stages */}
+                    <div className="mt-10 space-y-8">
 
-                            {/* Prelims - Modern floating card */}
-                            <div className="group bg-white/90 backdrop-blur-sm rounded-2xl p-7 shadow-sm hover:shadow-md transition-all duration-300 border border-amber-100 hover:border-amber-300 hover:-translate-y-0.5">
-                                <div className="flex items-start justify-between">
-                                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#6B0F0F] to-[#8B2A2A] text-white flex items-center justify-center text-2xl font-black shadow-md mb-5 group-hover:scale-105 transition-transform">
-                                        1
-                                    </div>
-                                    <div className="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full">Phase 01</div>
-                                </div>
-
-                                <h4 className="text-2xl font-bold text-[#6B0F0F] mt-2 tracking-tight">
-                                    Preliminary Exam
-                                </h4>
-                                <div className="mt-2 h-1 w-14 bg-amber-400 rounded-full mb-2"></div>
-
-                                <ul className="mt-4 text-[#5a4a3a] space-y-3 text-sm font-medium">
-                                    <li className="flex items-start gap-2"><span className="text-amber-600 text-base">•</span> <span>GS Paper I (200 Marks)</span></li>
-                                    <li className="flex items-start gap-2"><span className="text-amber-600 text-base">•</span> <span>CSAT (200 Marks)</span></li>
-                                    <li className="flex items-start gap-2"><span className="text-amber-600 text-base">•</span> <span>Objective Type Questions</span></li>
-                                    <li className="flex items-start gap-2"><span className="text-amber-600 text-base">•</span> <span>Negative Marking Applicable</span></li>
-                                    <li className="flex items-start gap-2"><span className="text-amber-600 text-base">•</span> <span className="font-semibold text-[#6B0F0F]">Qualifying Stage</span></li>
-                                </ul>
-
-                                {/* Badge for quick insight */}
-                                <div className="mt-6 pt-4 border-t border-amber-100">
-                                    <span className="inline-flex items-center gap-1 text-xs text-amber-700 bg-amber-50 px-3 py-1.5 rounded-full">
-                                        <span className="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Two compulsory papers
-                                    </span>
-                                </div>
+                        {/* Stage 1 */}
+                        <div className="bg-[#F3EFE6] rounded-[30px] overflow-hidden border border-[#d8cfc1] shadow-sm">
+                            <div className="bg-[#6B0F0F] py-4 text-center">
+                                <h3 className="text-white text-2xl md:text-3xl font-bold uppercase">
+                                    Stage 1 : Prelims Examination
+                                </h3>
                             </div>
 
-                            {/* Mains - Enhanced with gradient accent */}
-                            <div className="group bg-white/90 backdrop-blur-sm rounded-2xl p-7 shadow-sm hover:shadow-md transition-all duration-300 border border-amber-100 hover:border-amber-300 hover:-translate-y-0.5">
-                                <div className="flex items-start justify-between">
-                                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#6B0F0F] to-[#8B2A2A] text-white flex items-center justify-center text-2xl font-black shadow-md mb-5 group-hover:scale-105 transition-transform">
-                                        2
-                                    </div>
-                                    <div className="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full">Phase 02</div>
-                                </div>
+                            <div className="overflow-x-auto px-2">
+                                <table className="w-full text-center">
+                                    <thead>
+                                        <tr className="border-b border-[#d8cfc1] text-[#6B0F0F]">
+                                            <th className="py-3 font-semibold text-xl">EXAM</th>
+                                            <th className="py-3 font-semibold text-xl">EACH PAPER (200 MARKS)</th>
+                                            <th className="py-3 font-semibold text-xl">DETAILS</th>
+                                        </tr>
+                                    </thead>
 
-                                <h4 className="text-2xl font-bold text-[#6B0F0F] mt-2 tracking-tight">
-                                    Mains Examination
-                                </h4>
-                                <div className="mt-2 h-1 w-14 bg-amber-400 rounded-full mb-2"></div>
+                                    <tbody className="text-[#3f3f3f]">
+                                        <tr className="border-b border-[#d8cfc1]">
+                                            <td className="py-3 text-lg">Paper 1</td>
+                                            <td className='text-lg'>General Studies</td>
+                                            <td className='text-lg'>100 Qs. (Merit Based)</td>
+                                        </tr>
 
-                                <ul className="mt-4 text-[#5a4a3a] space-y-3 text-sm font-medium">
-                                    <li className="flex items-start gap-2"><span className="text-amber-600 text-base">•</span> <span>9 Descriptive Papers</span></li>
-                                    <li className="flex items-start gap-2"><span className="text-amber-600 text-base">•</span> <span>Essay Paper</span></li>
-                                    <li className="flex items-start gap-2"><span className="text-amber-600 text-base">•</span> <span>GS I, II, III & IV</span></li>
-                                    <li className="flex items-start gap-2"><span className="text-amber-600 text-base">•</span> <span>Optional Subject Papers</span></li>
-                                    <li className="flex items-start gap-2"><span className="text-amber-600 text-base">•</span> <span className="font-semibold text-[#6B0F0F]">1750 Marks Counted For Merit</span></li>
-                                </ul>
-
-                                <div className="mt-6 pt-4 border-t border-amber-100">
-                                    <span className="inline-flex items-center gap-1 text-xs text-amber-700 bg-amber-50 px-3 py-1.5 rounded-full">
-                                        <span className="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Descriptive + analytical
-                                    </span>
-                                </div>
+                                        <tr>
+                                            <td className="py-3 text-lg">Paper 2</td>
+                                            <td className='text-lg'>CSAT</td>
+                                            <td className='text-lg'>80 Qs. (Qualifying)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
 
-                            {/* Interview - Premium style */}
-                            <div className="group bg-white/90 backdrop-blur-sm rounded-2xl p-7 shadow-sm hover:shadow-md transition-all duration-300 border border-amber-100 hover:border-amber-300 hover:-translate-y-0.5">
-                                <div className="flex items-start justify-between">
-                                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#6B0F0F] to-[#8B2A2A] text-white flex items-center justify-center text-2xl font-black shadow-md mb-5 group-hover:scale-105 transition-transform">
-                                        3
-                                    </div>
-                                    <div className="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full">Phase 03</div>
-                                </div>
+                            <div className="text-center py-3 border-t border-[#d8cfc1] text-[#2F4A8A] text-base md:text-lg">
+                                (EXAM TYPE : MCQ Based, Time : 2 Hours, 1/3rd Negative Marking)
+                            </div>
 
-                                <h4 className="text-2xl font-bold text-[#6B0F0F] mt-2 tracking-tight">
-                                    Interview / Personality Test
-                                </h4>
-                                <div className="mt-2 h-1 w-14 bg-amber-400 rounded-full mb-2"></div>
-
-                                <ul className="mt-4 text-[#5a4a3a] space-y-3 text-sm font-medium">
-                                    <li className="flex items-start gap-2"><span className="text-amber-600 text-base">•</span> <span>Personality Assessment</span></li>
-                                    <li className="flex items-start gap-2"><span className="text-amber-600 text-base">•</span> <span>275 Marks</span></li>
-                                    <li className="flex items-start gap-2"><span className="text-amber-600 text-base">•</span> <span>Communication Skills</span></li>
-                                    <li className="flex items-start gap-2"><span className="text-amber-600 text-base">•</span> <span>Decision Making Ability</span></li>
-                                    <li className="flex items-start gap-2"><span className="text-amber-600 text-base">•</span> <span className="font-semibold text-[#6B0F0F]">Final Selection Stage</span></li>
-                                </ul>
-
-                                <div className="mt-6 pt-4 border-t border-amber-100">
-                                    <span className="inline-flex items-center gap-1 text-xs text-amber-700 bg-amber-50 px-3 py-1.5 rounded-full">
-                                        <span className="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> 275 marks | final merit
-                                    </span>
-                                </div>
+                            <div className="p-4 text-[#2F4A8A] font-medium text-base md:text-lg">
+                                Note : Marks scored in Prelims Exam are not counted in Final Selection.
                             </div>
                         </div>
+
+                        {/* Stage 2 */}
+                        <div className="bg-[#F3EFE6] rounded-[30px] overflow-hidden border border-[#d8cfc1] shadow-sm">
+                            <div className="bg-[#6B0F0F] py-4 text-center">
+                                <h3 className="text-white text-2xl md:text-3xl font-bold uppercase">
+                                    Stage 2 : Mains Examination
+                                </h3>
+                            </div>
+
+                            <div className="overflow-x-auto px-2 ">
+                                <table className="w-full text-center min-w-[900px] mb-2">
+                                    <thead>
+                                        <tr className="border-b border-[#d8cfc1] text-[#6B0F0F]">
+                                            <th className="py-3 text-xl">EXAM</th>
+                                            <th className='text-xl'>SUBJECTS</th>
+                                            <th className='text-xl'>MARKS</th>
+                                            <th className='text-xl'>NOTE</th>
+                                            <th className='text-xl'>MIN %</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody className="text-[#3f3f3f]">
+                                        <tr className="border-b border-[#d8cfc1]">
+                                            <td className='text-lg'>Paper A</td>
+                                            <td className="text-left text-lg px-3">
+                                                Any one Language from Schedule - 8
+                                            </td>
+                                            <td >300</td>
+                                            <td className='text-lg'>300</td>
+                                            <td rowSpan="2" className='text-lg'>Qualifying Paper</td>
+                                            <td rowSpan="2" className='text-lg'>25% Each</td>
+                                        </tr>
+
+                                        <tr className="border-b border-[#d8cfc1]">
+                                            <td className='text-lg'>Paper B</td>
+                                            <td className="text-left text-lg px-3">English Language</td>
+                                            <td className='text-lg'>300</td>
+                                        </tr>
+
+                                        <tr className="border-b border-[#d8cfc1]">
+                                            <td >Essay</td>
+                                            <td className='text-lg'>Essay</td>
+                                            <td className="text-left text-lg px-3">
+                                                Essay (125 marks each)
+                                            </td>
+                                            <td className='text-lg'>250</td>
+                                            <td rowSpan="6" className='text-lg'>
+                                                Paper Counted for final Merit
+                                            </td>
+                                            <td rowSpan="6" className='text-lg'>10% Each</td>
+                                        </tr>
+
+                                        <tr className="border-b border-[#d8cfc1]">
+                                            <td className='text-lg'>GS 1</td>
+                                            <td className="text-left text-lg px-3">
+                                                Indian Heritage and Culture, History and Geography of the World and Society
+                                            </td>
+                                            <td className='text-lg'>250</td>
+                                        </tr>
+
+                                        <tr className="border-b border-[#d8cfc1]">
+                                            <td className='text-lg'>GS 2</td>
+                                            <td className="text-left text-lg px-3">
+                                                Governance, Constitution, Polity, Social Justice and International Relations
+                                            </td>
+                                            <td className='text-lg'>250</td>
+                                        </tr>
+
+                                        <tr className="border-b border-[#d8cfc1]">
+                                            <td className='text-lg'>GS 3</td>
+                                            <td className="text-left text-lg px-3">
+                                                Technology, Economic Development, Biodiversity, Environment, Security and Disaster Management
+                                            </td>
+                                            <td className='text-lg'>250</td>
+                                        </tr>
+
+                                        <tr className="border-b border-[#d8cfc1]">
+                                            <td className='text-lg'>GS 4</td>
+                                            <td className="text-left text-lg px-3">
+                                                Ethics, Integrity, and Aptitude
+                                            </td>
+                                            <td className='text-lg'>250</td>
+                                        </tr>
+
+                                        <tr className="border-b border-[#d8cfc1] px-2">
+                                            <td className='text-lg'>Optional</td>
+                                            <td className="text-left px-3 text-lg">
+                                                2 Papers of Same Subject (250 × 2)
+                                            </td>
+                                            <td className='text-lg'>500</td>
+                                        </tr>
+
+                                        <tr className="font-bold text-black">
+                                            <td></td>
+                                            <td>TOTAL</td>
+                                            <td>1750</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        {/* Stage 3 */}
+                        <div className="bg-[#F3EFE6] rounded-[30px] overflow-hidden border border-[#d8cfc1] shadow-sm">
+                            <div className="bg-[#6B0F0F] py-4 text-center">
+                                <h3 className="text-white text-2xl md:text-3xl font-bold uppercase">
+                                    Stage 3 : Interview
+                                </h3>
+                            </div>
+
+                            <div className="p-8 text-center">
+                                <h4 className="text-2xl md:text-4xl font-bold text-[#5B1E1E]">
+                                    (Personality Test of 275 Marks)
+                                </h4>
+
+                                <p className="mt-5 text-lg md:text-2xl text-[#3f3f3f] leading-relaxed max-w-4xl mx-auto">
+                                    In Civil Services Interview, personality is tested on
+                                    parameters like confidence, empathy, balanced opinion,
+                                    mature and independent thoughts.
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
 
                     {/* FINAL SELECTION - Modern card with accent and iconography */}
@@ -130,7 +209,7 @@ const RoadMap = () => {
                                             Final Selection & Merit
                                         </h3>
                                     </div>
-                                    <p className="text-[#7C604F] leading-relaxed text-base md:text-lg">
+                                    <p className="text-[#7C604F] leading-relaxed text-lg md:text-xl">
                                         The final merit list is prepared based on the marks obtained in the
                                         <span className="font-semibold text-[#6B0F0F]"> Mains Examination (1750 Marks) </span>
                                         and the
@@ -152,68 +231,91 @@ const RoadMap = () => {
                     </div>
 
                     {/* ELIGIBILITY - Clean table with modern styling, badges, and better readability */}
-                    <div className="mt-10">
-                        <div className="flex items-center justify-center gap-4 mb-10">
-                            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-amber-300 max-w-20"></div>
-                            <h3 className="text-2xl md:text-3xl font-bold text-[#6B0F0F] tracking-wide">
-                                Eligibility Criteria
-                            </h3>
-                            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-amber-300 max-w-20"></div>
-                        </div>
+                    <div className="bg-white rounded-3xl overflow-hidden shadow-sm border border-amber-100 mt-7">
+                        <div className="overflow-x-auto">
+                            <table className="w-full min-w-[1200px] border-collapse">
+                                <thead>
+                                    <tr className="bg-gradient-to-r from-[#6B0F0F] to-[#8B2A2A] text-white">
+                                        <th className="p-5 text-xl border-r border-amber-300/30 whitespace-nowrap">
+                                            Category
+                                        </th>
+                                        <th className="p-5 text-xl border-r border-amber-300/30 whitespace-nowrap">
+                                            Age Limit
+                                        </th>
+                                        <th className="p-5 text-xl border-r border-amber-300/30 whitespace-nowrap">
+                                            Attempts
+                                        </th>
+                                        <th className="p-5 text-xl whitespace-nowrap w-[420px]">
+                                            Qualification
+                                        </th>
+                                    </tr>
+                                </thead>
 
-                        <div className="bg-white rounded-3xl overflow-hidden shadow-sm border border-amber-100 transition-all hover:shadow-md">
-                            {/* Table header - modern dark with gradient */}
-                            <div className="grid grid-cols-4 bg-gradient-to-r from-[#6B0F0F] to-[#8B2A2A] text-white font-bold text-center py-5 text-sm md:text-base">
-                                <div className="border-r border-amber-300/30">Category</div>
-                                <div className="border-r border-amber-300/30">Age Limit</div>
-                                <div className="border-r border-amber-300/30">Attempts</div>
-                                <div>Qualification</div>
-                            </div>
+                                <tbody className="text-[#5a4a3a]">
+                                    {/* General / EWS */}
+                                    <tr className="border-b border-amber-100 hover:bg-amber-50/50 transition-colors">
+                                        <td className="p-5 text-lg font-semibold text-[#6B0F0F] text-center whitespace-nowrap">
+                                            General / EWS
+                                        </td>
 
-                            {/* General Row */}
-                            <div className="grid grid-cols-4 text-center border-b border-amber-100 py-5 text-[#5a4a3a] text-sm md:text-base hover:bg-amber-50/50 transition-colors">
-                                <div className="font-semibold text-[#6B0F0F] border-r border-amber-100">General / EWS</div>
-                                <div className="border-r border-amber-100">21 - 32 Years</div>
-                                <div className="border-r border-amber-100">
-                                    <span className="inline-flex items-center justify-center bg-amber-100 text-amber-800 px-2.5 py-0.5 rounded-full text-xs font-bold">6</span>
-                                </div>
-                                <div className="text-left pl-3 md:pl-8 font-medium">Graduation from a recognized university</div>
-                            </div>
+                                        <td className="p-5 text-lg text-center whitespace-nowrap">
+                                            21 - 32 Years
+                                        </td>
 
-                            {/* OBC Row */}
-                            <div className="grid grid-cols-4 text-center border-b border-amber-100 py-2 text-[#5a4a3a] text-sm md:text-base hover:bg-amber-50/50 transition-colors">
-                                <div className="font-semibold text-[#6B0F0F] border-r border-amber-100">OBC</div>
-                                <div className="border-r border-amber-100">21 - 35 Years</div>
-                                <div className="border-r border-amber-100">
-                                    <span className="inline-flex items-center justify-center bg-amber-100 text-amber-800 px-2.5 py-0.5 rounded-full text-xs font-bold">9</span>
-                                </div>
-                                <div className="text-left pl-3 md:pl-10 font-medium text-[#7C604F]">Graduation from a recognized university</div>
-                            </div>
+                                        <td className="p-5 text-center whitespace-nowrap">
+                                            <span className="inline-flex items-center justify-center bg-amber-100 text-amber-800 px-4 py-1 rounded-full text-lg font-bold">
+                                                6
+                                            </span>
+                                        </td>
 
-                            {/* SC/ST Row with unlimited badge */}
-                            <div className="grid grid-cols-4 text-center py-5 text-[#5a4a3a] text-sm md:text-base hover:bg-amber-50/50 transition-colors">
-                                <div className="font-semibold text-[#6B0F0F] border-r border-amber-100">SC / ST</div>
-                                <div className="border-r border-amber-100">21 - 37 Years</div>
-                                <div className="border-r border-amber-100">
-                                    <span className="inline-flex items-center justify-center bg-emerald-100 text-emerald-700 px-2.5 py-0.5 rounded-full text-xs font-bold">Unlimited</span>
-                                </div>
-                                <div className="text-left pl-3 md:pl-8 font-medium text-[#7C604F]">Graduation from a recognized university</div>
-                            </div>
-                        </div>
+                                        <td className="p-5 text-lg whitespace-nowrap">
+                                            Graduation from a recognized university
+                                        </td>
+                                    </tr>
 
-                        {/* extra note for age relaxation */}
-                        <div className="flex flex-wrap gap-3 justify-center items-center mt-6 text-xs md:text-sm text-[#7C604F]">
+                                    {/* OBC */}
+                                    <tr className="border-b border-amber-100 hover:bg-amber-50/50 transition-colors">
+                                        <td className="p-5 text-lg font-semibold text-[#6B0F0F] text-center whitespace-nowrap">
+                                            OBC
+                                        </td>
 
-                            <span className="bg-white/70 rounded-full px-4 py-1.5 shadow-sm flex items-center gap-2">
-                                <ClipboardList size={16} className="text-[#6B0F0F]" />
-                                <strong>Age relaxation:</strong> +3 years for OBC, +5 years for SC/ST
-                            </span>
+                                        <td className="p-5 text-lg text-center whitespace-nowrap">
+                                            21 - 35 Years
+                                        </td>
 
-                            <span className="bg-white/70 rounded-full px-4 py-1.5 shadow-sm flex items-center gap-2">
-                                <CalendarDays size={16} className="text-[#6B0F0F]" />
-                                <strong>Physical disability:</strong> Additional relaxation as per rules
-                            </span>
+                                        <td className="p-5 text-center whitespace-nowrap">
+                                            <span className="inline-flex items-center justify-center bg-amber-100 text-amber-800 px-4 py-1 rounded-full text-lg font-bold">
+                                                9
+                                            </span>
+                                        </td>
 
+                                        <td className="p-5 text-lg whitespace-nowrap">
+                                            Graduation from a recognized university
+                                        </td>
+                                    </tr>
+
+                                    {/* SC / ST */}
+                                    <tr className="hover:bg-amber-50/50 transition-colors">
+                                        <td className="p-5 text-lg font-semibold text-[#6B0F0F] text-center whitespace-nowrap">
+                                            SC / ST
+                                        </td>
+
+                                        <td className="p-5 text-lg text-center whitespace-nowrap">
+                                            21 - 37 Years
+                                        </td>
+
+                                        <td className="p-5 text-center whitespace-nowrap">
+                                            <span className="inline-flex items-center justify-center bg-emerald-100 text-emerald-700 px-4 py-1 rounded-full text-lg font-bold whitespace-nowrap">
+                                                Unlimited
+                                            </span>
+                                        </td>
+
+                                        <td className="p-5 text-lg whitespace-nowrap">
+                                            Graduation from a recognized university
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 

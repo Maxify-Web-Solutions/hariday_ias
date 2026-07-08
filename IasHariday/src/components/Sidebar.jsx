@@ -185,6 +185,25 @@ export default function Sidebar() {
                                 </a>
                             </li>
 
+                            <li>
+                                <a
+                                    href="/carrer"
+                                    className={`flex items-center gap-3 px-3 py-1.5 rounded-lg transition-all duration-300 group
+
+            ${location.pathname === "/carrer"
+                                            ? "border-l-4  border-[#711716] text-[#711716] bg-[#F5E6D3]"
+                                            : "text-[#711716] hover:bg-[#F5E6D3]"
+                                        }
+            `}
+                                >
+                                    <MdCall className="text-xl" />
+                                    <span className="text-base font-bold">
+                                        Carrer
+                                    </span>
+                                </a>
+                            </li>
+
+
                         </ul>
 
                     </div>

@@ -85,14 +85,14 @@ const AboutNewPage = () => {
                 <div className="w-full lg:w-1/2">
 
                     {/* TITLE */}
-                    <h2 className="text-xl md:text-2xl font-bold text-[#6B0F0F] leading-tight -mt-4 md:mt-10">
+                    <h2 className="text-xl md:text-2xl font-bold text-black leading-tight -mt-4 md:mt-10">
                         About <span className="text-black">Hriday IAS</span>
                     </h2>
 
-                    <div className="w-20 h-1 bg-[#6B0F0F] rounded-full mb-1 mt-1"></div>
+                    {/* <div className="w-20 h-1 bg-[#6B0F0F] rounded-full mb-1 mt-1"></div> */}
 
                     {/* QUOTE CARD */}
-                    <div className="bg-white/70 backdrop-blur-md border border-[#F5E6D3] p-3 rounded-xl shadow-sm mt-3">
+                    <div className="bg-white/70 backdrop-blur-md border text-black p-3 rounded-xl shadow-sm mt-3">
                         <p className="italic text-lg leading-relaxed">
                             "In the garden of life, one flower blooms above all others – the flower of awareness."
                         </p>
@@ -101,13 +101,13 @@ const AboutNewPage = () => {
                     {/* MAIN TEXT */}
                     <div className="space-y-2 text-gray-700 leading-relaxed text-base md:text-lg mt-4">
 
-                        <p className="text-[18px] text-[#7C5A4F] leading-relaxed">
+                        <p className="text-[18px] text-black leading-relaxed">
 
                             At <span className="font-semibold text-[#6B0F0F]">Hriday IAS</span>, we nurture this flower,
                             cultivating awareness, intelligence, and compassion in every aspirant.
                             Inspired by the wisdom of <span className="text-[#6B0F0F] font-semibold underline"> Osho and Buddha</span> , we recognize that
                             <span className="italic">
-                                {" "}<span className="text-[#6B0F0F] text-[20px]"> “the ultimate source of all anxiety is the fear of the unknown.”</span>
+                                {" "}<span className="text-[#182769] text-[20px]"> “the ultimate source of all anxiety is the fear of the unknown.”</span>
                             </span>{" "}
                             Our approach to UPSC preparation is not just about acquiring knowledge but
                             about transforming ourselves, embracing the unknown, and discovering our
@@ -115,10 +115,10 @@ const AboutNewPage = () => {
                         </p>
 
                         <div className="">
-                            <h3 className="text-xl font-semibold text-[#6B0F0F]">
+                            <h3 className="text-xl font-semibold text-black">
                                 Join Our <span className="underline">Journey</span>
                             </h3>
-                            <p className=" text-[#7C5A4F] leading-relaxed text-[18px] mt-1.5">
+                            <p className=" text-black leading-relaxed text-[18px] mt-1.5">
                                 At Hriday IAS, we invite you to embark on a path of self-discovery, intellectual growth and civic responsibility. Together, let us explore the depths of human knowledge and emerge as leaders who will shape the future of our nation with awareness, compassion and courage.
 
                             </p>

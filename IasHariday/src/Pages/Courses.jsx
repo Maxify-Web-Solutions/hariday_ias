@@ -32,7 +32,7 @@ const Courses = () => {
             Start Your Journey Today
           </h1>
           <p className='text-[#7C604F] mt-2 text-sm md:text-base'>
-            Explore Premium Courses For UPSC, SSC, UPPCS & Government Exams
+            Explore Premium Courses For UPSC Examination
           </p>
         </div>
         {/* Course Cards */}

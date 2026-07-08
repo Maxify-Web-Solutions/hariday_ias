@@ -21,11 +21,12 @@ const Navbar = () => {
     const navLinks = [
         { name: "Courses", path: "/courses" },
         { name: "From Director", path: "/about" },
-        { name: "Mentors", path: "/mentor" },
+        { name: "faculty", path: "/mentor" },
         { name: "UPSC Roadmap", path: "/upsc-roadmap" },
         { name: "Blog", path: "/blog" },
         { name: "About Us", path: "/about_page" },
         { name: "Contact", path: "/contact" },
+        { name: "Carrer", path: "/carrer" },
     ];
 
     return (
@@ -75,7 +76,7 @@ const Navbar = () => {
                                         <li key={link.path} className="relative group/link">
                                             <Link
                                                 to={link.path}
-                                                className={`relative px-4 py-2 rounded-xl text-sm font-semibold tracking-wide transition-all duration-300
+                                                className={`relative px-4 py-2 rounded-xl text-base font-semibold tracking-wide transition-all duration-300
                                                     ${isActive
                                                         ? 'text-[#6B0F0F] bg-gradient-to-r from-[#F5E6D3] to-[#F5E6D3]/80 shadow-md'
                                                         : 'text-[#6B0F0F]/70 hover:text-[#6B0F0F] hover:bg-[#F5E6D3]/40'

@@ -17,6 +17,8 @@ import CourseDetailsPage from './Pages/CourseDetailsPage'
 import AboutNewPage from './Pages/AboutNewPage'
 import Mentors from './Pages/Mentors'
 import RoadMap from './Pages/RoadMap'
+import CarrerPage from './Pages/CarrerPage'
+import CarrerForm from './Pages/CarrerForm'
 
 function App() {
 
@@ -40,6 +42,8 @@ function App() {
           <Route path="/faq" element={<Faq />} />
           <Route path="/blog/:id" element={<BlogDetailPage />} />
           <Route path="/course/:id" element={<CourseDetailsPage />} />
+          <Route path="/carrer" element={<CarrerPage />} />
+          {/* <Route path="/carrer_form" element={<CarrerForm />} /> */}
 
         </Routes>
         <Footer />
