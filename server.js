@@ -53,13 +53,12 @@ app.use("/api/subscribers", subscriberRoutes);
 
 
 
-
 // production setup
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "./admin", "dist")));
+  app.use(express.static(path.join(__dirname, "./IasHariday", "dist")));
 
   app.use((req, res) => {
-    res.sendFile(path.join(__dirname, "./admin", "dist", "index.html")); 
+    res.sendFile(path.join(__dirname, "./IasHariday", "dist", "index.html")); 
   });
 }
 
