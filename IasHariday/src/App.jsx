@@ -42,7 +42,7 @@ function App() {
           <Route path="/faq" element={<Faq />} />
           <Route path="/blog/:id" element={<BlogDetailPage />} />
           <Route path="/course/:id" element={<CourseDetailsPage />} />
-          <Route path="/carrer" element={<CarrerPage />} />
+          <Route path="/career" element={<CarrerPage />} />
           {/* <Route path="/carrer_form" element={<CarrerForm />} /> */}
 
         </Routes>

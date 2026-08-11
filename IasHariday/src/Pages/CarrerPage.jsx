@@ -108,7 +108,7 @@ const CareerPage = () => {
             <div className="fixed bottom-20 right-10 w-72 h-72 bg-red-300/20 rounded-full blur-3xl pointer-events-none"></div>
 
             {/* Hero Section */}
-            <section id="hero" className="px-4 md:px-20 lg:px-28 py-16 animate-section">
+            <section id="hero" className="px-4 md:px-20 lg:px-28 py-3 animate-section">
                 <div className="relative overflow-hidden bg-gradient-to-br from-[#6B0F0F] via-[#7a1a1a] to-[#8B2A2A] rounded-3xl p-10 md:p-16 text-white shadow-2xl">
                     {/* Animated Background Pattern */}
                     <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>

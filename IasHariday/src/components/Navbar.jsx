@@ -26,7 +26,7 @@ const Navbar = () => {
         { name: "Blog", path: "/blog" },
         { name: "About Us", path: "/about_page" },
         { name: "Contact", path: "/contact" },
-        { name: "Carrer", path: "/carrer" },
+        { name: "Career", path: "career" },
     ];
 
     return (
@@ -115,7 +115,7 @@ const Navbar = () => {
             </nav>
 
             {/* Spacer */}
-            <div className="h-[76px] md:h-[80px]"></div>
+            <div className="h-[59px] md:h-[59px]"></div>
         </>
     )
 }
