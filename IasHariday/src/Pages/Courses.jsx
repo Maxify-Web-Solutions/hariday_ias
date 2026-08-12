@@ -26,7 +26,7 @@ const Courses = () => {
 
   return (
     <>
-      <div className='px-3 md:px-6 lg:px-10 py-5 md:py-6 bg-[#FDF6EC]'>
+      <div className='px-3 md:px-6 lg:px-10 py-1 md:py-6 bg-[#FDF6EC]'>
         <div className=''>
           <h1 className='text-2xl md:text-3xl font-bold text-[#6B0F0F]'>
             Start Your Journey Today

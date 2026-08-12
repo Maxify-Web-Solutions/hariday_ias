@@ -6,7 +6,8 @@ import { useLocation } from "react-router-dom";
 import { UserRound } from "lucide-react";
 import { Building2 } from "lucide-react";
 import { GraduationCap } from "lucide-react";
-
+import { Briefcase } from "lucide-react"
+ 
 import {
     MdMenuBook,
     MdArticle,
@@ -187,18 +188,18 @@ export default function Sidebar() {
 
                             <li>
                                 <a
-                                    href="/carrer"
+                                    href="/career"
                                     className={`flex items-center gap-3 px-3 py-1.5 rounded-lg transition-all duration-300 group
 
-            ${location.pathname === "/carrer"
+            ${location.pathname === "/career"
                                             ? "border-l-4  border-[#711716] text-[#711716] bg-[#F5E6D3]"
                                             : "text-[#711716] hover:bg-[#F5E6D3]"
                                         }
             `}
                                 >
-                                    <MdCall className="text-xl" />
+                                    <Briefcase className="text-xl" />
                                     <span className="text-base font-bold">
-                                        Carrer
+                                        Career
                                     </span>
                                 </a>
                             </li>

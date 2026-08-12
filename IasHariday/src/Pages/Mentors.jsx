@@ -20,7 +20,7 @@ const Mentors = () => {
         <div className="max-w-7xl mx-auto px-5 md:px-8 ">
 
             {/* Heading */}
-            <div className="text-center mb-14 mt-8">
+            <div className="text-center mb-10 mt-1 md:mt-6">
                 <h2 className="text-3xl md:text-4xl font-bold text-[#6B0F0F]">
                     Meet Our <span className="text-[#6B0F0F]">faculty</span>
                 </h2>
@@ -31,7 +31,7 @@ const Mentors = () => {
             </div>
 
             {/* Mentor Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-6">
                 {faculties.map((mentor) => (
                     <div
                         key={mentor.id}

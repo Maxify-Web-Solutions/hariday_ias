@@ -64,7 +64,7 @@ const Contact = () => {
 
   return (
     <>
-      <div className=" px-3 md:px-20 lg:px-28 py-6 bg-[#FDF6EC]">
+      <div className=" px-3 md:px-20 lg:px-28 py-2 md:py-5 bg-[#FDF6EC]">
         <h1 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold text-[#6B0F0F]">
           Reach Out to Us Anytime
         </h1>

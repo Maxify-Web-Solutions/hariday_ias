@@ -12,8 +12,8 @@ const About = () => {
   return (
     <div className="mt-2 max-w-6xl mx-auto px-5 md:px-6 mb-5 lg:px-[120px]">
 
-      <div className="pt-8">
-        <h1 className="text-center text-lg sm:text-xl md:text-4xl font-bold text-[#6B0F0F] mb-12 md:mb-20">
+      <div className="pt-1 md:pt-4">
+        <h1 className="text-center text-lg sm:text-xl md:text-4xl font-bold text-[#6B0F0F] mb-8 md:mb-24">
           Leading with Integrity :
           <span className="text-[#6B0F0F]">
             {" "}A Message from the Director
